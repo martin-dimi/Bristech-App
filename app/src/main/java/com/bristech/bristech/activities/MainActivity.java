@@ -17,6 +17,7 @@ import com.bristech.bristech.adaptors.EventsAdaptor;
 import com.bristech.bristech.data.Dummy;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.fragments.EventsFragment;
+import com.bristech.bristech.activities.VolunteerSpeakerActivity;
 
 import java.util.List;
 
@@ -71,6 +72,12 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_upcoming_events:
                 showUpcomingEvents();
                 break;
+            case R.id.nav_volunteer_a_speaker:
+                showVolunteerSpeaker();
+                break;
+            case R.id.nav_settings:
+                showSettings();
+                break;
             default:
                 break;
         }
@@ -83,6 +90,16 @@ public class MainActivity extends AppCompatActivity
     private void showUpcomingEvents() {
         EventsFragment eventsFragment = EventsFragment.getInstance(mEventList);
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
+    }
+
+    private void showVolunteerSpeaker() {
+        Intent volunteerSpeakerActivityIntent = new Intent(this, VolunteerSpeakerActivity.class);
+        startActivity(volunteerSpeakerActivityIntent);
+    }
+
+    private void showSettings() {
+        Intent settingsActivityIntent = new Intent(this, SettingsActivity.class);
+        startActivity(settingsActivityIntent);
     }
 
     private void getEvents(){

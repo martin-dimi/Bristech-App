@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorCard">#c6deff</color>
+
+    <color name="black">#000000</color>
 </resources>
