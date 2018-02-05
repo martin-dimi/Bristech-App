@@ -1,39 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.bristech.bristech.activities.FeedbackActivity">
 
+    <include
+        layout="@layout/app_bar_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/app_bar"/>
 
     <LinearLayout
-        android:layout_height="match_parent"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/settings_linear_layout_top"
         android:orientation="vertical"
         android:layout_gravity="center_horizontal">
 
-        <include
-            layout="@layout/app_bar_main"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/app_bar"/>
-
         <TextView
             android:id="@+id/txt_thank_for_attending"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:text="Thank you for attending (...) (replace this in xml)"
             />
 
         <TextView
             android:id="@+id/txt_request_feedback"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
             android:text="@string/feedback_please"
             />
+
+        <Button
+            android:id="@+id/btn_submit"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:onClick="submitBtnPress"
+            android:text="@string/btn_submit"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:id="@+id/txt_thank_for_feedback"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            />
+
+        <Button
+            android:id="@+id/btn_return_to_homepage"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:onClick="returnToHomepageBtnPress"
+            android:text="@string/btn_homepage"
+            android:gravity="center_horizontal" />
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

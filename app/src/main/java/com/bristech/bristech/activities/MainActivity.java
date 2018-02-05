@@ -72,11 +72,18 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_upcoming_events:
                 showUpcomingEvents();
                 break;
-            case R.id.nav_volunteer_a_speaker:
-                showVolunteerSpeaker();
+            case R.id.nav_past_events:
+                showPastEvents();
                 break;
             case R.id.nav_settings:
                 showSettings();
+                break;
+
+            case R.id.nav_volunteer_a_speaker:
+                showVolunteerSpeaker();
+                break;
+            case R.id.nav_attend_event:
+                showAttendEvent();
                 break;
             default:
                 break;
@@ -92,6 +99,11 @@ public class MainActivity extends AppCompatActivity
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
     }
 
+    private void showPastEvents() {
+        EventsFragment eventsFragment = EventsFragment.getInstance(mEventList);
+        mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
+    }
+
     private void showVolunteerSpeaker() {
         Intent volunteerSpeakerActivityIntent = new Intent(this, VolunteerSpeakerActivity.class);
         startActivity(volunteerSpeakerActivityIntent);
@@ -100,6 +112,11 @@ public class MainActivity extends AppCompatActivity
     private void showSettings() {
         Intent settingsActivityIntent = new Intent(this, SettingsActivity.class);
         startActivity(settingsActivityIntent);
+    }
+
+    private void showAttendEvent() {
+        Intent feedbackActivityEvent = new Intent(this, FeedbackActivity.class);
+        startActivity(feedbackActivityEvent);
     }
 
     private void getEvents(){

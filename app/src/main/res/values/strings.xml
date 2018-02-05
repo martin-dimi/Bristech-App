@@ -14,4 +14,7 @@
     <string name="modify_interests">Modify Interests</string>
     <string name="user_settings">User Settings</string>
     <string name="feedback_please">Would you mind providing some feedback on the talk?</string>
+    <string name="btn_submit">Submit</string>
+    <string name="btn_homepage">Homepage</string>
+    <string name="thank_for_feedback">Thank you for the feedback!</string>
 </resources>

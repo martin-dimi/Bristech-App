@@ -8,4 +8,5 @@
     <dimen name="btn_log_out_margin_top">64dp</dimen>
     <dimen name="btn_register_for_talk">16dp</dimen>
     <dimen name="settings_linear_layout_top">64dp</dimen>
+    <dimen name="app_bar_margin">64dp</dimen>
 </resources>
