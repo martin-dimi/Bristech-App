@@ -24,6 +24,10 @@
                 android:id="@+id/nav_volunteer_a_speaker"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Volunteer a speaker" />
+            <item
+                android:id="@+id/attend_event"
+                android:icon="@drawable/ic_menu_send"
+                android:title="(physically attend an event)" />
         </menu>
     </item>
 

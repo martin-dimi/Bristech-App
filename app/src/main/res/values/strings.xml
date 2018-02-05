@@ -13,4 +13,5 @@
     <string name="register_for_talk">Register for Talk</string>
     <string name="modify_interests">Modify Interests</string>
     <string name="user_settings">User Settings</string>
+    <string name="feedback_please">Would you mind providing some feedback on the talk?</string>
 </resources>
