@@ -10,4 +10,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="btn_log_out">Log Out</string>
+    <string name="register_for_talk">Register for Talk</string>
+    <string name="modify_interests">Modify Interests</string>
+    <string name="user_settings">User Settings</string>
 </resources>

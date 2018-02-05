@@ -6,13 +6,43 @@
     android:layout_height="match_parent"
     tools:context="com.bristech.bristech.activities.SettingsActivity">
 
-    <Button
-        android:layout_marginTop="@dimen/btn_log_out_margin_top"
-        android:id="@+id/btn_log_out"
-        android:layout_height="wrap_content"
+    <include
+        layout="@layout/app_bar_main"
         android:layout_width="match_parent"
-        android:onClick="logOutBtnPress"
-        android:text="@string/btn_log_out"
-        android:gravity="center_horizontal" />
+        android:layout_height="match_parent"
+        android:id="@+id/app_bar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/settings_linear_layout_top"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btn_log_out"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:onClick="logOutBtnPress"
+            android:text="@string/btn_log_out"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btn_modify_interests"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:onClick="modifyInterestsBtnPress"
+            android:text="@string/modify_interests"
+            android:gravity="center_horizontal" />
+
+        <Button
+            android:id="@+id/btn_edit_user_settings"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:onClick="editUserSettingsBtnPress"
+            android:text="@string/user_settings"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
 
 </RelativeLayout>

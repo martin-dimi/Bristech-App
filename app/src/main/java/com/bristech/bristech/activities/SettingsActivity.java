@@ -20,4 +20,12 @@ public class SettingsActivity extends AppCompatActivity {
         Log.i("SettingsActivity", "Log out button pressed");
     }
 
+    public void modifyInterestsBtnPress(View view) {
+        Log.i("SettingsActivity", "Modify Interests button pressed");
+    }
+
+    public void editUserSettingsBtnPress(View view) {
+        Log.i("SettingsActivity", "Edit user settings button pressed");
+    }
+
 }

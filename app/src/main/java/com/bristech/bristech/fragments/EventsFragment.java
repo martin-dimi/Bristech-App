@@ -73,7 +73,21 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
 
     @Override
     public void onClick() {
+        // create new intent
         Intent eventDetailActivityIntent = new Intent(getContext(), EventDetailActivity.class);
+
+        // send details of event to individual view
+        Bundle mBundle = new Bundle();
+        mBundle.putString("event_title", "testTitle");
+        mBundle.putString("event_topic", "testTopic");
+        mBundle.putString("event_date", "testDate");
+        mBundle.putString("event_time", "testTime");
+        mBundle.putString("event_duration", "testDuration");
+        mBundle.putString("event_location", "testLocation");
+        mBundle.putString("event_description", "testDescription");
+        eventDetailActivityIntent.putExtras(mBundle);
+
+        // start the activity
         startActivity(eventDetailActivityIntent);
     }
 }

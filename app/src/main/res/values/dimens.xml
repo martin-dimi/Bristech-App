@@ -5,5 +5,7 @@
     <dimen name="nav_header_vertical_spacing">24dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="btn_log_out_margin_top">16dp</dimen>
+    <dimen name="btn_log_out_margin_top">64dp</dimen>
+    <dimen name="btn_register_for_talk">16dp</dimen>
+    <dimen name="settings_linear_layout_top">64dp</dimen>
 </resources>
