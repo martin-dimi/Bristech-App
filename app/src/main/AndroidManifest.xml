@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bristech.bristech">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +24,8 @@
         <activity android:name=".activities.EventDetailActivity" />
         <activity android:name=".activities.VolunteerSpeakerActivity" />
         <activity android:name=".activities.SettingsActivity" />
-        <activity android:name=".activities.FeedbackActivity"></activity>
+        <activity android:name=".activities.FeedbackActivity" />
+        <activity android:name=".activities.LoginBasicActivity"></activity>
     </application>
 
 </manifest>

@@ -5,22 +5,34 @@ import java.io.Serializable;
 
 public class Event implements Serializable{
 
+    private long id;
     private String title;
-    private String topic;
+    private String location;
     private String date;
     private String time;
-    private int duration;
-    private String location;
     private String description;
+    private String backdrop;
 
-    public Event(String title, String topic, String date, String time, int duration, String location, String description) {
+    public Event(){
+
+    }
+
+    public Event(long id, String title, String location, String date, String time, String description, String backdrop) {
+        this.id = id;
         this.title = title;
-        this.topic = topic;
+        this.location = location;
         this.date = date;
         this.time = time;
-        this.duration = duration;
-        this.location = location;
         this.description = description;
+        this.backdrop = backdrop;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -31,12 +43,12 @@ public class Event implements Serializable{
         this.title = title;
     }
 
-    public String getTopic() {
-        return topic;
+    public String getLocation() {
+        return location;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getDate() {
@@ -45,22 +57,6 @@ public class Event implements Serializable{
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public String getTime() {
@@ -79,5 +75,11 @@ public class Event implements Serializable{
         this.description = description;
     }
 
+    public String getBackdrop() {
+        return backdrop;
+    }
 
+    public void setBackdrop(String backdrop) {
+        this.backdrop = backdrop;
+    }
 }

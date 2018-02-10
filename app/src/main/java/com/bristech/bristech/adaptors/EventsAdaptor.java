@@ -45,10 +45,8 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
         Event event = mEvents.get(position);
         holder.myTitle.setText(event.getTitle());
         holder.myImage.setImageResource(R.drawable.test_event_image_1);
-        holder.myTopic.setText(event.getTopic());
         holder.myDate.setText(event.getDate());
         holder.myTime.setText(event.getTime());
-        holder.myDuration.setText(Integer.toString(event.getDuration()));
         holder.myLocation.setText(event.getLocation());
         holder.myShortDescription.setText(event.getDescription());
     }
@@ -66,7 +64,6 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
         TextView myTopic;
         TextView myDate;
         TextView myTime;
-        TextView myDuration;
         TextView myLocation;
         TextView myShortDescription;
 
@@ -77,7 +74,6 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
             myTopic = itemView.findViewById(R.id.event_card_topic);
             myDate = itemView.findViewById(R.id.event_card_date);
             myTime = itemView.findViewById(R.id.event_card_time);
-            myDuration = itemView.findViewById(R.id.event_card_duration);
             myLocation = itemView.findViewById(R.id.event_card_location);
             myShortDescription = itemView.findViewById(R.id.event_card_shortdescription);
             itemView.setOnClickListener(this);

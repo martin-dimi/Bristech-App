@@ -18,12 +18,13 @@ import com.bristech.bristech.data.Dummy;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.fragments.EventsFragment;
 import com.bristech.bristech.activities.VolunteerSpeakerActivity;
+import com.bristech.bristech.services.UserService;
+import com.bristech.bristech.utils.UserUtils;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
-
 
     private List<Event> mEventList;
     private FragmentManager mFragmentManager;
@@ -35,6 +36,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+
+        //Check if logged in
+        UserUtils.isLoggedIn(this);
 
         // set up navigation functionality of the sidebar
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
