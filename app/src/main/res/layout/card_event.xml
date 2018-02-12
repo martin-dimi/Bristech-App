@@ -25,6 +25,7 @@
             <ImageView
                 android:id="@+id/event_card_image"
                 android:layout_width="match_parent"
+                android:contentDescription="@string/no_description_set"
                 android:layout_height="200dp"
                 android:scaleType="fitCenter"
                 />

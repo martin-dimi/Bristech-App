@@ -4,11 +4,8 @@
     <color name="black">#000000</color>
     <color name="grey">#A3A4A8</color>
     <color name="maroon">#9A1C30</color>
-    <color name="white">#FFFFFF</color>
 
     <!--Secondary theme colours-->
-    <color name="lightMaroon">#974351</color>
-    <color name="darkMaroon">#320f14</color>
 
     <!--For app bar-->
     <color name="colorPrimary">#9A1C30</color>

@@ -24,7 +24,7 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
     }
 
     public void submitBtnPress(View view) {
-        Log.i("VolunteerSpeakerActivity", "Submit button pressed");
+        Log.i("VolunteerSpeakerActivit", "Submit button pressed");
         TextView textView = findViewById(R.id.thank_for_speaker_volunteer);
         textView.setText(R.string.txt_thank_for_speaker_volunteer);
         String name = mSpeakerNameField.getText().toString();

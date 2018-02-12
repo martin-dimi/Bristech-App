@@ -7,15 +7,15 @@
         <item
             android:id="@+id/nav_upcoming_events"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Upcoming events" />
+            android:title="@string/upcoming_events" />
         <item
             android:id="@+id/nav_past_events"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Past Events" />
+            android:title="@string/past_events" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Settings" />
+            android:title="@string/Settings" />
     </group>
 
     <item android:title="Communicate">
@@ -23,7 +23,7 @@
             <item
                 android:id="@+id/nav_volunteer_a_speaker"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Volunteer a speaker" />
+                android:title="@string/volunteer_a_speaker" />
             <item
                 android:id="@+id/nav_attend_event"
                 android:icon="@drawable/ic_menu_send"

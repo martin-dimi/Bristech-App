@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:gravity="center_horizontal"
-            android:text="Thank you for attending (...) (replace this in xml)"
+            android:text="@string/thank_for_attending"
             />
 
         <TextView
