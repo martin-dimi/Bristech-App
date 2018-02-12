@@ -15,7 +15,7 @@ import retrofit2.http.POST;
  */
 public interface UserService {
 
-    @POST("login")
+    @POST("/login")
     Call<Void> login(@Body Account account);
 
     @GET("/event/1")

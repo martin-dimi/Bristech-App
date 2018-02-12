@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--Key theme colours-->
+    <color name="black">#000000</color>
+    <color name="grey">#A3A4A8</color>
+    <color name="maroon">#9A1C30</color>
+    <color name="white">#FFFFFF</color>
+
+    <!--Secondary theme colours-->
+    <color name="lightMaroon">#974351</color>
+    <color name="darkMaroon">#320f14</color>
+
+    <!--For app bar-->
+    <color name="colorPrimary">#9A1C30</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#A3A4A8</color>
 
     <color name="colorCard">#c6deff</color>
 
-    <color name="black">#000000</color>
+    <!--For errors-->
     <color name="red">#ff0000</color>
+
+
 </resources>

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //Check if logged in
-        UserUtils.isLoggedIn(this);
+        //UserUtils.isLoggedIn(this);
 
         // set up navigation functionality of the sidebar
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

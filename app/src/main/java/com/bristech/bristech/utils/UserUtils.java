@@ -54,7 +54,7 @@ public class UserUtils {
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(context, "Wrong cred", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Wrong credentials", Toast.LENGTH_SHORT).show();
                 }
             }
 
