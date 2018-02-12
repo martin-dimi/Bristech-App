@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bristech.bristech">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -25,7 +25,8 @@
         <activity android:name=".activities.VolunteerSpeakerActivity" />
         <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.FeedbackActivity" />
-        <activity android:name=".activities.LoginBasicActivity"></activity>
+        <activity android:name=".activities.LoginBasicActivity" />
+        <activity android:name=".activities.createAccount"></activity>
     </application>
 
 </manifest>

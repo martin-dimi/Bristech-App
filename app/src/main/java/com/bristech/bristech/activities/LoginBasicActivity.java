@@ -1,5 +1,6 @@
 package com.bristech.bristech.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,10 +35,13 @@ public class LoginBasicActivity extends AppCompatActivity implements UserUtils.U
         UserUtils.login(this, username, password, this);
     }
 
-
-
-    public void getevents(View view){
+    public void getEvents(View view){
         EventUtils.getAllEvents(this, token);
+    }
+
+    public void createAccount(View view) {
+        Intent createAccountIntent = new Intent(this, createAccount.class);
+        startActivity(createAccountIntent);
     }
 
 
