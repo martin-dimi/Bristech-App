@@ -22,7 +22,7 @@
             android:id="@+id/event_image"
             android:layout_width="match_parent"
             android:contentDescription="@string/no_description_set"
-            android:layout_height="300dp"
+            android:layout_height="400dp"
             android:scaleType="fitCenter"
             />
 
