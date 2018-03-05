@@ -38,6 +38,9 @@
     <string name="name">Name</string>
     <string name="topic">Topic</string>
     <string name="email_address">Email address</string>
+    <string name="todo">TODO</string>
+    <string name="volunteer_to_speak" />
+    <string name="volunteerToSpeak">Volunteer to Speak</string>
 
 
     <string-array name="genders_array">
