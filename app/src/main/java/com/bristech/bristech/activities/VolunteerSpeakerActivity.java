@@ -31,4 +31,5 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
         String topic = mSpeakerTopicField.getText().toString();
         String email = mSpeakerEmailField.getText().toString();
     }
+
 }

@@ -41,6 +41,8 @@
     <string name="todo">TODO</string>
     <string name="volunteer_to_speak" />
     <string name="volunteerToSpeak">Volunteer to Speak</string>
+    <string name="settings">Settings</string>
+    <string name="feedback">Feedback</string>
 
 
     <string-array name="genders_array">

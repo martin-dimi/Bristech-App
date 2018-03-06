@@ -21,42 +21,68 @@
 
         <TextView
             android:id="@+id/txt_thank_for_attending"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/thank_for_attending"
-            />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/txt_request_feedback"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@string/feedback_please"
-            />
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/btn_submit"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape"
+            android:gravity="center_horizontal"
             android:onClick="submitBtnPress"
+            android:paddingTop="10dp"
             android:text="@string/btn_submit"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/cardview_light_background" />
 
         <TextView
             android:id="@+id/txt_thank_for_feedback"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            />
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_return_to_homepage"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/button_shape"
+            android:gravity="center_horizontal"
             android:onClick="returnToHomepageBtnPress"
+            android:paddingTop="10dp"
             android:text="@string/btn_homepage"
-            android:gravity="center_horizontal" />
+            android:textColor="@color/cardview_light_background" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/Feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/feedback"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

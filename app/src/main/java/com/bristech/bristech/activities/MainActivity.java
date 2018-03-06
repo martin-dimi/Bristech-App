@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
+
         //Check if logged in
         //UserUtils.isLoggedIn(this);
 
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity
         // sets upcoming events as default fragment
         showUpcomingEvents();
     }
+
+
 
     @Override
     public void onBackPressed() {

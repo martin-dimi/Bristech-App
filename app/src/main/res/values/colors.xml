@@ -10,7 +10,7 @@
     <!--For app bar-->
     <color name="colorPrimary">#9a1c30</color>
     <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#A3A4A8</color>
+    <color name="colorAccent">#a3a4a8</color>
 
     <color name="colorCard">#c6deff</color>
 
