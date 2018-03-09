@@ -9,9 +9,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- For underline-->
@@ -20,4 +18,11 @@
         <item name="colorControlActivated">@color/colorPrimary</item>
     </style>
 
+
+    <style name="LoginUserInfo">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">@dimen/login_user_info_margin_hor</item>
+        <item name="android:layout_marginRight">@dimen/login_user_info_margin_hor</item>
+    </style>
 </resources>

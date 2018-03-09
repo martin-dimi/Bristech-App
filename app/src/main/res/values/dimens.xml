@@ -9,13 +9,16 @@
     <dimen name="app_bar_margin">64dp</dimen>
 
     <!--LoginActivity screen-->
-    <dimen name="login_edit_text_margins">12dp</dimen>
-    <dimen name="login_login_user_and_password_text_size">20sp</dimen>
-    <dimen name="login_text_below_login_button_that_says_or">12sp</dimen>
-    <dimen name="login_create_account_text_size">16sp</dimen>
+    <dimen name="login_user_info_margin_hor">16dp</dimen>
+    <dimen name="login_logo_width">230dp</dimen>
+    <dimen name="login_logo_height">250dp</dimen>
+    <dimen name="login_google_margin_bottom">64dp</dimen>
+    <dimen name="login_google_margin_side">8dp</dimen>
+    <dimen name="login_login_margin_top">16dp</dimen>
 
     <!--Create Account Screen-->
     <dimen name="create_account_vertical_margins">8sp</dimen>
     <dimen name="create_account_text_size">16sp</dimen>
+
 
 </resources>

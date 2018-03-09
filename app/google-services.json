@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "449703625011",
+    "firebase_url": "https://bristech-be538.firebaseio.com",
+    "project_id": "bristech-be538",
+    "storage_bucket": "bristech-be538.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:449703625011:android:7c5021a94d2ef3db",
+        "android_client_info": {
+          "package_name": "com.bristech.bristech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "449703625011-4lnl08i5qb425vd991fhpeh5r5vdsk8e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bristech.bristech",
+            "certificate_hash": "c955d1bd0fd22e3db5c3e1ea91810251871e8009"
+          }
+        },
+        {
+          "client_id": "449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuWft0F_I4nqdlReg_jtT41KQLdAOBS_c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

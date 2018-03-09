@@ -24,10 +24,10 @@
     <string name="other_names">other names</string>
     <string name="password">password</string>
     <string name="retype_password">retype password</string>
-    <string name="create_account">Create Account</string>
+    <string name="sign_up">Sign up</string>
     <string name="unexpected_text">you should not be seeings this text</string>
     <string name="thank_for_attending">Thank you for attending (...) (replace this in xml)</string>
-    <string name="login">Login</string>
+    <string name="sign_in">Sign in</string>
     <string name="or">or</string>
     <string name="ask_reset_password">Trouble logging in? Reset Pawword here</string>
     <string name="get_events">(get events)</string>
@@ -45,6 +45,9 @@
     <string name="feedback">Feedback</string>
 
 
+    <string name="server_client_id">449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com</string>
+    <string name="facebook_app_id">215502435852921</string>
+    <string name="fb_login_protocol_scheme">fb215502435852921</string>
 
     <string-array name="genders_array">
         <item>M</item>
