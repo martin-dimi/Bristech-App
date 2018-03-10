@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.adaptors.EventsAdaptor;
@@ -38,7 +39,6 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-
         //Check if logged in
         //UserUtils.isLoggedIn(this);
 
@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         //Gets events and set fragment manager
         getEvents();
         mFragmentManager = getSupportFragmentManager();
@@ -58,7 +59,6 @@ public class MainActivity extends AppCompatActivity
         // sets upcoming events as default fragment
         showUpcomingEvents();
     }
-
 
 
     @Override
@@ -130,4 +130,6 @@ public class MainActivity extends AppCompatActivity
     private void getEvents(){
         mEventList = Dummy.getEvents();
     }
+
+
 }

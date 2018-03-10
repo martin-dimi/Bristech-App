@@ -32,6 +32,8 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bristechBanner" />
@@ -44,6 +46,8 @@
         android:hint="@string/username"
         android:inputType="textPersonName"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
@@ -56,6 +60,8 @@
         android:hint="@string/first_name"
         android:inputType="textPersonName"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
@@ -68,6 +74,8 @@
         android:hint="@string/other_names"
         android:inputType="textPersonName"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFirstName" />
@@ -90,6 +98,8 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spiGender" />
@@ -102,6 +112,8 @@
         android:hint="@string/retype_password"
         android:inputType="textPassword"
         android:textSize="@dimen/create_account_text_size"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
