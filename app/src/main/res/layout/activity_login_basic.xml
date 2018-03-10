@@ -1,135 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.bristech.bristech.activities.LoginBasicActivity">
 
-    <!--<android.support.v7.widget.Toolbar-->
-        <!--android:id="@+id/toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="?attr/colorPrimary"-->
-        <!--app:popupTheme="@style/AppTheme.PopupOverlay" />-->
-
     <ImageView
         android:id="@+id/bristechBanner"
-        android:layout_width="230dp"
-        android:layout_height="250dp"
+        android:layout_width="@dimen/login_logo_width"
+        android:layout_height="@dimen/login_logo_height"
         android:src="@drawable/bristech_banner"
         android:tint="@color/black"
         android:contentDescription="@string/hashtag_bristech_banner"
-        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        style="@style/LoginUserInfo"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        android:theme="@style/MyEditText"
-        android:textCursorDrawable="@drawable/cursor_color"
-        android:textSize="@dimen/login_login_user_and_password_text_size"
-        app:layout_constraintEnd_toEndOf="@+id/bristechBanner"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bristechBanner"
-        app:layout_constraintTop_toBottomOf="@+id/bristechBanner" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bristechBanner"/>
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/login_edit_text_margins"
+        style="@style/LoginUserInfo"
         android:hint="@string/password"
-        android:textSize="@dimen/login_login_user_and_password_text_size"
         android:inputType="textPassword"
-        android:theme="@style/MyEditText"
-        android:textCursorDrawable="@drawable/cursor_color"
         app:layout_constraintEnd_toEndOf="@+id/username"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/username"
         app:layout_constraintTop_toBottomOf="@+id/username" />
 
     <Button
-        android:id="@+id/login"
-        android:layout_width="wrap_content"
+        android:id="@+id/bt_sign_in"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/login_edit_text_margins"
-        android:text="@string/login"
-        android:textSize="@dimen/login_login_user_and_password_text_size"
-        android:onClick="login"
-        android:textAlignment="center"
-        android:background="@drawable/login_button"
+        android:layout_marginEnd="@dimen/login_google_margin_side"
+        android:layout_marginTop="@dimen/login_login_margin_top"
+        android:text="@string/sign_in"
         app:layout_constraintEnd_toEndOf="@+id/password"
         app:layout_constraintStart_toStartOf="@+id/password"
-        app:layout_constraintTop_toBottomOf="@+id/password"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:layout_constraintTop_toBottomOf="@+id/password" />
 
     <TextView
-        android:id="@+id/txtOr"
+        android:id="@+id/tv_create_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/or"
-        android:textSize="@dimen/login_text_below_login_button_that_says_or"
-        android:layout_marginTop="@dimen/login_edit_text_margins"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login" />
-
-    <Button
-        android:id="@+id/createAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_account"
-        android:onClick="createAccount"
-        android:textSize="@dimen/login_create_account_text_size"
-        android:layout_marginTop="@dimen/login_edit_text_margins"
-        android:background="@drawable/login_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOr"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <TextView
-        android:id="@+id/txtResetPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ask_reset_password"
-        android:textSize="@dimen/login_create_account_text_size"
-        android:layout_marginTop="@dimen/login_edit_text_margins"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createAccount"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-
-    <Button
-        android:id="@+id/getEvents"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/get_events"
-        android:onClick="getEvents"
-        android:background="@drawable/login_button"
+        android:text="@string/create_account"
+        app:layout_constraintEnd_toEndOf="@+id/bt_sign_in"
+        app:layout_constraintTop_toBottomOf="@+id/bt_sign_in" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/btn_google_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/login_google_margin_bottom"
+        android:layout_marginEnd="@dimen/login_google_margin_side"
+        android:layout_marginStart="@dimen/login_google_margin_side"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/btn_facebook_sign_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="@dimen/login_google_margin_side"
+        android:layout_marginStart="@dimen/login_google_margin_side"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtResetPassword"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
 
-
-
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="logout"/>
 
 </android.support.constraint.ConstraintLayout>
