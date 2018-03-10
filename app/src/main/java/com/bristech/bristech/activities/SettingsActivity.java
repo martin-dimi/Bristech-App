@@ -1,5 +1,6 @@
 package com.bristech.bristech.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,6 +19,8 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void logOutBtnPress(View view) {
         Log.i("SettingsActivity", "Log out button pressed");
+        Intent loginActivityIntent = new Intent(this, LoginBasicActivity.class);
+        startActivity(loginActivityIntent);
     }
 
     public void modifyInterestsBtnPress(View view) {

@@ -27,4 +27,6 @@ public class FeedbackActivity extends AppCompatActivity {
         Intent mainActivityIntent = new Intent(this, MainActivity.class);
         startActivity(mainActivityIntent);
     }
+
+
 }
