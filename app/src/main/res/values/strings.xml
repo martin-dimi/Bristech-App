@@ -48,6 +48,7 @@
     <string name="server_client_id">449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com</string>
     <string name="facebook_app_id">215502435852921</string>
     <string name="fb_login_protocol_scheme">fb215502435852921</string>
+    <string name="create_account">Create account</string>
 
     <string-array name="genders_array">
         <item>M</item>

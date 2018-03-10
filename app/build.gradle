@@ -29,7 +29,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
 
+    // Libraries for authorization and authentication with selected providers
     implementation 'com.google.firebase:firebase-auth:11.8.0'
+    implementation 'com.firebaseui:firebase-ui-auth:3.2.2'
     implementation 'com.google.android.gms:play-services-auth:11.8.0'
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
 
