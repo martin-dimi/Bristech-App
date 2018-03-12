@@ -3,11 +3,12 @@ package com.bristech.bristech.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.bristech.bristech.activities.LoginBasicActivity;
 import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ApiException;
@@ -22,65 +23,62 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginUtils {
 
-    private static final String TAG = "Login";
+    public interface AuthenticationCallback extends OnCompleteListener<AuthResult> {
+        @Override
+        void onComplete(@NonNull Task<AuthResult> task);
+    }
+
     public static FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-    public static void loginWithGoogle(Intent data, final Context context) {
-        Log.i(TAG, "Loggin in with Google");
+    private static final String TAG = LoginUtils.class.getSimpleName();
 
-        //Handles google authorization
+    public static void signInWithGoogle(Intent data, AuthenticationCallback callback) {
+        Log.i(TAG, "Authorising in with Google");
+
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-        GoogleSignInAccount account = task.getResult();
+        try {
+            GoogleSignInAccount account = task.getResult(ApiException.class);
+            AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
+            firebaseProviderAuth(credential, callback);
 
-        //Handles firebase
-        AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
-        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                handleFirebase(task, context);
-            }
-        });
+        } catch (ApiException e) {
+            Log.w(TAG, "Google sign-in failed", e);
+        }
     }
 
-    public static void loginWithFacebook(AccessToken accessToken, final Context context) {
-
-        //Handles Facebook authorization
-        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
-
-        //Handles firebase
-        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                handleFirebase(task, context);
-            }
-        });
+    public static void signInWithFacebook(CallbackManager manager, int requestCode, int resultCode, Intent data){
+        manager.onActivityResult(requestCode, resultCode, data);
     }
 
-    public static void signinWithAccount(String email, String password, final Context context) {
-        Log.i(TAG, "Loggin in with username and password");
-
-        //Handles firebase
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                handleFirebase(task, context);
-            }
-        });
+    public static void signInWithEmail(String email, String password, AuthenticationCallback callback){
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(callback);
     }
 
-    public static void signOut(){
+    public static void createAccount(String email, String password, AuthenticationCallback callback){
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(callback);
+    }
+
+    public static void signOut() {
         mAuth.signOut();
     }
 
-    private static void handleFirebase(@NonNull Task<AuthResult> task, Context context) {
-        if (task.isSuccessful()) {
-            // Sign in success, update UI with the signed-in user's information
-            FirebaseUser user = mAuth.getCurrentUser();
-            Log.i(TAG, "uId: " + user.getUid());
-        } else {
-            // If sign in fails, display a message to the user.
-            Toast.makeText(context, "Authentication failed.", Toast.LENGTH_SHORT).show();
-        }
+    public static boolean isLoggedIn(){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        return !(currentUser == null);
+    }
+
+    public static void handleFacebookToken(AccessToken token, AuthenticationCallback callback) {
+        Log.i(TAG, "Authorising in with Facebook");
+
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+        firebaseProviderAuth(credential, callback);
+    }
+
+    private static void firebaseProviderAuth(AuthCredential credential, AuthenticationCallback callback) {
+        mAuth.signInWithCredential(credential)
+                .addOnCompleteListener(callback);
     }
 
 }

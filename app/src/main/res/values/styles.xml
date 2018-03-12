@@ -20,10 +20,24 @@
     </style>
 
 
-    <style name="LoginUserInfo">
+    <style name="et_loginActivity_loginInformationField">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
         <item name="android:layout_marginLeft">@dimen/login_user_info_margin_hor</item>
         <item name="android:layout_marginRight">@dimen/login_user_info_margin_hor</item>
+    </style>
+
+    <style name="btn_loginActivity_signInWithProvider">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+
+        <item name="android:background">@drawable/btn_login</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/tv_sign_in_text_size</item>
+
+        <item name="android:layout_marginStart">@dimen/btn_login_margin_side</item>
+        <item name="android:layout_marginEnd">@dimen/btn_login_margin_side</item>
     </style>
 </resources>

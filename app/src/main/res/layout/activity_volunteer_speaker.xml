@@ -84,7 +84,7 @@
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:theme="@style/MyEditText"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username" />
+                app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
             <EditText
                 android:id="@+id/speaker_email"
@@ -99,7 +99,7 @@
                 android:textCursorDrawable="@drawable/cursor_color"
                 android:theme="@style/MyEditText"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/username" />
+                app:layout_constraintTop_toBottomOf="@+id/et_username" />
         </LinearLayout>
 
         <LinearLayout

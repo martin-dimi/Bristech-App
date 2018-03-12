@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    android:id="@+id/login_coordinator"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_bristechBanner"
+            android:layout_width="@dimen/logo_login_width"
+            android:layout_height="@dimen/logo_login_height"
+            android:contentDescription="@string/bristech_banner_description"
+            android:src="@drawable/bristech_banner"
+            android:tint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/et_username"
+            style="@style/et_loginActivity_loginInformationField"
+            android:hint="@string/hint_username"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner" />
+
+        <EditText
+            android:id="@+id/et_password"
+            style="@style/et_loginActivity_loginInformationField"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/et_username"
+            app:layout_constraintStart_toStartOf="@+id/et_username"
+            app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+        <Button
+            android:id="@+id/bt_sign_in"
+            style="@style/btn_loginActivity_signInWithProvider"
+            android:layout_marginTop="@dimen/btn_email_signIn_margin_top"
+            android:backgroundTint="@color/colorPrimary"
+            android:text="@string/btn_emailSignIn"
+            app:layout_constraintEnd_toEndOf="@+id/et_password"
+            app:layout_constraintStart_toStartOf="@+id/et_password"
+            app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+        <TextView
+            android:id="@+id/tv_create_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tv_createAcc_margin_top"
+            android:text="@string/tv_create_account"
+            app:layout_constraintEnd_toEndOf="@+id/et_password"
+            app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+        <TextView
+            android:id="@+id/divider_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tv_divider_text_margin_top"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/divider_or"
+            android:textSize="@dimen/tv_or_text_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bt_sign_in" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="@dimen/btn_login_margin_side"
+            android:layout_marginStart="@dimen/btn_login_margin_side"
+            android:background="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider_or" />
+
+        <Button
+            android:id="@+id/btn_google_sign_in"
+            style="@style/btn_loginActivity_signInWithProvider"
+            android:backgroundTint="@color/google_sign_in"
+            android:text="@string/btn_googleSignIn"
+            android:layout_marginTop="@dimen/btn_signIn_margin_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <Button
+            android:id="@+id/btn_facebook_sign_in"
+            style="@style/btn_loginActivity_signInWithProvider"
+            android:backgroundTint="@color/facebook_sing_in"
+            android:text="@string/btn_facebookSignIn"
+            android:layout_marginTop="@dimen/btn_signIn_margin_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="logout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
+

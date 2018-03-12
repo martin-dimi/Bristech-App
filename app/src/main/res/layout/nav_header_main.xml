@@ -13,13 +13,13 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/bristechBanner"
+        android:id="@+id/img_bristechBanner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/bristech_banner"
         android:tint="@color/black"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:contentDescription="@string/hashtag_bristech_banner"
+        android:contentDescription="@string/bristech_banner_description"
         app:srcCompat="@mipmap/ic_launcher_round" />
 
     <!--<TextView-->

@@ -16,19 +16,14 @@
     <string name="thank_for_feedback">Thank you for the feedback!</string>
     <string name="txt_thank_for_speaker_volunteer">Thank you for volunteering [name]</string>
     <string name="txt_ask_for_details">Enter details of the speaker you would like to volunteer below, and we will get back to you!</string>
-    <string name="hashtag_bristech_banner">Hashtag Bristech banner</string>
     <string name="no_description_set">No content description set yet</string>
     <string name="email">email</string>
-    <string name="username">username</string>
     <string name="first_name">first name</string>
     <string name="other_names">other names</string>
-    <string name="password">password</string>
     <string name="retype_password">retype password</string>
     <string name="sign_up">Sign up</string>
     <string name="unexpected_text">you should not be seeings this text</string>
     <string name="thank_for_attending">Thank you for attending (...) (replace this in xml)</string>
-    <string name="sign_in">Sign in</string>
-    <string name="or">or</string>
     <string name="ask_reset_password">Trouble logging in? Reset Pawword here</string>
     <string name="get_events">(get events)</string>
     <string name="upcoming_events">Upcoming events</string>
@@ -45,10 +40,24 @@
     <string name="feedback">Feedback</string>
 
 
-    <string name="server_client_id">449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com</string>
+    <!--App -->
+    <string name="bristech_banner_description">Hashtag Bristech banner</string>
+
+
+    <!--Login tokens-->
+    <string name="google_client_id">449703625011-d29g4h7nj6uncesjveu2gdvnibkqtc26.apps.googleusercontent.com</string>
     <string name="facebook_app_id">215502435852921</string>
     <string name="fb_login_protocol_scheme">fb215502435852921</string>
-    <string name="create_account">Create account</string>
+
+    <!--Login activity-->
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="tv_create_account">Create account</string>
+    <string name="btn_googleSignIn">Google Sign in</string>
+    <string name="btn_facebookSignIn">Facebook Sign in</string>
+    <string name="btn_emailSignIn">Sign in</string>
+    <string name="divider_or">or</string>
+
 
     <string-array name="genders_array">
         <item>M</item>

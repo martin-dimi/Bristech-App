@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Key theme colours-->
-    <color name="black">#000000</color>
-    <color name="grey">#A3A4A8</color>
-    <color name="maroon">#9A1C30</color>
 
-    <!--Secondary theme colours-->
 
-    <!--For app bar-->
     <color name="colorPrimary">#9a1c30</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#a3a4a8</color>
 
     <color name="colorCard">#c6deff</color>
 
-    <!--For errors-->
+    <!--Key theme colours-->
+    <color name="black">#000000</color>
+    <color name="grey">#A3A4A8</color>
+    <color name="maroon">#9A1C30</color>
+    <color name="white">#ffffff</color>
+
     <color name="red">#ff0000</color>
+
+    <color name="google_sign_in">#ee668e</color>
+    <color name="facebook_sing_in">#3c589a</color>
+
 
 
 </resources>

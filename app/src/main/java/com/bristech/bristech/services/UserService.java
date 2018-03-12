@@ -1,13 +1,10 @@
 package com.bristech.bristech.services;
 
-import com.bristech.bristech.entities.Account;
-import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.entities.User;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.POST;
 
 
 /**
@@ -15,9 +12,6 @@ import retrofit2.http.POST;
  */
 public interface UserService {
 
-    @POST("/login")
-    Call<Void> login(@Body Account account);
-
-    @GET("/event/1")
-    Call<Event> getEvent1(@Header("token") String token);
+    @GET("/user")
+    Call<User> getUser(@Header("token") String token);
 }

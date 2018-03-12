@@ -1,11 +1,11 @@
 package com.bristech.bristech.entities;
 
-public class User extends Account{
+public class User{
 
     private Long id;
     private String email;
-    private String firstName;
-    private String lastName;
+    private String name;
+    private String picture;
 
 
     public User() {
@@ -27,19 +27,20 @@ public class User extends Account{
         this.email = email;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 }

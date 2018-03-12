@@ -15,15 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "449703625011-4lnl08i5qb425vd991fhpeh5r5vdsk8e.apps.googleusercontent.com",
+          "client_id": "449703625011-pc3jelorgsqpi5p411gbraj0a8es8ttc.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.bristech.bristech",
-            "certificate_hash": "c955d1bd0fd22e3db5c3e1ea91810251871e8009"
+            "certificate_hash": "0a392b0b0342b4217d2904b5c1f6ea0c89fb9e01"
           }
         },
         {
-          "client_id": "449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com",
+          "client_id": "449703625011-d29g4h7nj6uncesjveu2gdvnibkqtc26.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "449703625011-fkjijvb7aq1q41njfpfem6poil6li2o9.apps.googleusercontent.com",
+              "client_id": "449703625011-d29g4h7nj6uncesjveu2gdvnibkqtc26.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

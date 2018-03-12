@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bristech.bristech.R;
+import com.bristech.bristech.utils.LoginUtils;
 
 public class createAccount extends AppCompatActivity {
 
@@ -43,7 +44,6 @@ public class createAccount extends AppCompatActivity {
                     infoText.setText("Passwords do not match"); }
 
                 // If so, send request to server, which sends a verification email
-
 
                 // set info text
                 if (!allFieldsValid) {
