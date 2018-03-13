@@ -66,17 +66,10 @@
 
         <Button
             android:id="@+id/btn_register_for_event"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_marginTop="@dimen/btn_register_for_talk"
-            android:background="@drawable/button_background"
-            android:gravity="center_horizontal"
+            style="@style/btn_raised"
+            android:layout_gravity="center_horizontal"
             android:onClick="registerForTalkBtnPress"
-            android:paddingTop="10dp"
             android:text="@string/register_for_talk"
-            android:textColor="@color/cardview_light_background" />
-
+            android:backgroundTint="@color/mustard" />
 
 </RelativeLayout>

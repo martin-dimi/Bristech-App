@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Bristech-App.iml" filepath="$PROJECT_DIR$/Bristech-App.iml" />
+      <module fileurl="file://D:\Tutorial\SPE\Bristech-App\Bristech-App.iml" filepath="D:\Tutorial\SPE\Bristech-App\Bristech-App.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Tutorial\SPE\Bristech-App\app\app.iml" filepath="D:\Tutorial\SPE\Bristech-App\app\app.iml" />
     </modules>
   </component>
 </project>

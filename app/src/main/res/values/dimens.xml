@@ -13,7 +13,6 @@
     <dimen name="logo_login_width">230dp</dimen>
     <dimen name="logo_login_height">250dp</dimen>
     <dimen name="btn_email_signIn_margin_top">42dp</dimen>
-    <dimen name="btn_login_margin_side">16dp</dimen>
     <dimen name="btn_signIn_margin_top">8dp</dimen>
     <dimen name="tv_sign_in_text_size">14sp</dimen>
     <dimen name="tv_or_text_size">18sp</dimen>
@@ -24,6 +23,10 @@
     <dimen name="create_account_vertical_margins">8sp</dimen>
     <dimen name="create_account_text_size">16sp</dimen>
 
-
-
+    <!--Raised button-->
+    <dimen name="btn_login_margin_side">16dp</dimen>
+    <dimen name="btn_login_padding_side">16dp</dimen>
+    <dimen name="btn_raised_margin_ver">6dp</dimen>
+    <dimen name="btn_raised_text_size">14sp</dimen>
+    <dimen name="btn_raised_height">36dp</dimen>
 </resources>

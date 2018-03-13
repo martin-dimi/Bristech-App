@@ -40,4 +40,26 @@
         <item name="android:layout_marginStart">@dimen/btn_login_margin_side</item>
         <item name="android:layout_marginEnd">@dimen/btn_login_margin_side</item>
     </style>
+
+    <style name="btn_raised">
+        <item name="android:layout_height">@dimen/btn_raised_height</item>
+        <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:background">@drawable/btn_login</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/btn_raised_text_size</item>
+
+        <item name="android:layout_marginStart">@dimen/btn_login_margin_side</item>
+        <item name="android:layout_marginEnd">@dimen/btn_login_margin_side</item>
+        <item name="android:layout_marginTop">@dimen/btn_raised_margin_ver</item>
+        <item name="android:layout_marginBottom">@dimen/btn_raised_margin_ver</item>
+        <item name="android:paddingLeft">@dimen/btn_login_padding_side</item>
+        <item name="android:paddingRight">@dimen/btn_login_padding_side</item>
+    </style>
+
+    <style name="btn_flat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
 </resources>

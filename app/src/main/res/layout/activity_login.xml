@@ -43,7 +43,7 @@
             android:id="@+id/bt_sign_in"
             style="@style/btn_loginActivity_signInWithProvider"
             android:layout_marginTop="@dimen/btn_email_signIn_margin_top"
-            android:backgroundTint="@color/colorPrimary"
+            android:backgroundTint="@color/mustard"
             android:text="@string/btn_emailSignIn"
             app:layout_constraintEnd_toEndOf="@+id/et_password"
             app:layout_constraintStart_toStartOf="@+id/et_password"

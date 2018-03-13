@@ -31,6 +31,7 @@
                 android:id="@+id/vulenteer_speak"
                 android:layout_width="394dp"
                 android:layout_height="175dp"
+                android:layout_gravity="center"
                 android:background="@color/cardview_light_background"
                 android:contentDescription="@string/todo"
                 android:cropToPadding="false"
@@ -110,16 +111,11 @@
 
             <Button
                 android:id="@+id/btn_submit"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:background="@drawable/button_background"
+                style="@style/btn_raised"
                 android:onClick="submitBtnPress"
-                android:paddingTop="5dp"
                 android:text="@string/btn_submit"
-                android:textAlignment="center"
-                android:textColor="@color/cardview_light_background" />
+                android:layout_gravity="center_horizontal"
+                android:backgroundTint="@color/mustard" />
         </LinearLayout>
     </RelativeLayout>
 

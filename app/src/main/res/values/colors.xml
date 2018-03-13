@@ -12,11 +12,12 @@
     <color name="black">#000000</color>
     <color name="grey">#A3A4A8</color>
     <color name="maroon">#9A1C30</color>
+    <color name="mustard">#FFDB58</color>
     <color name="white">#ffffff</color>
 
     <color name="red">#ff0000</color>
 
-    <color name="google_sign_in">#ee668e</color>
+    <color name="google_sign_in">#dd4b39</color>
     <color name="facebook_sing_in">#3c589a</color>
 
 
