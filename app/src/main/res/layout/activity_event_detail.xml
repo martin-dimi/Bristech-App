@@ -6,70 +6,114 @@
     tools:context="com.bristech.bristech.activities.EventDetailActivity">
 
 
-
         <TextView
             android:id="@+id/event_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            />
+            android:fontFamily="@font/roboto_medium"
+            android:paddingBottom="@dimen/event_topic_b_padding"
+            android:paddingEnd="@dimen/event_topic_r_padding"
+            android:paddingStart="@dimen/event_topic_l_padding"
+            android:paddingTop="@dimen/event_topic_t_padding"
+            android:text="@string/event_title"
+            android:textSize="@dimen/tile_size"
+            tools:text="@string/event_title" />
 
         <ImageView
             android:id="@+id/event_image"
             android:layout_width="match_parent"
+            android:layout_height="@dimen/image_height"
+            android:layout_below="@+id/event_topic"
             android:contentDescription="@string/no_description_set"
-            android:layout_height="400dp"
-            android:scaleType="fitCenter"
-            />
+            android:scaleType="fitCenter" />
 
         <TextView
             android:id="@+id/event_topic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            />
+            android:layout_below="@+id/event_title"
+            android:paddingBottom="@dimen/event_description_b_padding"
+            android:paddingStart="@dimen/event_description_l_padding"
+            android:paddingEnd="@dimen/event_description_r_padding"
+            android:paddingTop="@dimen/event_description_t_padding"
+            android:text="@string/event_topic" />
 
         <TextView
             android:id="@+id/event_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/event_time"
             android:layout_gravity="center_horizontal"
-            />
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="12dp"
+            android:paddingBottom="@dimen/even_time_bottom_padding"
+            android:paddingStart="@dimen/event_time_l_padding"
+            android:paddingEnd="@dimen/event_time_r_padding"
+            android:paddingTop="@dimen/event_time_t_padding"
+            android:text="@string/event_date" />
 
         <TextView
             android:id="@+id/event_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/event_description"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            />
+            android:paddingBottom="@dimen/even_time_bottom_padding"
+            android:paddingStart="@dimen/event_time_l_padding"
+            android:paddingEnd="@dimen/event_time_r_padding"
+            android:paddingTop="@dimen/event_time_t_padding"
+            android:text="@string/event_time"
+            tools:text="@string/event_time" />
 
         <TextView
             android:id="@+id/event_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/btn_register_for_event"
+            android:layout_below="@+id/event_date"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            />
+            android:paddingBottom="@dimen/even_time_bottom_padding"
+            android:paddingStart="@dimen/event_time_l_padding"
+            android:paddingEnd="@dimen/event_time_r_padding"
+            android:paddingTop="@dimen/event_time_t_padding"
+            android:text="@string/event_duration" />
 
         <TextView
             android:id="@+id/event_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/event_duration"
             android:layout_gravity="center_horizontal"
-            />
+            android:layout_centerHorizontal="true"
+            android:text="@string/event_location" />
 
         <TextView
             android:id="@+id/event_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/event_image"
             android:layout_gravity="center_horizontal"
-            />
+            android:paddingBottom="@dimen/event_description_b_padding"
+            android:paddingEnd="@dimen/event_description_r_padding"
+            android:paddingStart="@dimen/event_description_l_padding"
+            android:paddingTop="@dimen/event_description_t_padding"
+            android:text="@string/event_description"/>
 
         <Button
             android:id="@+id/btn_register_for_event"
             style="@style/btn_raised"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
+            android:backgroundTint="@color/mustard"
             android:onClick="registerForTalkBtnPress"
-            android:text="@string/register_for_talk"
-            android:backgroundTint="@color/mustard" />
+            android:text="@string/register_for_talk" />
 
 </RelativeLayout>

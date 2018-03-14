@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.bristech.bristech.R;
+import com.bristech.bristech.utils.LoginUtils;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -18,8 +19,10 @@ public class SettingsActivity extends AppCompatActivity {
 
     public void logOutBtnPress(View view) {
         Log.i("SettingsActivity", "Log out button pressed");
+        LoginUtils.signOut();
         Intent loginActivityIntent = new Intent(this, LoginActivity.class);
         startActivity(loginActivityIntent);
+        finish();
     }
 
     public void modifyInterestsBtnPress(View view) {

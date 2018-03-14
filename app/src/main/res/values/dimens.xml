@@ -29,4 +29,28 @@
     <dimen name="btn_raised_margin_ver">6dp</dimen>
     <dimen name="btn_raised_text_size">14sp</dimen>
     <dimen name="btn_raised_height">36dp</dimen>
+
+    <!--Event Detail-->
+    <dimen name="event_topic_t_padding">6dp</dimen>
+    <dimen name="event_topic_b_padding">6dp</dimen>
+    <dimen name="event_topic_l_padding">16dp</dimen>
+    <dimen name="event_topic_r_padding">16dp</dimen>
+
+    <dimen name="event_time_top_padding">8dp</dimen>
+    <dimen name="even_time_bottom_padding">8dp</dimen>
+    <dimen name="tile_size">24sp</dimen>
+    <dimen name="topic_size">14sp</dimen>
+    <dimen name="image_height">250dp</dimen>
+    <!--<dimen name="image_width">match_parent</dimen>-->
+    <dimen name="event_description_l_padding">16dp</dimen>
+    <dimen name="event_description_r_padding">16dp</dimen>
+    <dimen name="event_description_t_padding">16dp</dimen>
+    <dimen name="event_description_b_padding">16dp</dimen>
+    <dimen name="event_time_l_padding">16dp</dimen>
+    <dimen name="event_time_r_padding">8dp</dimen>
+    <dimen name="event_time_t_padding">16dp</dimen>
+    <dimen name="event_time_b_padding">8dp</dimen>
+
+
+
 </resources>

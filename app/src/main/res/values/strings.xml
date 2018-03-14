@@ -57,6 +57,7 @@
     <string name="btn_facebookSignIn">Facebook Sign in</string>
     <string name="btn_emailSignIn">Sign in</string>
     <string name="divider_or">or</string>
+    <string name="logout">logout</string>
 
 
     <string-array name="genders_array">
@@ -65,5 +66,19 @@
         <item>Other</item>
         <item>Don't wish to specify</item>
     </string-array>
+
+
+    <!--Event details-->
+    <string name="event_title">Event Title</string>
+    <string name="event_topic">Event Topic</string>
+    <string name="event_date">Event Date</string>
+    <string name="event_time">Event Time</string>
+    <string name="event_duration">Event Duration</string>
+    <string name="event_location">Event Location</string>
+    <string name="event_description">Event Description</string>
+
+
+
+
 
 </resources>

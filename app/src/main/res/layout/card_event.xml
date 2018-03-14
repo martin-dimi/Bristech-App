@@ -17,71 +17,80 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true">
 
                 <ImageView
                     android:id="@+id/event_card_image"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/no_description_set"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:paddingTop="10dp"
-                    android:contentDescription="@string/no_description_set"
-                    />
+                    android:paddingTop="10dp" />
 
                 <TextView
                     android:id="@+id/event_card_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="No Title Set"
-                    android:textColor="@color/red"
-                    />
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="@font/roboto_medium"
+                    android:paddingBottom="@dimen/event_topic_b_padding"
+                    android:paddingEnd="@dimen/event_time_r_padding"
+                    android:paddingStart="@dimen/event_topic_l_padding"
+                    android:paddingTop="@dimen/event_time_t_padding"
+                    android:textSize="@dimen/tile_size" />
 
             </FrameLayout>
-
-            <TextView
-                android:id="@+id/event_card_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                />
 
             <TextView
                 android:id="@+id/event_card_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_toEndOf="@id/event_card_date"
-                />
-
-            <TextView
-                android:id="@+id/event_card_topic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_toEndOf="@id/event_card_date"
-                />
+                android:layout_alignStart="@id/event_card_duration"
+                android:text="@string/event_time"/>
 
             <TextView
                 android:id="@+id/event_card_duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                />
-
-            <TextView
-                android:id="@+id/event_card_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                />
+                android:layout_alignParentEnd="true"/>
 
             <TextView
                 android:id="@+id/event_card_shortdescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                />
+                android:layout_alignParentBottom="true"/>
+
+            <TextView
+                android:id="@+id/event_card_topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/event_card_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:id="@+id/event_card_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentEnd="true"/>
+
         </RelativeLayout>
 
-    </android.support.v7.widget.CardView>
+
+
+</android.support.v7.widget.CardView>

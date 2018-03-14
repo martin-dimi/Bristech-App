@@ -36,6 +36,7 @@ public class LoginUtils {
         Log.i(TAG, "Authorising in with Google");
 
         Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+
         try {
             GoogleSignInAccount account = task.getResult(ApiException.class);
             AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(), null);
