@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_alignStart="@id/event_card_duration"
+                android:fontFamily="@font/roboto_regular"
                 android:text="@string/event_time"/>
 
             <TextView
@@ -58,6 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_alignParentEnd="true"/>
 
             <TextView
@@ -65,13 +67,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_alignParentBottom="true"/>
 
             <TextView
                 android:id="@+id/event_card_topic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_regular"/>
 
             <TextView
                 android:id="@+id/event_card_date"
@@ -79,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/roboto_regular"
                 android:layout_alignParentStart="true"/>
 
             <TextView
@@ -87,7 +92,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
-                android:layout_alignParentEnd="true"/>
+                android:fontFamily="@font/roboto_regular"
+                android:layout_alignParentRight="true"/>
 
         </RelativeLayout>
 

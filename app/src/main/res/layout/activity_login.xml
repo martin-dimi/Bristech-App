@@ -26,6 +26,7 @@
             style="@style/et_loginActivity_loginInformationField"
             android:hint="@string/hint_username"
             android:inputType="textPersonName"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner" />
@@ -35,6 +36,7 @@
             style="@style/et_loginActivity_loginInformationField"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="@+id/et_username"
             app:layout_constraintStart_toStartOf="@+id/et_username"
             app:layout_constraintTop_toBottomOf="@+id/et_username" />
@@ -45,6 +47,7 @@
             android:layout_marginTop="@dimen/btn_email_signIn_margin_top"
             android:backgroundTint="@color/mustard"
             android:text="@string/btn_emailSignIn"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="@+id/et_password"
             app:layout_constraintStart_toStartOf="@+id/et_password"
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
@@ -55,6 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/tv_createAcc_margin_top"
             android:text="@string/tv_create_account"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="@+id/et_password"
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
 
@@ -77,6 +81,7 @@
             android:layout_marginEnd="@dimen/btn_login_margin_side"
             android:layout_marginStart="@dimen/btn_login_margin_side"
             android:background="@color/colorPrimary"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider_or" />
@@ -87,6 +92,7 @@
             android:backgroundTint="@color/google_sign_in"
             android:text="@string/btn_googleSignIn"
             android:layout_marginTop="@dimen/btn_signIn_margin_top"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -97,6 +103,7 @@
             android:backgroundTint="@color/facebook_sing_in"
             android:text="@string/btn_facebookSignIn"
             android:layout_marginTop="@dimen/btn_signIn_margin_top"
+            android:fontFamily="@font/roboto_regular"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
@@ -107,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_regular"
             android:text="@string/logout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

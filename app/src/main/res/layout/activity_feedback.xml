@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:fontFamily="@font/roboto_regular"
             android:text="@string/thank_for_attending"
             android:textSize="18sp" />
 
@@ -31,6 +32,7 @@
             android:id="@+id/txt_request_feedback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
             android:gravity="center_horizontal"
             android:text="@string/feedback_please"
             android:textSize="18sp" />
@@ -40,6 +42,7 @@
             style="@style/btn_raised"
             android:layout_gravity="center_horizontal"
             android:onClick="submitBtnPress"
+            android:fontFamily="@font/roboto_regular"
             android:text="@string/btn_submit"
             android:backgroundTint="@color/mustard" />
 
@@ -48,6 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:fontFamily="@font/roboto_medium"
             android:paddingBottom="10dp"
             android:paddingTop="10dp"
             android:textStyle="bold" />
@@ -57,6 +61,7 @@
             style="@style/btn_raised"
             android:layout_gravity="center_horizontal"
             android:onClick="returnToHomepageBtnPress"
+            android:fontFamily="@font/roboto_regular"
             android:text="@string/btn_homepage"
             android:backgroundTint="@color/mustard" />
     </LinearLayout>
@@ -69,6 +74,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="21dp"
         android:layout_marginTop="18dp"
+
         android:text="@string/feedback"
         android:textColor="@color/cardview_light_background"
         android:textSize="20sp"

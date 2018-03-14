@@ -34,6 +34,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner" />
@@ -48,6 +49,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
@@ -62,6 +64,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
@@ -76,6 +79,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFirstName" />
@@ -100,6 +104,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spiGender" />
@@ -114,6 +119,7 @@
         android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
         android:theme="@style/MyEditText"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
@@ -135,6 +141,7 @@
         android:text="@string/unexpected_text"
         android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:visibility="gone"
+        android:fontFamily="@font/roboto_regular"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

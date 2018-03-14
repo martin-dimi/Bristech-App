@@ -18,9 +18,9 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="@string/settings"
+        android:fontFamily="@font/roboto_medium"
         android:textColor="@android:color/background_light"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="20sp" />
     <!--/    app:layout_constraintLeft_toLeftOf="parent"-->
         <!--app:layout_constraintTop_toTopOf="parent" />-->
 
@@ -37,6 +37,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="logOutBtnPress"
             android:text="@string/btn_log_out"
+            android:fontFamily="@font/roboto_regular"
             android:backgroundTint="@color/mustard" />
 
         <Button
@@ -45,6 +46,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="modifyInterestsBtnPress"
             android:text="@string/modify_interests"
+            android:fontFamily="@font/roboto_regular"
             android:backgroundTint="@color/mustard" />
 
         <Button
@@ -53,6 +55,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="editUserSettingsBtnPress"
             android:text="@string/user_settings"
+            android:fontFamily="@font/roboto_regular"
             android:backgroundTint="@color/mustard" />
 
     </LinearLayout>

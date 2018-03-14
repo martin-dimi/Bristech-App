@@ -41,7 +41,7 @@
     <dimen name="tile_size">24sp</dimen>
     <dimen name="topic_size">14sp</dimen>
     <dimen name="image_height">250dp</dimen>
-    <!--<dimen name="image_width">match_parent</dimen>-->
+
     <dimen name="event_description_l_padding">16dp</dimen>
     <dimen name="event_description_r_padding">16dp</dimen>
     <dimen name="event_description_t_padding">16dp</dimen>
@@ -52,5 +52,10 @@
     <dimen name="event_time_b_padding">8dp</dimen>
 
 
+    <!-- card event -->
+    <dimen name="card_event_l_padding">8dp</dimen>
+    <dimen name="card_event_r_padding">8dp</dimen>
+    <dimen name="card_event_t_padding">8dp</dimen>
+    <dimen name="card_event_b_padding">8dp</dimen>
 
 </resources>
