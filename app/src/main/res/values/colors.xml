@@ -14,6 +14,7 @@
     <color name="maroon">#9A1C30</color>
     <color name="mustard">#FFDB58</color>
     <color name="white">#ffffff</color>
+    <color name="transparent">#00ffffff</color>
 
     <color name="red">#ff0000</color>
 

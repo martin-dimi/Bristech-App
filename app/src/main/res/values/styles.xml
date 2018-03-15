@@ -61,5 +61,15 @@
     <style name="btn_flat">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
+
+        <item name="android:background">@drawable/btn_transparent</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+        <item name="android:textColor">@color/maroon</item>
+        <item name="android:textSize">@dimen/btn_raised_text_size</item>
+
+        <item name="android:layout_marginStart">@dimen/btn_login_margin_side</item>
+        <item name="android:layout_marginEnd">@dimen/btn_login_margin_side</item>
+        <item name="android:layout_marginTop">@dimen/btn_raised_margin_ver</item>
+        <item name="android:layout_marginBottom">@dimen/btn_raised_margin_ver</item>
     </style>
 </resources>
