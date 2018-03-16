@@ -77,14 +77,13 @@
             android:id="@+id/event_duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/btn_register_for_event"
             android:layout_below="@+id/event_date"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/roboto_regular"
             android:paddingBottom="@dimen/even_time_bottom_padding"
-            android:paddingStart="@dimen/event_time_l_padding"
             android:paddingEnd="@dimen/event_time_r_padding"
+            android:paddingStart="@dimen/event_time_l_padding"
             android:paddingTop="@dimen/event_time_t_padding"
             android:text="@string/event_duration" />
 
@@ -93,9 +92,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/event_duration"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
             android:fontFamily="@font/roboto_regular"
-            android:layout_centerHorizontal="true"
+            android:paddingBottom="@dimen/event_time_b_padding"
+            android:paddingStart="@dimen/event_time_l_padding"
+            android:paddingEnd="@dimen/event_time_r_padding"
+            android:paddingTop="@dimen/event_time_r_padding"
             android:text="@string/event_location" />
 
         <TextView
@@ -114,11 +117,10 @@
 
         <Button
             android:id="@+id/btn_register_for_event"
-            style="@style/btn_raised"
+            style="@style/btn_effect"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center_horizontal"
-            android:backgroundTint="@color/mustard"
             android:onClick="registerForTalkBtnPress"
             android:fontFamily="@font/roboto_regular"
             android:text="@string/register_for_talk" />

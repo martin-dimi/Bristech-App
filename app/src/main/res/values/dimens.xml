@@ -42,10 +42,10 @@
     <dimen name="topic_size">14sp</dimen>
     <dimen name="image_height">250dp</dimen>
 
-    <dimen name="event_description_l_padding">16dp</dimen>
-    <dimen name="event_description_r_padding">16dp</dimen>
-    <dimen name="event_description_t_padding">16dp</dimen>
-    <dimen name="event_description_b_padding">16dp</dimen>
+    <dimen name="event_description_l_padding">8dp</dimen>
+    <dimen name="event_description_r_padding">8dp</dimen>
+    <dimen name="event_description_t_padding">8dp</dimen>
+    <dimen name="event_description_b_padding">8dp</dimen>
     <dimen name="event_time_l_padding">16dp</dimen>
     <dimen name="event_time_r_padding">8dp</dimen>
     <dimen name="event_time_t_padding">16dp</dimen>
@@ -57,5 +57,15 @@
     <dimen name="card_event_r_padding">8dp</dimen>
     <dimen name="card_event_t_padding">8dp</dimen>
     <dimen name="card_event_b_padding">8dp</dimen>
+
+    <!-- volunteer page-->
+    <dimen name="image_t_padding">8dp</dimen>
+    <dimen name="image_b_padding">8dp</dimen>
+    <dimen name="image_l_padding">16dp</dimen>
+    <dimen name="image_r_padding">16dp</dimen>
+    <dimen name="image_width">400dp</dimen>
+    <dimen name="image_volunteer_height">200dp</dimen>
+
+    <dimen name="txt_thank_for_attending_padding">6dp</dimen>
 
 </resources>

@@ -23,8 +23,8 @@
     <string name="retype_password">retype password</string>
     <string name="sign_up">Sign up</string>
     <string name="unexpected_text">you should not be seeings this text</string>
-    <string name="thank_for_attending">Thank you for attending (...) (replace this in xml)</string>
-    <string name="ask_reset_password">Trouble logging in? Reset Pawword here</string>
+    <string name="thank_for_attending">Thank you for attending </string>
+    <string name="ask_reset_password">Trouble logging in? Reset Password here</string>
     <string name="get_events">(get events)</string>
     <string name="upcoming_events">Upcoming events</string>
     <string name="past_events">Past Events</string>

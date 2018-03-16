@@ -2,8 +2,9 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
+    <!--when button is NOT pressed it red-->
     <solid android:color="@color/maroon"/>
 
     <corners
-        android:radius="20dip" />
+        android:radius="35dp" />
 </shape>

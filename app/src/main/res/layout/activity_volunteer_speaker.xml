@@ -25,31 +25,38 @@
 
             <ImageView
                 android:id="@+id/vulenteer_speak"
-                android:layout_width="394dp"
-                android:layout_height="175dp"
+                android:layout_width="@dimen/image_width"
+                android:layout_height="@dimen/image_volunteer_height"
                 android:layout_gravity="center"
                 android:background="@color/cardview_light_background"
                 android:contentDescription="@string/todo"
                 android:cropToPadding="false"
+                android:paddingBottom="@dimen/image_t_padding"
+                android:paddingStart="@dimen/image_l_padding"
+                android:paddingEnd="@dimen/image_r_padding"
+                android:paddingTop="@dimen/image_t_padding"
                 android:scaleType="fitCenter"
                 android:src="@drawable/volunteer_speak" />
 
             <TextView
                 android:id="@+id/txt_thank_for_attending"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
-                android:gravity="center_horizontal"
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/txt_thank_for_attending_padding"
                 android:text="@string/txt_ask_for_details"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/thank_for_speaker_volunteer"
                 android:layout_width="match_parent"
-                android:layout_height="34dp"
-                android:gravity="center_horizontal"
-                android:text=""
+                android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_regular"
+                android:gravity="center_horizontal"
+                android:padding="@dimen/txt_thank_for_attending_padding"
+                android:text=""
                 android:textAlignment="center"
                 android:textStyle="bold" />
 
@@ -112,9 +119,8 @@
 
             <Button
                 android:id="@+id/btn_submit"
-                style="@style/btn_raised"
+                style="@style/btn_effect"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/mustard"
                 android:onClick="submitBtnPress"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/btn_submit" />
@@ -131,7 +137,8 @@
         android:textAlignment="textStart"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        android:fontFamily="@font/roboto_medium" />
+        android:fontFamily="@font/roboto_medium"
+        android:backgroundTint="@color/colorPrimary" />
 
 
 </RelativeLayout>
