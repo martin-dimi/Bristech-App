@@ -9,94 +9,9 @@
     android:layout_margin="16dp"
     android:elevation="8dp">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/relativeLayout"
-            android:layout_gravity="center">
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true">
-
-                <ImageView
-                    android:id="@+id/event_card_image"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/no_description_set"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingTop="10dp" />
-
-                <TextView
-                    android:id="@+id/event_card_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="@font/roboto_medium"
-                    android:paddingBottom="@dimen/event_topic_b_padding"
-                    android:paddingEnd="@dimen/event_time_r_padding"
-                    android:paddingStart="@dimen/event_topic_l_padding"
-                    android:paddingTop="@dimen/event_time_t_padding"
-                    android:textSize="@dimen/tile_size" />
-
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/event_card_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_alignStart="@id/event_card_duration"
-                android:fontFamily="@font/roboto_regular"
-                android:text="@string/event_time"/>
-
-            <TextView
-                android:id="@+id/event_card_duration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/roboto_regular"
-                android:layout_alignParentEnd="true"/>
-
-            <TextView
-                android:id="@+id/event_card_shortdescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/roboto_regular"
-                android:layout_alignParentBottom="true"/>
-
-            <TextView
-                android:id="@+id/event_card_topic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/roboto_regular"/>
-
-            <TextView
-                android:id="@+id/event_card_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/roboto_regular"
-                android:layout_alignParentStart="true"/>
-
-            <TextView
-                android:id="@+id/event_card_location"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/roboto_regular"
-                android:layout_alignParentRight="true"/>
-
-        </RelativeLayout>
-
-
+    <include
+        layout="@layout/card_event_within"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </android.support.v7.widget.CardView>

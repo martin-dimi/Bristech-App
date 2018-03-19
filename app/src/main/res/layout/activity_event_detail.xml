@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     tools:context="com.bristech.bristech.activities.EventDetailActivity">
 
-
         <TextView
             android:id="@+id/event_title"
             android:layout_width="wrap_content"
@@ -18,7 +17,7 @@
             android:paddingStart="@dimen/event_topic_l_padding"
             android:paddingTop="@dimen/event_topic_t_padding"
             android:text="@string/event_title"
-            android:textSize="@dimen/tile_size"
+            android:textSize="@dimen/title_size"
             tools:text="@string/event_title" />
 
         <ImageView
