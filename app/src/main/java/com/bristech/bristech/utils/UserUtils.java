@@ -23,33 +23,42 @@ public class UserUtils {
 
     public static final String TAG = "UserUtils";
 
-
-
-    static Retrofit.Builder builder = new Retrofit.Builder()
+    private static Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl("https://bristech-server.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create());
 
-    static Retrofit retrofit = builder.build();
+    public static User user;
+
     //Retrofit populates interface
-    static UserService userService = retrofit.create(UserService.class);
+    private static Retrofit retrofit = builder.build();
+    private static UserService userService = retrofit.create(UserService.class);
 
 
     public static void getUser(){
         Log.i(TAG, "Getting user");
-        FirebaseUser mUser = mAuth.getCurrentUser();
-        Log.i(TAG, mUser.getEmail());
-        mUser.getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
+        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+        if(firebaseUser == null)
+            return;
+
+        firebaseUser.getIdToken(true).addOnCompleteListener(new OnCompleteListener<GetTokenResult>() {
                     public void onComplete(@NonNull Task<GetTokenResult> task) {
                         if (task.isSuccessful()) {
                             String idToken = task.getResult().getToken();
                             Log.i(TAG, idToken);
+
                             // Send token to your backend via HTTPS
-                            Call<User> user = userService.getUser(idToken);
+                            Call<User> user = userService.loginUserWithToken(idToken);
                             user.enqueue(new Callback<User>() {
                                 @Override
                                 public void onResponse(Call<User> call, Response<User> response) {
                                     if (response.isSuccessful()){
-                                        Log.d(TAG, response.body().getPicture());
+                                        User user = response.body();
+                                        if (user != null) {
+                                            Log.i(TAG, "Successfully requested user:" + user.getEmail());
+                                            UserUtils.user = user;
+                                        }
+                                    }else {
+                                        Log.w(TAG, "Connection failed, Response:" + response.errorBody());
                                     }
                                 }
 

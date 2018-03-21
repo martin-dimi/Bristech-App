@@ -1,11 +1,8 @@
 package com.bristech.bristech.utils;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -23,14 +20,14 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class LoginUtils {
 
+    private static final String TAG = LoginUtils.class.getSimpleName();
+
+    public static FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
     public interface AuthenticationCallback extends OnCompleteListener<AuthResult> {
         @Override
         void onComplete(@NonNull Task<AuthResult> task);
     }
-
-    public static FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-    private static final String TAG = LoginUtils.class.getSimpleName();
 
     public static void signInWithGoogle(Intent data, AuthenticationCallback callback) {
         Log.i(TAG, "Authorising in with Google");

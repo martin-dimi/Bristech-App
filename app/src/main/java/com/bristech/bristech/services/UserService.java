@@ -12,6 +12,6 @@ import retrofit2.http.Header;
  */
 public interface UserService {
 
-    @GET("/user")
-    Call<User> getUser(@Header("token") String token);
+    @GET("/user/login")
+    Call<User> loginUserWithToken(@Header("token") String token);
 }

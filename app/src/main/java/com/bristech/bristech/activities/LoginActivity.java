@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.utils.LoginUtils;
+import com.bristech.bristech.utils.UserUtils;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -186,6 +187,7 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
         try {
             AuthResult r = task.getResult(FirebaseException.class);
             showSnackbar("Successful login");
+            UserUtils.getUser();
 
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
