@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/colorCard"
     android:layout_margin="8dp"
-    android:elevation="16dp">
+    android:elevation="32dp">
 
     <include
         layout="@layout/card_event_within"

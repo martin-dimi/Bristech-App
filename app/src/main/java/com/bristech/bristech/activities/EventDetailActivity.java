@@ -19,15 +19,13 @@ public class EventDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_detail);
 
         setText("event_title", R.id.event_title);
-        setText("event_topic", R.id.event_topic);
         setText("event_date", R.id.event_date);
         setText("event_time", R.id.event_time);
-        setText("event_duration", R.id.event_duration);
         setText("event_location", R.id.event_location);
         setText("event_description", R.id.event_description);
 
         ImageView testImage = findViewById(R.id.event_image);
-        testImage.setImageResource(R.drawable.test_event_image_1);
+        testImage.setImageResource(R.drawable.test_event_image_2);
     }
 
     private void setText(String key, int textViewID) {

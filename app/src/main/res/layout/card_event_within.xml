@@ -10,9 +10,10 @@
         android:id="@+id/event_card_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="@font/roboto_regular"
+        android:layout_marginEnd="4dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="@string/event_time"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_card_image" />
 
@@ -27,16 +28,15 @@
         android:id="@+id/event_card_shortdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/roboto_regular"
         android:text="test_description"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_card_location" />
+        app:layout_constraintTop_toBottomOf="@+id/event_card_date" />
 
     <TextView
         android:id="@+id/event_card_topic"
@@ -47,7 +47,7 @@
     <ImageView
         android:id="@+id/event_card_image"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="238dp"
         android:contentDescription="@string/no_description_set"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/event_card_topic"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_medium"
+        android:fontFamily="@font/roboto_condensed_bold"
         android:text="test_title"
         android:textColor="@color/white"
         android:textSize="@dimen/title_size"
@@ -69,22 +69,27 @@
     <TextView
         android:id="@+id/event_card_date"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_regular"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="test_date"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_card_image" />
 
     <TextView
         android:id="@+id/event_card_location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_bold_italic"
         android:text="test_locaton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_card_date" />
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@+id/event_card_time"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toEndOf="@+id/event_card_date"
+        app:layout_constraintTop_toBottomOf="@+id/event_card_image" />
 
 </android.support.constraint.ConstraintLayout>

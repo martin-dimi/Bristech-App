@@ -84,7 +84,7 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
         mBundle.putString("event_time", "testTime");
         mBundle.putString("event_duration", "testDuration");
         mBundle.putString("event_location", "testLocation");
-        mBundle.putString("event_description", "testDescription");
+        mBundle.putString("event_description", "Lorem ipsum dolor sit amet, tollit noster nam ut. Sea id eruditi platonem, summo everti in eam. Inermis tibique perfecto ea vim, choro phaedrum in his. Eam alia omittam forensibus ut, nisl purto inciderint in pri. Cum diam alia nominavi no, te nisl illum sea.");
         eventDetailActivityIntent.putExtras(mBundle);
 
         // start the activity
