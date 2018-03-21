@@ -53,11 +53,14 @@ public class EventUtils {
 
                     callback.onComplete(events);
                 }
+                else{
+                    Log.e(TAG, response.message());
+                }
             }
 
             @Override
             public void onFailure(Call<List<Event>> call, Throwable t) {
-
+                Log.e(TAG, t.getMessage());
             }
         });
 

@@ -10,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -21,6 +22,7 @@ import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.fragments.EventsFragment;
 import com.bristech.bristech.activities.VolunteerSpeakerActivity;
 import com.bristech.bristech.services.UserService;
+import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.LoginUtils;
 import com.bristech.bristech.utils.UserUtils;
 
@@ -61,6 +63,13 @@ public class MainActivity extends AppCompatActivity
         //Gets events and set fragment manager
         getEvents();
         mFragmentManager = getSupportFragmentManager();
+
+        EventUtils.getAllEvents(new EventUtils.EventsCallback() {
+            @Override
+            public void onComplete(List<Event> events) {
+                Log.i("MainActivityEventsLoade", events.get(0).getTitle());
+            }
+        });
 
         // sets upcoming events as default fragment
         showUpcomingEvents();
