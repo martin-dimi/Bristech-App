@@ -50,6 +50,10 @@ public class EventUtils {
                 if(response.isSuccessful()){
                     Log.i(TAG, "successfully fetched events");
                     List<Event> events = response.body();
+                    Log.d(TAG, events.get(0).getTitle());
+                    boolean n = callback == null;
+                    Log.d(TAG, ""+n);
+
 
                     callback.onComplete(events);
                 }

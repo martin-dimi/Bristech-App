@@ -20,7 +20,7 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
 
 
     public interface EventOnClick{
-        void onClick();
+        void onClick(int position);
     }
 
     public EventsAdaptor(List<Event> mEvents, EventOnClick eventOnClick) {
@@ -81,7 +81,7 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
 
         @Override
         public void onClick(View view) {
-            mEventOnClick.onClick();
+            mEventOnClick.onClick(getAdapterPosition());
         }
     }
 }
