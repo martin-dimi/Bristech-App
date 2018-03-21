@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fragmentBg"
-    tools:context="com.bristech.bristech.fragments.EventsFragment">
+    tools:context="com.bristech.bristech.fragments.AddEventFragment">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_events"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:textColor="@color/black"
+        android:text="@string/hello_blank_fragment" />
 
 </FrameLayout>

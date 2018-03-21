@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EventsFragment extends Fragment implements EventsAdaptor.EventOnClick {
+    public static final String TAG = "EventsFragment";
 
     private static final String EVENT = "events";
 
@@ -46,6 +48,14 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
 
         mEvents = (List<Event>) getArguments().getSerializable(EVENT);
         mEventsAdaptor = new EventsAdaptor(mEvents, this);
+
+        Log.i(TAG, "passing to individual Event View");
+        Log.i(TAG, mEvents.get(0).getTitle());
+        Log.i(TAG, mEvents.get(0).getLocation());
+        Log.i(TAG, mEvents.get(0).getDate());
+        Log.i(TAG, mEvents.get(0).getTime());
+        Log.i(TAG, mEvents.get(0).getDescription());
+        Log.i(TAG, mEvents.get(0).getBackdrop());
     }
 
     @Override
@@ -78,13 +88,11 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
 
         // send details of event to individual view
         Bundle mBundle = new Bundle();
-        mBundle.putString("event_title", "testTitle");
-        mBundle.putString("event_topic", "testTopic");
-        mBundle.putString("event_date", "testDate");
-        mBundle.putString("event_time", "testTime");
-        mBundle.putString("event_duration", "testDuration");
-        mBundle.putString("event_location", "testLocation");
-        mBundle.putString("event_description", "Lorem ipsum dolor sit amet, tollit noster nam ut. Sea id eruditi platonem, summo everti in eam. Inermis tibique perfecto ea vim, choro phaedrum in his. Eam alia omittam forensibus ut, nisl purto inciderint in pri. Cum diam alia nominavi no, te nisl illum sea.");
+        mBundle.putString("event_title", mEvents.get(0).getTitle());
+        mBundle.putString("event_date", mEvents.get(0).getDate());
+        mBundle.putString("event_time", mEvents.get(0).getTime());
+        mBundle.putString("event_location", mEvents.get(0).getLocation());
+        mBundle.putString("event_description", mEvents.get(0).getDescription());
         eventDetailActivityIntent.putExtras(mBundle);
 
         // start the activity

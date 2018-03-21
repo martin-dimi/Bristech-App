@@ -6,11 +6,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_upcoming_events"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_home_black_24dp"
             android:title="@string/upcoming_events" />
         <item
             android:id="@+id/nav_past_events"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ic_view_agenda_black_24dp"
             android:title="@string/past_events" />
         <item
             android:id="@+id/nav_settings"
@@ -22,12 +22,16 @@
         <menu>
             <item
                 android:id="@+id/nav_volunteer_a_speaker"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_person_black_24dp"
                 android:title="@string/volunteer_a_speaker" />
             <item
                 android:id="@+id/nav_attend_event"
                 android:icon="@drawable/ic_menu_send"
                 android:title="(physically attend an event)" />
+            <item
+                android:id="@+id/nav_add_event"
+                android:icon="@drawable/ic_add_circle_black_24dp"
+                android:title="add an event (admin only)" />
         </menu>
     </item>
 

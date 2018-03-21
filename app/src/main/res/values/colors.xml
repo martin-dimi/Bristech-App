@@ -7,7 +7,7 @@
     <color name="colorAccent">#a3a4a8</color>
 
     <color name="colorCard">#fff</color>
-    <color name="colorCardBg">#cacaca</color>
+    <color name="fragmentBg">#cacaca</color>
 
     <!--Key theme colours-->
     <color name="black">#000000</color>

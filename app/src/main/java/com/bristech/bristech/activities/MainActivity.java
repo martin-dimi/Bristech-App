@@ -19,6 +19,7 @@ import com.bristech.bristech.R;
 import com.bristech.bristech.adaptors.EventsAdaptor;
 import com.bristech.bristech.data.Dummy;
 import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
 import com.bristech.bristech.activities.VolunteerSpeakerActivity;
 import com.bristech.bristech.services.UserService;
@@ -30,6 +31,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
+
+    public static final String TAG = "MainActivityEventsLoade";
 
     private List<Event> mEventList;
     private FragmentManager mFragmentManager;
@@ -67,7 +70,15 @@ public class MainActivity extends AppCompatActivity
         EventUtils.getAllEvents(new EventUtils.EventsCallback() {
             @Override
             public void onComplete(List<Event> events) {
-                Log.i("MainActivityEventsLoade", events.get(0).getTitle());
+//                Log.i(TAG, events.get(0).getId());
+                Log.i(TAG, events.get(0).getTitle());
+                Log.i(TAG, events.get(0).getLocation());
+                Log.i(TAG, events.get(0).getDate());
+                Log.i(TAG, events.get(0).getTime());
+                Log.i(TAG, events.get(0).getDescription());
+                Log.i(TAG, events.get(0).getBackdrop());
+
+                mEventList = events;
             }
         });
 
@@ -108,6 +119,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.nav_attend_event:
                 showAttendEvent();
                 break;
+            case R.id.nav_add_event:
+                showAddEvent();
+                break;
             default:
                 break;
         }
@@ -142,9 +156,13 @@ public class MainActivity extends AppCompatActivity
         startActivity(feedbackActivityEvent);
     }
 
+    private void showAddEvent() {
+        AddEventFragment addEventFragment = AddEventFragment.getInstance();
+        mFragmentManager.beginTransaction().replace(R.id.fragment_container, addEventFragment).commit();
+    }
+
     private void getEvents(){
         mEventList = Dummy.getEvents();
     }
-
 
 }
