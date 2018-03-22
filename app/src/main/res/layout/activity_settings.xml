@@ -37,7 +37,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="logOutBtnPress"
             android:text="@string/btn_log_out"
-            android:fontFamily="@font/roboto_regular" />
+            android:fontFamily="@font/roboto_medium" />
 
         <Button
             android:id="@+id/btn_modify_interests"
@@ -45,7 +45,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="modifyInterestsBtnPress"
             android:text="@string/modify_interests"
-            android:fontFamily="@font/roboto_regular" />
+            android:fontFamily="@font/roboto_medium" />
 
         <Button
             android:id="@+id/btn_edit_user_settings"
@@ -53,7 +53,7 @@
             android:layout_gravity="center_horizontal"
             android:onClick="editUserSettingsBtnPress"
             android:text="@string/user_settings"
-            android:fontFamily="@font/roboto_regular" />
+            android:fontFamily="@font/roboto_medium" />
 
     </LinearLayout>
 

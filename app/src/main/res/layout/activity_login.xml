@@ -48,7 +48,7 @@
             style="@style/btn_loginActivity_signInWithProvider"
             android:layout_marginTop="@dimen/btn_email_signIn_margin_top"
             android:text="@string/btn_emailSignIn"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             app:layout_constraintEnd_toEndOf="@+id/et_password"
             app:layout_constraintStart_toStartOf="@+id/et_password"
             app:layout_constraintTop_toBottomOf="@+id/et_password" />
@@ -93,7 +93,7 @@
             android:backgroundTint="@color/google_sign_in"
             android:text="@string/btn_googleSignIn"
             android:layout_marginTop="@dimen/btn_signIn_margin_top"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -104,7 +104,7 @@
             android:backgroundTint="@color/facebook_sing_in"
             android:text="@string/btn_facebookSignIn"
             android:layout_marginTop="@dimen/btn_signIn_margin_top"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_google_sign_in" />
@@ -115,7 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/logout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

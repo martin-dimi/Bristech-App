@@ -47,7 +47,7 @@ public class createAccount extends AppCompatActivity {
 
                 // set info text
                 if (!allFieldsValid) {
-                    infoText.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.red));
+                    infoText.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.maroon));
                     infoText.setVisibility(View.VISIBLE);
                 }
                 else {

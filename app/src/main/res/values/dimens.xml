@@ -52,6 +52,7 @@
     <dimen name="event_time_b_padding">8dp</dimen>
 
 
+
     <!-- card event -->
     <dimen name="card_event_l_padding">8dp</dimen>
     <dimen name="card_event_r_padding">8dp</dimen>

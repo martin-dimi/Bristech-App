@@ -61,7 +61,7 @@
             style="@style/btn_effect"
             android:layout_gravity="center_horizontal"
             android:onClick="submitBtnPress"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/btn_submit" />
 
         <TextView
@@ -78,7 +78,7 @@
             style="@style/btn_effect"
             android:layout_gravity="center_horizontal"
             android:onClick="returnToHomepageBtnPress"
-            android:fontFamily="@font/roboto_regular"
+            android:fontFamily="@font/roboto_medium"
             android:text="@string/btn_homepage" />
     </LinearLayout>
 
