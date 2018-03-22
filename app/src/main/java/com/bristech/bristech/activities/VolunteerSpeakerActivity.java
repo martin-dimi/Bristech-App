@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
 
 import com.bristech.bristech.R;
 
@@ -25,11 +27,18 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
 
     public void submitBtnPress(View view) {
         Log.i("VolunteerSpeakerActivit", "Submit button pressed");
-        TextView textView = findViewById(R.id.thank_for_speaker_volunteer);
-        textView.setText(R.string.txt_thank_for_speaker_volunteer);
         String name = mSpeakerNameField.getText().toString();
         String topic = mSpeakerTopicField.getText().toString();
         String email = mSpeakerEmailField.getText().toString();
+        new AlertDialog.Builder(this)
+                .setTitle("Notice")
+                .setMessage(R.string.txt_thank_for_speaker_volunteer)
+                .setPositiveButton("GO BACK", null)
+                .show();
+
+//        TextView textView = findViewById(R.id.thank_for_speaker_volunteer);
+//        textView.setText(R.string.txt_thank_for_speaker_volunteer);
     }
+
 
 }

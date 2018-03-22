@@ -1,6 +1,7 @@
 package com.bristech.bristech.activities;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,5 +37,10 @@ public class EventDetailActivity extends AppCompatActivity {
 
     public void registerForTalkBtnPress(View view) {
         Log.i("SettingsActivity", "Register for talk button pressed");
+        new AlertDialog.Builder(this)
+                .setTitle("Notice")
+                .setMessage("You are successfully registered for this event.")
+                .setPositiveButton("OK", null)
+                .show();
     }
 }
