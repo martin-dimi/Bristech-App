@@ -20,7 +20,7 @@
     <dimen name="tv_divider_text_margin_top">32dp</dimen>
 
     <!--Create Account Screen-->
-    <dimen name="create_account_vertical_margins">8sp</dimen>
+    <dimen name="create_account_vertical_margins">6sp</dimen>
     <dimen name="create_account_text_size">16sp</dimen>
 
     <!--Raised button-->
@@ -60,7 +60,7 @@
     <dimen name="card_event_b_padding">8dp</dimen>
 
     <!-- volunteer page-->
-    <dimen name="image_t_padding">8dp</dimen>
+    <dimen name="image_t_padding">32dp</dimen>
     <dimen name="image_b_padding">8dp</dimen>
     <dimen name="image_l_padding">16dp</dimen>
     <dimen name="image_r_padding">16dp</dimen>

@@ -4,6 +4,8 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +18,12 @@ public class FeedbackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+
+        TextView textView =(TextView)findViewById(R.id.txt_poll_link);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "Would you mind providing us some feedback through this <a href='http://www.google.com'>Google Poll</a> link, in order for us to improve future events?";
+        textView.setText(Html.fromHtml(text));
     }
 
     public void submitBtnPress(View view) {
@@ -25,8 +33,8 @@ public class FeedbackActivity extends AppCompatActivity {
                 .setMessage("Thank you for the feedback")
                 .setPositiveButton("GO BACK", null)
                 .show();
-//        TextView textView = findViewById(R.id.txt_thank_for_feedback);
-//        textView.setText(R.string.thank_for_feedback);
+        TextView textView = findViewById(R.id.txt_poll_link);
+        textView.setText(R.string.thank_for_feedback);
     }
 
     public void returnToHomepageBtnPress(View view) {

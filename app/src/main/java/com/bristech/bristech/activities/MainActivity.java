@@ -12,20 +12,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.bristech.bristech.R;
-import com.bristech.bristech.adaptors.EventsAdaptor;
 import com.bristech.bristech.data.Dummy;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
-import com.bristech.bristech.activities.VolunteerSpeakerActivity;
-import com.bristech.bristech.services.UserService;
 import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.LoginUtils;
-import com.bristech.bristech.utils.UserUtils;
 
 import java.util.List;
 

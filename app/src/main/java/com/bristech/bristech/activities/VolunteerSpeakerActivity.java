@@ -3,6 +3,7 @@ package com.bristech.bristech.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +24,9 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
         mSpeakerNameField = findViewById(R.id.speaker_name);
         mSpeakerTopicField = findViewById(R.id.speaker_topic);
         mSpeakerEmailField = findViewById(R.id.speaker_email);
+        mSpeakerNameField.setGravity(Gravity.CENTER);
+        mSpeakerTopicField.setGravity(Gravity.CENTER);
+        mSpeakerEmailField.setGravity(Gravity.CENTER);
     }
 
     public void submitBtnPress(View view) {

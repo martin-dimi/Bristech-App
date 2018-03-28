@@ -10,12 +10,11 @@
     <string name="register_for_talk">Register for Talk</string>
     <string name="modify_interests">Modify Interests</string>
     <string name="user_settings">User Settings</string>
-    <string name="feedback_please">Would you mind providing some feedback on the talk?</string>
     <string name="btn_submit">Submit</string>
     <string name="btn_homepage">Homepage</string>
     <string name="thank_for_feedback">Thank you for the feedback!</string>
     <string name="txt_thank_for_speaker_volunteer">Thank you for volunteering [name]</string>
-    <string name="txt_ask_for_details">Enter details of the speaker you would like to volunteer below, and we will get back to you!</string>
+    <string name="txt_ask_for_details">Enter details of the speaker you would like to volunteer below, and we will courteously contact them!</string>
     <string name="no_description_set">No content description set yet</string>
     <string name="email">email</string>
     <string name="first_name">first name</string>
@@ -23,7 +22,7 @@
     <string name="retype_password">retype password</string>
     <string name="sign_up">Sign up</string>
     <string name="unexpected_text">you should not be seeings this text</string>
-    <string name="thank_for_attending">Thank you for attending </string>
+    <string name="thank_for_attending">Thank you for attending! </string>
     <string name="ask_reset_password">Trouble logging in? Reset Password here</string>
     <string name="get_events">(get events)</string>
     <string name="upcoming_events">Upcoming events</string>
@@ -32,7 +31,7 @@
     <string name="volunteer_a_speaker">Volunteer a speaker</string>
     <string name="name">Name</string>
     <string name="topic">Topic</string>
-    <string name="email_address">Email address</string>
+    <string name="email_address">Email</string>
     <string name="todo">TODO</string>
     <string name="volunteer_to_speak" />
     <string name="volunteerToSpeak">Volunteer to Speak</string>
