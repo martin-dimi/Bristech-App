@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,136 +9,148 @@
     <include
         android:id="@+id/app_bar"
         layout="@layout/app_bar_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_width="389dp"
+        android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/settings_linear_layout_top"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/vulenteer_speak"
-                android:layout_width="@dimen/image_width"
-                android:layout_height="@dimen/image_volunteer_height"
-                android:layout_gravity="center"
-                android:background="@color/cardview_light_background"
-                android:contentDescription="@string/todo"
-                android:cropToPadding="false"
-                android:paddingBottom="@dimen/image_t_padding"
-                android:paddingStart="@dimen/image_l_padding"
-                android:paddingEnd="@dimen/image_r_padding"
-                android:paddingTop="@dimen/image_t_padding"
-                android:scaleType="fitCenter"
-                android:src="@drawable/volunteer_speak" />
-
-            <TextView
-                android:id="@+id/txt_thank_for_attending"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/txt_thank_for_attending_padding"
-                android:text="@string/txt_ask_for_details"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/thank_for_speaker_volunteer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_regular"
-                android:gravity="center_horizontal"
-                android:padding="@dimen/txt_thank_for_attending_padding"
-                android:text=""
-                android:textAlignment="center"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/speaker_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:cursorVisible="true"
-                android:layout_gravity="center_horizontal"
-                android:ems="10"
-                android:hint="@string/name"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/roboto_regular"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:theme="@style/MyEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <EditText
-                android:id="@+id/speaker_topic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:cursorVisible="true"
-                android:layout_gravity="center_horizontal"
-                android:ems="10"
-                android:hint="@string/topic"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textNoSuggestions"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:theme="@style/MyEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_username" />
-
-            <EditText
-                android:id="@+id/speaker_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:cursorVisible="true"
-                android:layout_gravity="center_horizontal"
-                android:ems="10"
-                android:hint="@string/email_address"
-                android:fontFamily="@font/roboto_regular"
-                android:inputType="textEmailAddress"
-                android:textCursorDrawable="@drawable/cursor_color"
-                android:theme="@style/MyEditText"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_username" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btn_submit"
-                style="@style/btn_effect"
-                android:layout_gravity="center_horizontal"
-                android:onClick="submitBtnPress"
-                android:fontFamily="@font/roboto_medium"
-                android:text="@string/btn_submit" />
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/vulenteer_speak"
+        android:layout_width="@dimen/image_width"
+        android:layout_height="@dimen/image_volunteer_height"
+        android:layout_gravity="center"
+        android:layout_marginTop="44dp"
+        android:background="@color/cardview_light_background"
+        android:contentDescription="@string/todo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/volunteer_speak"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="0dp" />
 
     <TextView
+        android:id="@+id/txt_volunteer_speaker"
         android:layout_width="match_parent"
-        android:layout_height="26dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="@string/txt_ask_for_details"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/app_bar"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toEndOf="@+id/app_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vulenteer_speak" />
+
+    <EditText
+        android:id="@+id/speaker_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/name"
+        android:inputType="textPersonName"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speaker_email" />
+
+    <EditText
+        android:id="@+id/speaker_topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/topic"
+        android:inputType="textNoSuggestions"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speaker_name" />
+
+    <EditText
+        android:id="@+id/speaker_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_volunteer_speaker" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        style="@style/btn_effect"
+        android:layout_height="32dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/roboto_medium"
+        android:onClick="submitBtnPress"
+        android:text="@string/btn_submit"
+        app:layout_constraintBottom_toBottomOf="@+id/app_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/thank_for_speaker_volunteer" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/volunteerToSpeak"
         android:textAlignment="textStart"
         android:textColor="@android:color/background_light"
         android:textSize="20sp"
-        android:fontFamily="@font/roboto_medium"
-        android:backgroundTint="@color/colorPrimary" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/thank_for_speaker_volunteer"
+        android:layout_width="216dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="thanks (should not see this)"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speaker_topic" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

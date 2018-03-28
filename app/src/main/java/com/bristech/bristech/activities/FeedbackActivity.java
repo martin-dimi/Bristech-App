@@ -22,7 +22,7 @@ public class FeedbackActivity extends AppCompatActivity {
         TextView textView =(TextView)findViewById(R.id.txt_poll_link);
         textView.setClickable(true);
         textView.setMovementMethod(LinkMovementMethod.getInstance());
-        String text = "Would you mind providing us some feedback through this <a href='http://www.google.com'>Google Poll</a> link, in order for us to improve future events?";
+        String text = "Would you mind providing us some feedback through this <a href='https://docs.google.com/forms/d/e/1FAIpQLScleeUHXIv1y4sz7sud0MaY_NUJ7OUPT81zRc3Y_s0xYFyQzg/viewform?usp=sf_link'>Google Poll</a> link, in order for us to improve future events?";
         textView.setText(Html.fromHtml(text));
     }
 
