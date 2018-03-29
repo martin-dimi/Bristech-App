@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -16,8 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.bristech.bristech.R;
-import com.bristech.bristech.entities.Event;
-import com.bristech.bristech.utils.EventUtils;
+import com.bristech.bristech.entities.User;
 import com.bristech.bristech.utils.LoginUtils;
 import com.bristech.bristech.utils.UserUtils;
 import com.facebook.CallbackManager;
@@ -36,7 +34,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import java.util.Collections;
-import java.util.List;
 
 import static android.provider.ContactsContract.Intents.Insert.EMAIL;
 
@@ -164,18 +161,12 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
         mLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                LoginUtils.signOut();
-//                Snackbar
-//                        .make(findViewById(R.id.login_coordinator), "Logout successful", Snackbar.LENGTH_LONG)
-//                        .show();
+                // test button
+                LoginUtils.signOut();
+                Snackbar
+                        .make(findViewById(R.id.login_coordinator), "Logout successful", Snackbar.LENGTH_LONG)
+                        .show();
 
-
-                EventUtils.getAllEvents(new EventUtils.EventsCallback() {
-                    @Override
-                    public void onComplete(List<Event> events) {
-                        Log.i(TAG, "YOU GOT THE EVENTS: " + events.get(0).getTitle());
-                    }
-                });
             }
         });
     }
@@ -199,7 +190,14 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
         try {
             AuthResult r = task.getResult(FirebaseException.class);
             showSnackbar("Successful login");
-            UserUtils.getUser();
+            UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                @Override
+                public void onComplete(User user) {
+                    // TODO This is the callback function for getting the user from our servers, do something here
+                    // TODO or use the function below
+                    userHasLoggedIn(user);
+                }
+            });
 
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -231,5 +229,9 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
         InputMethodManager inputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         if(inputManager != null && getCurrentFocus() != null)
             inputManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
+
+    private void userHasLoggedIn(User user){
+        // TODO Do something with the user.. like save it to sharedPreferences
     }
 }

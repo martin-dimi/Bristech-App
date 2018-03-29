@@ -1,11 +1,14 @@
 package com.bristech.bristech.entities;
 
+import java.util.List;
+
 public class User{
 
     private Long id;
     private String email;
     private String name;
     private String picture;
+    private List<Event> events;
 
 
     public User() {
@@ -42,5 +45,13 @@ public class User{
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public List<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<Event> events) {
+        this.events = events;
     }
 }

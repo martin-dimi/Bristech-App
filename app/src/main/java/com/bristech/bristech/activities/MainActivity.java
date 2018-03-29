@@ -10,12 +10,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.bristech.bristech.R;
-import com.bristech.bristech.data.Dummy;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
@@ -30,6 +28,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private List<Event> mEventList;
     private FragmentManager mFragmentManager;
+
+    // TODO Use onSaveInstanceState to save the instance on device rotaion,
+    // TODO so that it doesn't re-download the events again when device is rotated
+
+    // TODO save the user in SharedPreferences and use it through there in other activities
+
+    // TODO get the events once, not every time you change screens/rotate device
+
+    // TODO fix options screen so it's not an activity but a fragment
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +120,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         EventsFragment eventsFragment = EventsFragment.getInstance();
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
 
+
+        //TODO get the events in createActivity and pass appropriate events to fragments
         getEvents(eventsFragment);
     }
 
@@ -142,8 +151,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getEvents(EventsFragment eventsFragment){
+
+        // TODO check out eventUtils, get appropriate events, use your brain
         //mEventList = Dummy.getEvents();
-        EventUtils.getAllEvents(eventsFragment);
+        EventUtils.getPastEvents(eventsFragment);
     }
 
 }

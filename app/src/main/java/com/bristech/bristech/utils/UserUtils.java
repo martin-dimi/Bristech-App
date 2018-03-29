@@ -22,19 +22,20 @@ import static com.bristech.bristech.utils.LoginUtils.mAuth;
 public class UserUtils {
 
     public static final String TAG = "UserUtils";
-
+    public static User user;
     private static Retrofit.Builder builder = new Retrofit.Builder()
             .baseUrl("https://bristech-server.herokuapp.com/")
             .addConverterFactory(GsonConverterFactory.create());
-
-    public static User user;
-
     //Retrofit populates interface
     private static Retrofit retrofit = builder.build();
     private static UserService userService = retrofit.create(UserService.class);
 
-
-    public static void getUser(){
+    /**
+     * Gets the user from the server,
+     * if he doesn't exist, creates it
+     * @param callback callback to be executed on successful response
+     */
+    public static void getUser(final UserCallback<User> callback){
         Log.i(TAG, "Getting user");
         FirebaseUser firebaseUser = mAuth.getCurrentUser();
         if(firebaseUser == null)
@@ -53,27 +54,28 @@ public class UserUtils {
                                 public void onResponse(Call<User> call, Response<User> response) {
                                     if (response.isSuccessful()){
                                         User user = response.body();
-                                        if (user != null) {
-                                            Log.i(TAG, "Successfully requested user:" + user.getEmail());
-                                            UserUtils.user = user;
-                                        }
+                                        callback.onComplete(user);
                                     }else {
+                                        // Todo handle failure better
                                         Log.w(TAG, "Connection failed, Response:" + response.errorBody());
                                     }
                                 }
 
                                 @Override
                                 public void onFailure(Call<User> call, Throwable t) {
+                                    // Todo handle failure better
                                     Log.e(TAG, "Error connecting to server");
                                     t.printStackTrace();
                                 }
                             });
                         } else {
-                            // Handle error -> task.getException();
+                            // TODO Handle error -> task.getException();
                         }
                     }
                 });
     }
 
-
+    public interface UserCallback<T> {
+        void onComplete(T object);
+    }
 }

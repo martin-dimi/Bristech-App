@@ -19,10 +19,6 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
     private EventOnClick mEventOnClick;
 
 
-    public interface EventOnClick{
-        void onClick(int position);
-    }
-
     public EventsAdaptor(List<Event> mEvents, EventOnClick eventOnClick) {
         this.mEvents = mEvents;
         this.mEventOnClick = eventOnClick;
@@ -43,11 +39,10 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
     @Override
     public void onBindViewHolder(EventCard holder, int position) {
         Event event = mEvents.get(position);
-        holder.myTitle.setText(event.getTitle());
+
+        // TODO FIX THIS - add all event information
+        holder.myTitle.setText(event.getName());
         holder.myImage.setImageResource(R.drawable.test_event_image_2);
-        holder.myDate.setText(event.getDate());
-        holder.myTime.setText(event.getTime());
-        holder.myLocation.setText(event.getLocation());
         holder.myShortDescription.setText(event.getDescription());
     }
 
@@ -55,6 +50,10 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
     public int getItemCount() {
         if(mEvents == null) return 0;
         return mEvents.size();
+    }
+
+    public interface EventOnClick{
+        void onClick(int position);
     }
 
     class EventCard extends RecyclerView.ViewHolder implements View.OnClickListener{

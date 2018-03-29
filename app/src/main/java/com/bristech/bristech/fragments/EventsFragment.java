@@ -17,13 +17,12 @@ import com.bristech.bristech.adaptors.EventsAdaptor;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.utils.EventUtils;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class EventsFragment extends Fragment implements EventsAdaptor.EventOnClick, EventUtils.EventsCallback{
+public class EventsFragment extends Fragment implements EventsAdaptor.EventOnClick, EventUtils.EventsCallback<List<Event>>{
     public static final String TAG = "EventsFragment";
 
-    private static final String EVENT = "events";
+    public static final String EVENT = "events";
 
     private List<Event> mEvents;
     private EventsAdaptor mEventsAdaptor;
@@ -68,7 +67,7 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
     }
 
     private void setEvents(List<Event> events){
-        Log.d(TAG, "seeting the events:" + events.get(0).getTitle());
+        Log.d(TAG, "seeting the events:" + events.get(0).getName());
         this.mEvents = events;
         updateAdaptor(events);
     }
@@ -88,13 +87,9 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
         Event event = mEvents.get(position);
 
         // send details of event to individual view
-        Bundle mBundle = new Bundle();
-        mBundle.putString("event_title", event.getTitle());
-        mBundle.putString("event_date", event.getDate());
-        mBundle.putString("event_time", event.getTime());
-        mBundle.putString("event_location", event.getLocation());
-        mBundle.putString("event_description", event.getDescription());
-        eventDetailActivityIntent.putExtras(mBundle);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(EVENT, event);
+        eventDetailActivityIntent.putExtras(bundle);
 
         // start the activity
         startActivity(eventDetailActivityIntent);
