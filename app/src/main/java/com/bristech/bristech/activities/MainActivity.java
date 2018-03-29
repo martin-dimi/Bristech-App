@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         //Check if logged in
         boolean isLoggedIn = LoginUtils.isLoggedIn();
         if(!isLoggedIn){

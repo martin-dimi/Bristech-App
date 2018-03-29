@@ -1,7 +1,9 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+
+//    compile "com.google.android.gms:play-services-maps:10.0.1"
+
     repositories {
         google()
         jcenter()
