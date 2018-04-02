@@ -4,6 +4,8 @@ package com.bristech.bristech.entities;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
+import android.text.Html;
+import android.text.Spanned;
 
 import com.bristech.bristech.R;
 
@@ -63,6 +65,11 @@ public class Event implements Serializable{
     public String getDescription() {
         if( description != null ) { return description; }
         else { return "no_description"; }
+    }
+
+    public Spanned getDescriptionHtml() {
+        if( description != null ) { return Html.fromHtml(description); }
+        else { return Html.fromHtml("no_description"); }
     }
 
     public void setDescription(String description) {
@@ -140,7 +147,7 @@ public class Event implements Serializable{
     }
 
     public String getLocation() {
-        if( description != null ) { return location; }
+        if( location != null ) { return location; }
         else { return "no_location"; }
     }
 

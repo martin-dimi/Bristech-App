@@ -2,6 +2,7 @@ package com.bristech.bristech.adaptors;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
 
         holder.myTitle.setText(event.getName());
         holder.myImage.setImageResource(R.drawable.test_event_image_2);
-        holder.myShortDescription.setText(event.getDescription());
+        holder.myShortDescription.setText(event.getDescriptionHtml());
         holder.myTime.setText(event.getTimeStr());
         holder.myDate.setText(event.getDateStr());
         holder.myLocation.setText(event.getLocation());

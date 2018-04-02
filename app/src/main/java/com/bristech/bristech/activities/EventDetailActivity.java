@@ -28,7 +28,9 @@ public class EventDetailActivity extends AppCompatActivity {
         setText(event.getDateStr(), R.id.event_date);
         setText(event.getTimeStr(), R.id.event_time);
         setText(event.getLocation(), R.id.event_location);
-        setText(event.getDescription(), R.id.event_description);
+
+        TextView textView = findViewById(R.id.event_description);
+        textView.setText(event.getDescriptionHtml());
 
         ImageView testImage = findViewById(R.id.event_image);
         testImage.setImageResource(R.drawable.test_event_image_2);
