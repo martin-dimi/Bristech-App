@@ -2,6 +2,8 @@ package com.bristech.bristech.entities;
 
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 public class Event implements Serializable{
@@ -71,6 +73,32 @@ public class Event implements Serializable{
 
     public void setTime(Long time) {
         this.time = time;
+    }
+
+    public String getTimeStr() {
+        if( time != null ) {
+            SimpleDateFormat formatter = new SimpleDateFormat("hh:mm");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(this.time);
+            String retStr = formatter.format(calendar.getTime());
+            return retStr;
+        }
+        else {
+            return "no_time";
+        }
+    }
+
+    public String getDateStr() {
+        if( time != null ) {
+            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(this.time);
+            String retStr = formatter.format(calendar.getTime());
+            return retStr;
+        }
+        else {
+            return "no_time";
+        }
     }
 
     public Long getDuration() {

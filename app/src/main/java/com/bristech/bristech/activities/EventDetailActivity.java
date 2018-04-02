@@ -23,16 +23,12 @@ public class EventDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        // TODO USE THIS INSTEAD
         Event event = (Event) getIntent().getSerializableExtra(EVENT);
         setText(event.getName(), R.id.event_title);
-//        setText(event.getDate(), R.id.event_date);
-//        setText(event.getTime(), R.id.event_time);
+        setText(event.getDateStr(), R.id.event_date);
+        setText(event.getTimeStr(), R.id.event_time);
         setText(event.getLocation(), R.id.event_location);
         setText(event.getDescription(), R.id.event_description);
-
-        Log.d(TAG, event.getName());
-//        Log.d(TAG, event.getDescription());
 
         ImageView testImage = findViewById(R.id.event_image);
         testImage.setImageResource(R.drawable.test_event_image_2);
