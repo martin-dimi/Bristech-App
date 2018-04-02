@@ -43,7 +43,7 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
 
         holder.myTitle.setText(event.getName());
         holder.myImage.setImageResource(R.drawable.test_event_image_2);
-        holder.myShortDescription.setText(event.getDescriptionHtml());
+        holder.myShortDescription.setText(event.getShortDescription());
         holder.myTime.setText(event.getTimeStr());
         holder.myDate.setText(event.getDateStr());
         holder.myLocation.setText(event.getLocation());

@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.text.Html;
 import android.text.Spanned;
+import android.util.Log;
 
 import com.bristech.bristech.R;
 
@@ -26,12 +27,14 @@ public class Event implements Serializable{
     private String eventUrl;
 
     private String location;
+    private String shortDescription;
 //    private Drawable image;
 
     public Event() {
 
     }
 
+    // TODO: specify whether event is from meetup in order to format description as HTML or not
     public Event(long id, String name, String description, Long time, Long duration, int waitlistCount, String status, String eventUrl, List<User> users, String backdrop, String location/*, Drawable image*/) {
         this.id = id;
         this.name = name;
@@ -72,6 +75,30 @@ public class Event implements Serializable{
         else { return Html.fromHtml("no_description"); }
     }
 
+    public String getShortDescription() {
+        if( this.shortDescription != null ) {
+            return this.shortDescription;
+        }
+
+        if( this.description != null ) {
+            try {
+                String[] pSep = description.split("<br/>")[1].split("</p>");
+                this.shortDescription = pSep[0].concat("\n\n").concat(pSep[1].split("<p>")[1]);
+            }
+            catch(Exception e1) {
+                try {
+                    String[] ppSep = description.split("</p>");
+                    this.shortDescription = ppSep[0].split("<p>")[1].concat("\n\n").concat(ppSep[1].split("<p>")[1]);
+                }
+                catch(Exception e2) {
+                    this.shortDescription = this.description;
+                }
+            }
+            return this.shortDescription;
+        }
+        else { return "no_short_description"; }
+    }
+
     public void setDescription(String description) {
         this.description = description;
     }
@@ -88,11 +115,12 @@ public class Event implements Serializable{
         this.time = time;
     }
 
+    // TODO: fix time
     public String getTimeStr() {
         if( time != null ) {
-            SimpleDateFormat formatter = new SimpleDateFormat("hh:mm");
+            SimpleDateFormat formatter = new SimpleDateFormat("EEE HH:mm");
             Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(this.time);
+            calendar.setTimeInMillis(this.time + 3600000 * 19);
             String retStr = formatter.format(calendar.getTime());
             return retStr;
         }
@@ -159,5 +187,6 @@ public class Event implements Serializable{
 //        if( this.image != null ) { return image; }
 //        else { return ContextCompat.getDrawable(inActivity,R.drawable.test_event_image_2); }
 //    }
+
 
 }
