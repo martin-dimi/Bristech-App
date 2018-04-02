@@ -15,10 +15,12 @@ import android.widget.Toast;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.entities.User;
 import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
 import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.LoginUtils;
+import com.bristech.bristech.utils.UserUtils;
 
 import java.util.List;
 
@@ -52,7 +54,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(!isLoggedIn){
             Intent startLogin = new Intent(this, LoginActivity.class);
             startActivity(startLogin);
-        }else Toast.makeText(this, "You are logged in", Toast.LENGTH_LONG).show();
+        }else {
+            Toast.makeText(this, "You are logged in", Toast.LENGTH_LONG).show();
+            UserUtils.getCurrentUser();
+        }
+
 
         // set up navigation functionality of the sidebar
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

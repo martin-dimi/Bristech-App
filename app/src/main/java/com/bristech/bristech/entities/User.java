@@ -10,6 +10,7 @@ public class User{
     private String picture;
     private List<Event> events;
 
+    public static User currentUser;
 
     public User() {
     }

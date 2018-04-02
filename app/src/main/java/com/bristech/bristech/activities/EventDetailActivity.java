@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -14,11 +15,16 @@ import android.support.design.widget.CollapsingToolbarLayout;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.entities.User;
+import com.bristech.bristech.utils.EventUtils;
+import com.bristech.bristech.utils.UserUtils;
 
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
+
+    Event mEvent;
 
     @SuppressLint("ResourceType")
     @Override
@@ -26,14 +32,14 @@ public class EventDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
 
-        Event event = (Event) getIntent().getSerializableExtra(EVENT);
-        setText(event.getName(), R.id.event_title);
-        setText(event.getDateStr(), R.id.event_date);
-        setText(event.getTimeStr(), R.id.event_time);
-        setText(event.getLocation(), R.id.event_location);
+        mEvent = (Event) getIntent().getSerializableExtra(EVENT);
+        setText(mEvent.getName(), R.id.event_title);
+        setText(mEvent.getDateStr(), R.id.event_date);
+        setText(mEvent.getTimeStr(), R.id.event_time);
+        setText(mEvent.getLocation(), R.id.event_location);
 
         TextView textView = findViewById(R.id.event_description);
-        textView.setText(event.getDescriptionHtml());
+        textView.setText(mEvent.getDescriptionHtml());
 
         ImageView testImage = findViewById(R.id.event_image);
         testImage.setImageResource(R.drawable.test_event_image_2);
@@ -54,11 +60,30 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     public void registerForTalkBtnPress(View view) {
-        Log.i("SettingsActivity", "Register for talk button pressed");
-        new AlertDialog.Builder(this)
-                .setTitle("Notice")
-                .setMessage("You are successfully registered for this event.")
-                .setPositiveButton("OK", null)
-                .show();
+        register();
+    }
+
+    void register(){
+        EventUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new EventUtils.EventsCallback<Boolean>() {
+            @Override
+            public void onComplete(final Boolean object) {
+                UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                    @Override
+                    public void onComplete(User uobject) {
+                        User.currentUser = uobject;
+                        if( object ) {
+                            Snackbar.make(findViewById(R.id.login_coordinator),
+                                    "Registered"
+                                    , Snackbar.LENGTH_LONG).show();
+                        }
+                        else {
+                            Snackbar.make(findViewById(R.id.login_coordinator),
+                                    "Unregistered"
+                                    , Snackbar.LENGTH_LONG).show();
+                        }
+                    }
+                });
+            }
+        });
     }
 }

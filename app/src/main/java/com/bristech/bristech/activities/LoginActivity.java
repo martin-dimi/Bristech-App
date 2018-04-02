@@ -2,6 +2,7 @@ package com.bristech.bristech.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -236,5 +237,6 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
 
     private void userHasLoggedIn(User user){
         // TODO Do something with the user.. like save it to sharedPreferences
+        User.currentUser = user;
     }
 }

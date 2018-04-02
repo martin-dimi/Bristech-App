@@ -75,6 +75,15 @@ public class UserUtils {
                 });
     }
 
+    public static void getCurrentUser() {
+        getUser(new UserCallback<User>() {
+            @Override
+            public void onComplete(User object) {
+                User.currentUser = object;
+            }
+        });
+    }
+
     public interface UserCallback<T> {
         void onComplete(T object);
     }
