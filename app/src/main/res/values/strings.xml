@@ -5,7 +5,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="btn_log_out">Log Out</string>
     <string name="register_for_talk">Register for Talk</string>
     <string name="modify_interests">Modify Interests</string>
@@ -76,7 +75,6 @@
     <string name="event_location">Event Location</string>
     <string name="event_description">Event Description</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 

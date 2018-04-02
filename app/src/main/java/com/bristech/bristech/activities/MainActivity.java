@@ -120,15 +120,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void showUpcomingEvents() {
         EventsFragment eventsFragment = EventsFragment.getInstance();
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
-
-
-        //TODO get the events in createActivity and pass appropriate events to fragments
-        getEvents(eventsFragment);
+        EventUtils.getUpcomingEvents(eventsFragment);
     }
 
     private void showPastEvents() {
         EventsFragment eventsFragment = EventsFragment.getInstance();
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, eventsFragment).commit();
+        EventUtils.getPastEvents(eventsFragment);
     }
 
     private void showVolunteerSpeaker() {
@@ -152,10 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private void getEvents(EventsFragment eventsFragment){
-
-        // TODO check out eventUtils, get appropriate events, use your brain
-        //mEventList = Dummy.getEvents();
-        EventUtils.getPastEvents(eventsFragment);
+        EventUtils.getAllEvents(eventsFragment);
     }
 
 }

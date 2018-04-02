@@ -1,6 +1,12 @@
 package com.bristech.bristech.entities;
 
 
+import android.app.Activity;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
+
+import com.bristech.bristech.R;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -11,8 +17,6 @@ public class Event implements Serializable{
     private long id;
     private String name;
     private String description;
-
-    // TODO The time is in milliseconds transfer it to Date type (hint use set method to get long and transfer it to Date)
     private Long time;
     private Long duration;
     private int waitlistCount;
@@ -20,6 +24,7 @@ public class Event implements Serializable{
     private String eventUrl;
 
     private String location;
+//    private Drawable image;
 
     public Event(){
 
@@ -35,6 +40,7 @@ public class Event implements Serializable{
         this.status = status;
         this.eventUrl = eventUrl;
         this.location = location;
+//        this.image = image;
     }
 
     public long getId() {
@@ -141,5 +147,10 @@ public class Event implements Serializable{
     public void setLocation(String newLocation) {
         this.location = newLocation;
     }
+
+//    public Drawable getImage(Activity inActivity) {
+//        if( this.image != null ) { return image; }
+//        else { return ContextCompat.getDrawable(inActivity,R.drawable.test_event_image_2); }
+//    }
 
 }

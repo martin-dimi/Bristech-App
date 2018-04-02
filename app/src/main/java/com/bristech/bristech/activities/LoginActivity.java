@@ -13,6 +13,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.User;
@@ -96,13 +97,15 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
 
                     @Override
                     public void onCancel() {
-                        //TODO Add snackbar or toast
+                        //TODO Pass activity to toast
+                        // Toast.makeText(this, "Facebook login cancelled", Toast.LENGTH_LONG).show();
                         // App code
                     }
 
                     @Override
                     public void onError(FacebookException exception) {
-                        //TODO Add snackbar or toast
+                        //TODO Pass activity to toast
+                        // Toast.makeText(this, "Error logging in with Facebook", Toast.LENGTH_LONG).show();
                         // App code
                     }
                 });

@@ -35,11 +35,6 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
 
     public static EventsFragment getInstance(){
         EventsFragment fragment = new EventsFragment();
-//
-//        Bundle bundle = new Bundle();
-//        bundle.putSerializable(EVENT, (ArrayList<Event>) events);
-//        fragment.setArguments(bundle);
-
         return fragment;
     }
 
@@ -67,7 +62,7 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
     }
 
     private void setEvents(List<Event> events){
-        Log.d(TAG, "seeting the events:" + events.get(0).getName());
+        Log.d(TAG, "seating the events:" + events.get(0).getName());
         this.mEvents = events;
         updateAdaptor(events);
     }
@@ -98,7 +93,6 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
     @Override
     public void onComplete(List<Event> events) {
         setEvents(events);
-
         Toast.makeText(getActivity(), "Events are updated!", Toast.LENGTH_LONG).show();
     }
 }

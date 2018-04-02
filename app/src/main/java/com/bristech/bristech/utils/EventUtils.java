@@ -7,6 +7,7 @@ import android.util.Log;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.services.EventService;
 
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -56,7 +57,6 @@ public class EventUtils {
                 Log.e(TAG, t.getMessage());
             }
         });
-
     }
 
     /**
@@ -101,6 +101,7 @@ public class EventUtils {
                 if(response.isSuccessful()){
                     Log.i(TAG, "successfully fetched events");
                     List<Event> events = response.body();
+                    Collections.reverse(events);
 
                     // TODO Add null check for callback
                     callback.onComplete(events);
