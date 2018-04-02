@@ -30,8 +30,8 @@ public class EventDetailActivity extends AppCompatActivity {
         setText(event.getLocation(), R.id.event_location);
         setText(event.getDescription(), R.id.event_description);
 
-//        ImageView testImage = findViewById(R.id.event_image);
-//        testImage.setImageDrawable(event.getImage(this));
+        ImageView testImage = findViewById(R.id.event_image);
+        testImage.setImageResource(R.drawable.test_event_image_2);
     }
 
     private void setText(String key, int textViewID) {

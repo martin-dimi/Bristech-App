@@ -26,11 +26,11 @@ public class Event implements Serializable{
     private String location;
 //    private Drawable image;
 
-    public Event(){
+    public Event() {
 
     }
 
-    public Event(long id, String name, String description, Long time, Long duration, int waitlistCount, String status, String eventUrl, List<User> users, String backdrop, String location) {
+    public Event(long id, String name, String description, Long time, Long duration, int waitlistCount, String status, String eventUrl, List<User> users, String backdrop, String location/*, Drawable image*/) {
         this.id = id;
         this.name = name;
         this.description = description;
