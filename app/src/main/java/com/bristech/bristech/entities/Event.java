@@ -17,11 +17,13 @@ public class Event implements Serializable{
     private String status;
     private String eventUrl;
 
+    private String location;
+
     public Event(){
 
     }
 
-    public Event(long id, String name, String description, Long time, Long duration, int waitlistCount, String status, String eventUrl, List<User> users, String backdrop) {
+    public Event(long id, String name, String description, Long time, Long duration, int waitlistCount, String status, String eventUrl, List<User> users, String backdrop, String location) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -30,6 +32,7 @@ public class Event implements Serializable{
         this.waitlistCount = waitlistCount;
         this.status = status;
         this.eventUrl = eventUrl;
+        this.location = location;
     }
 
     public long getId() {
@@ -41,7 +44,8 @@ public class Event implements Serializable{
     }
 
     public String getName() {
-        return name;
+        if( name != null ) { return name; }
+        else { return "no_name"; }
     }
 
     public void setName(String name) {
@@ -49,7 +53,8 @@ public class Event implements Serializable{
     }
 
     public String getDescription() {
-        return description;
+        if( description != null ) { return description; }
+        else { return "no_description"; }
     }
 
     public void setDescription(String description) {
@@ -57,7 +62,11 @@ public class Event implements Serializable{
     }
 
     public Long getTime() {
-        return time;
+        if( time != null ) { return time; }
+        else {
+            long i = 0;
+            return i;
+        }
     }
 
     public void setTime(Long time) {
@@ -94,6 +103,15 @@ public class Event implements Serializable{
 
     public void setEventUrl(String eventUrl) {
         this.eventUrl = eventUrl;
+    }
+
+    public String getLocation() {
+        if( description != null ) { return location; }
+        else { return "no_location"; }
+    }
+
+    public void setLocation(String newLocation) {
+        this.location = newLocation;
     }
 
 }

@@ -15,9 +15,9 @@
         android:fontFamily="@font/roboto_black"
         android:textSize="30sp"
         android:textColor="@color/black"
+        android:text="empty_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/event_image"
-        tools:text="@string/event_title" />
+        app:layout_constraintTop_toBottomOf="@+id/event_image" />
 
     <ImageView
         android:id="@+id/event_image"
@@ -36,7 +36,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_italic"
-        android:text="@string/event_date"
+        android:text="empty_date"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_title" />
@@ -48,7 +48,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_italic"
-        android:text="@string/event_time"
+        android:text="empty_time"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/event_date"
         app:layout_constraintTop_toBottomOf="@+id/event_title" />
@@ -60,7 +60,7 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_italic"
-        android:text="@string/event_location"
+        android:text="empty_location"
         android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@+id/event_time"
         app:layout_constraintTop_toBottomOf="@+id/event_title" />
@@ -74,7 +74,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_regular"
-        android:text="@string/event_description"
+        android:text="empty_description"
         android:textAlignment="center"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
