@@ -34,6 +34,7 @@
         <Button
             android:id="@+id/btn_log_out"
             style="@style/btn_effect"
+            android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:onClick="logOutBtnPress"
             android:text="@string/btn_log_out"
@@ -42,6 +43,7 @@
         <Button
             android:id="@+id/btn_modify_interests"
             style="@style/btn_effect"
+            android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:onClick="modifyInterestsBtnPress"
             android:text="@string/modify_interests"
@@ -50,6 +52,7 @@
         <Button
             android:id="@+id/btn_edit_user_settings"
             style="@style/btn_effect"
+            android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
             android:onClick="editUserSettingsBtnPress"
             android:text="@string/user_settings"
