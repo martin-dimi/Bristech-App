@@ -2,12 +2,15 @@ package com.bristech.bristech.activities;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
+import android.support.design.widget.CollapsingToolbarLayout;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
@@ -32,6 +35,15 @@ public class EventDetailActivity extends AppCompatActivity {
 
         ImageView testImage = findViewById(R.id.event_image);
         testImage.setImageResource(R.drawable.test_event_image_2);
+
+        Toolbar toolbar = findViewById(R.id.event_toolbar);
+        toolbar.setNavigationIcon(R.drawable.arrow_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
     }
 
     private void setText(String key, int textViewID) {

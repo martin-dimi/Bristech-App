@@ -51,7 +51,7 @@
     <dimen name="event_time_t_padding">16dp</dimen>
     <dimen name="event_time_b_padding">8dp</dimen>
 
-
+    <dimen name="event_toolbar_height">56dp</dimen>
 
     <!-- card event -->
     <dimen name="card_event_l_padding">8dp</dimen>
