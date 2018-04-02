@@ -176,7 +176,7 @@ public class Event implements Serializable{
 
     public String getLocation() {
         if( location != null ) { return location; }
-        else { return "no_location"; }
+        else { return "Bristol Engine Shed"; }
     }
 
     public void setLocation(String newLocation) {
@@ -187,6 +187,5 @@ public class Event implements Serializable{
 //        if( this.image != null ) { return image; }
 //        else { return ContextCompat.getDrawable(inActivity,R.drawable.test_event_image_2); }
 //    }
-
 
 }
