@@ -12,30 +12,70 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Space
+        android:id="@+id/space_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,20:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/volunteerToSpeak"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/background_light"
+        android:textSize="20sp"
+        app:layout_constraintDimensionRatio="h,10:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space_0" />
+
+    <Space
+        android:id="@+id/space_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,10:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
     <ImageView
         android:id="@+id/vulenteer_speak"
-        android:layout_width="353dp"
-        android:layout_height="162dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="28dp"
         android:background="@color/cardview_light_background"
         android:contentDescription="@string/todo"
         android:scaleType="fitCenter"
         android:src="@drawable/volunteer_speak"
+        app:layout_constraintDimensionRatio="h,20:9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/space_1" />
+
+    <Space
+        android:id="@+id/space_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,50:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vulenteer_speak" />
 
     <TextView
         android:id="@+id/txt_volunteer_speaker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/txt_ask_for_details"
         android:textAlignment="center"
@@ -46,7 +86,34 @@
         app:layout_constraintHorizontal_bias="0.96"
         app:layout_constraintStart_toEndOf="@+id/app_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vulenteer_speak" />
+        app:layout_constraintTop_toBottomOf="@+id/space_2" />
+
+    <Space
+        android:id="@+id/space_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,50:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_volunteer_speaker" />
+
+    <EditText
+        android:id="@+id/speaker_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:cursorVisible="true"
+        android:ems="10"
+        android:fontFamily="@font/roboto_regular"
+        android:hint="@string/email_address"
+        android:inputType="textEmailAddress"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:theme="@style/MyEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space_3" />
+
 
     <EditText
         android:id="@+id/speaker_name"
@@ -86,75 +153,50 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/speaker_name" />
 
-    <EditText
-        android:id="@+id/speaker_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:cursorVisible="true"
-        android:ems="10"
-        android:fontFamily="@font/roboto_regular"
-        android:hint="@string/email_address"
-        android:inputType="textEmailAddress"
-        android:textCursorDrawable="@drawable/cursor_color"
-        android:theme="@style/MyEditText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+    <Space
+        android:id="@+id/space_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,50:1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_volunteer_speaker" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/speaker_topic" />
+
+    <TextView
+        android:id="@+id/thank_for_speaker_volunteer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/roboto_regular"
+        android:text="thanks (should not see this)"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:layout_constraintDimensionRatio="h,16:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space_4" />
 
     <Button
         android:id="@+id/btn_submit"
         style="@style/btn_effect"
         android:layout_height="32dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_medium"
         android:onClick="submitBtnPress"
         android:text="@string/btn_submit"
-        app:layout_constraintBottom_toBottomOf="@+id/app_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/thank_for_speaker_volunteer" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="31dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="@font/roboto_medium"
-        android:text="@string/volunteerToSpeak"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/background_light"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
+    <Space
+        android:id="@+id/space_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,:1"
+        app:layout_constraintBottom_toBottomOf="@+id/app_bar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_submit" />
 
-    <TextView
-        android:id="@+id/thank_for_speaker_volunteer"
-        android:layout_width="216dp"
-        android:layout_height="22dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/roboto_regular"
-        android:text="thanks (should not see this)"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/speaker_topic" />
+
 
 </android.support.constraint.ConstraintLayout>

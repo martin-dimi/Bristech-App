@@ -124,7 +124,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event_date" />
 
-    <!--TODO: FIX POSITION -->
     <Button
         android:id="@+id/btn_register_for_event"
         style="@style/btn_effect"
