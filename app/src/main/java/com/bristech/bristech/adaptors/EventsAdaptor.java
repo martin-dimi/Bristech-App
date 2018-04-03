@@ -42,11 +42,11 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
         Event event = mEvents.get(position);
 
         holder.myTitle.setText(event.getName());
-        holder.myImage.setImageResource(R.drawable.test_event_image_2);
+//        holder.myImage.setImageResource(R.drawable.test_event_image_2);
         holder.myShortDescription.setText(event.getShortDescription());
         holder.myTime.setText(event.getTimeStr());
         holder.myDate.setText(event.getDateStr());
-        holder.myLocation.setText(event.getLocation());
+//        holder.myLocation.setText(event.getLocation());
     }
 
     @Override
@@ -62,21 +62,21 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
     class EventCard extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView myTitle;
-        ImageView myImage;
+//        ImageView myImage;
         TextView myTopic;
         TextView myDate;
         TextView myTime;
-        TextView myLocation;
+//        TextView myLocation;
         TextView myShortDescription;
 
         EventCard(View itemView) {
             super(itemView);
             myTitle = itemView.findViewById(R.id.event_card_title);
-            myImage = itemView.findViewById(R.id.event_card_image);
+//            myImage = itemView.findViewById(R.id.event_card_image);
             myTopic = itemView.findViewById(R.id.event_card_topic);
             myDate = itemView.findViewById(R.id.event_card_date);
             myTime = itemView.findViewById(R.id.event_card_time);
-            myLocation = itemView.findViewById(R.id.event_card_location);
+//            myLocation = itemView.findViewById(R.id.event_card_location);
             myShortDescription = itemView.findViewById(R.id.event_card_shortdescription);
             itemView.setOnClickListener(this);
         }
