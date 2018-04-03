@@ -7,6 +7,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
 
 public interface EventService {
     @GET("/event/all")
@@ -18,6 +19,6 @@ public interface EventService {
     @GET("/event/past")
     Call<List<Event>> getPastEvents();
 
-    @GET("/event/attend")
+    @POST("/event/attend")
     Call<Boolean> attendEvent(@Header("email") String email, @Header("event_id") long eventId);
 }

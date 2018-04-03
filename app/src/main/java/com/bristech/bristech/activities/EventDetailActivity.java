@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -52,6 +53,11 @@ public class EventDetailActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        Button registerButton = findViewById(R.id.btn_register_for_event);
+        if(mEvent != null && mEvent.getStatus().equals("past")) {
+            registerButton.setVisibility(View.GONE);
+        }
     }
 
     private void setText(String key, int textViewID) {
@@ -72,12 +78,12 @@ public class EventDetailActivity extends AppCompatActivity {
                     public void onComplete(User uobject) {
                         User.currentUser = uobject;
                         if( object ) {
-                            Snackbar.make(findViewById(R.id.login_coordinator),
+                            Snackbar.make(findViewById(R.id.activity_event_coordinator),
                                     "Registered"
                                     , Snackbar.LENGTH_LONG).show();
                         }
                         else {
-                            Snackbar.make(findViewById(R.id.login_coordinator),
+                            Snackbar.make(findViewById(R.id.activity_event_coordinator),
                                     "Unregistered"
                                     , Snackbar.LENGTH_LONG).show();
                         }
