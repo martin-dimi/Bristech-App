@@ -2,6 +2,7 @@ package com.bristech.bristech.entities;
 
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
 import android.text.Html;
@@ -14,6 +15,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 public class Event implements Serializable{
 
@@ -28,7 +30,9 @@ public class Event implements Serializable{
 
     private String location;
     private String shortDescription;
+    private Spanned shortDescriptionHtml;
 //    private Drawable image;
+    private int tileColour;
 
     public Event() {
 
@@ -46,6 +50,7 @@ public class Event implements Serializable{
         this.eventUrl = eventUrl;
         this.location = location;
 //        this.image = image;
+        this.tileColour = 0;
     }
 
     public long getId() {
@@ -75,29 +80,30 @@ public class Event implements Serializable{
         else { return Html.fromHtml("no_description"); }
     }
 
-    public String getShortDescription() {
-        if( this.shortDescription != null ) {
-            return this.shortDescription;
+    public Spanned getShortDescription() {
+        if( this.shortDescriptionHtml != null ) {
+            return this.shortDescriptionHtml;
         }
 
         if( this.description != null ) {
             try {
                 String[] pSep = description.split("<br/>")[1].split("</p>");
-                this.shortDescription = pSep[0].concat("\n\n").concat(pSep[1].split("<p>")[1]);
+                this.shortDescription = pSep[0].concat("<br/><br/>").concat(pSep[1].split("<p>")[1]);
             }
             catch(Exception e1) {
                 try {
                     String[] ppSep = description.split("</p>");
-                    this.shortDescription = ppSep[0].split("<p>")[1].concat("\n\n").concat(ppSep[1].split("<p>")[1]);
+                    this.shortDescription = ppSep[0].split("<p>")[1].concat("<br/><br/>").concat(ppSep[1].split("<p>")[1]);
                 }
                 catch(Exception e2) {
                     this.shortDescription = this.description;
                 }
             }
-            this.shortDescription = this.shortDescription.replaceAll("<br/>", "\n\n");
-            return this.shortDescription;
+//            this.shortDescription = this.shortDescription.replaceAll("<br/>", "\n\n");
+            this.shortDescriptionHtml = Html.fromHtml(this.shortDescription);
+            return this.shortDescriptionHtml;
         }
-        else { return "no_short_description"; }
+        else { return Html.fromHtml("no_short_description"); }
     }
 
     public void setDescription(String description) {
@@ -182,6 +188,34 @@ public class Event implements Serializable{
 
     public void setLocation(String newLocation) {
         this.location = newLocation;
+    }
+
+    public int getTileColour() {
+        if(this.tileColour != 0) {
+            return this.tileColour;
+        }
+        else {
+            try {
+                int seed = 0;
+                seed += Character.getNumericValue(this.name.charAt(0));
+                seed += Character.getNumericValue(this.name.charAt(1));
+                seed += Character.getNumericValue(this.name.charAt(2));
+                seed += Character.getNumericValue(this.name.charAt(3));
+                seed += Character.getNumericValue(this.name.charAt(4));
+
+                Random rand = new Random(seed);
+
+                int r = rand.nextInt(149) + 1;
+                int g = rand.nextInt(149) + 1;
+                int b = rand.nextInt(149) + 1;
+
+                return Color.rgb(r, g, b);
+            }
+            catch( Exception e1 ) {
+                // maroon
+                return Color.rgb(158, 28, 48);
+            }
+        }
     }
 
 //    public Drawable getImage(Activity inActivity) {
