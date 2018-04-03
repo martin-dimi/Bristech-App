@@ -37,13 +37,13 @@ public class EventDetailActivity extends AppCompatActivity {
         setText(mEvent.getName(), R.id.event_title);
         setText(mEvent.getDateStr(), R.id.event_date);
         setText(mEvent.getTimeStr(), R.id.event_time);
-        setText(mEvent.getLocation(), R.id.event_location);
+//        setText(mEvent.getLocation(), R.id.event_location);
 
         TextView textView = findViewById(R.id.event_description);
         textView.setText(mEvent.getDescriptionHtml());
 
-        ImageView testImage = findViewById(R.id.event_image);
-        testImage.setImageResource(R.drawable.test_event_image_2);
+//        ImageView testImage = findViewById(R.id.event_image);
+//        testImage.setImageResource(R.drawable.test_event_image_2);
 
         Toolbar toolbar = findViewById(R.id.event_toolbar);
         toolbar.setNavigationIcon(R.drawable.arrow_back);

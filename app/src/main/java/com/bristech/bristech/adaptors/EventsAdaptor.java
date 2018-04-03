@@ -6,6 +6,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -46,6 +47,7 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
         holder.myShortDescription.setText(event.getShortDescription());
         holder.myTime.setText(event.getTimeStr());
         holder.myDate.setText(event.getDateStr());
+        holder.myFrame.setBackgroundColor(event.getTileColour());
 //        holder.myLocation.setText(event.getLocation());
     }
 
@@ -63,21 +65,23 @@ public class EventsAdaptor extends RecyclerView.Adapter<EventsAdaptor.EventCard>
 
         TextView myTitle;
 //        ImageView myImage;
-        TextView myTopic;
+//        TextView myTopic;
         TextView myDate;
         TextView myTime;
 //        TextView myLocation;
         TextView myShortDescription;
+        FrameLayout myFrame;
 
         EventCard(View itemView) {
             super(itemView);
             myTitle = itemView.findViewById(R.id.event_card_title);
 //            myImage = itemView.findViewById(R.id.event_card_image);
-            myTopic = itemView.findViewById(R.id.event_card_topic);
+//            myTopic = itemView.findViewById(R.id.event_card_topic);
             myDate = itemView.findViewById(R.id.event_card_date);
             myTime = itemView.findViewById(R.id.event_card_time);
 //            myLocation = itemView.findViewById(R.id.event_card_location);
             myShortDescription = itemView.findViewById(R.id.event_card_shortdescription);
+            myFrame = itemView.findViewById(R.id.event_card_colour);
             itemView.setOnClickListener(this);
         }
 

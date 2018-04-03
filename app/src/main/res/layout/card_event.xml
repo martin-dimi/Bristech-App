@@ -8,17 +8,18 @@
     android:layout_height="wrap_content"
     app:cardBackgroundColor="@color/colorCard"
     android:layout_margin="8dp"
-    android:elevation="32dp">
+    android:elevation="8dp"
+    app:cardCornerRadius="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintDimensionRatio="1:1">
+        android:orientation="vertical">
 
         <FrameLayout
+            android:id="@+id/event_card_colour"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             android:background="@color/maroon">
 
             <TextView
@@ -30,7 +31,9 @@
                 android:textColor="@color/white"
                 android:layout_margin="8dp"
                 android:textSize="24sp"
-                android:layout_gravity="center"/>
+                android:padding="8dp"
+                android:layout_gravity="center"
+                android:fontFamily="@font/roboto_condensed_bold"/>
 
         </FrameLayout>
 
@@ -49,7 +52,8 @@
                     android:layout_height="wrap_content"
                     tools:text="test_short_description"
                     android:textSize="14sp"
-                    android:padding="16dp"/>
+                    android:padding="16dp"
+                    android:fontFamily="@font/roboto_regular"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -60,14 +64,16 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="test_time"
-                        android:padding="8dp"/>
+                        android:padding="8dp"
+                        android:fontFamily="@font/roboto_italic" />
 
                     <TextView
                         android:id="@+id/event_card_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="test_date"
-                        android:padding="8dp"/>
+                        android:padding="8dp"
+                        android:fontFamily="@font/roboto_italic"/>
 
                 </LinearLayout>
 
