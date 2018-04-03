@@ -94,6 +94,7 @@ public class Event implements Serializable{
                     this.shortDescription = this.description;
                 }
             }
+            this.shortDescription = this.shortDescription.replaceAll("<br/>", "\n\n");
             return this.shortDescription;
         }
         else { return "no_short_description"; }
