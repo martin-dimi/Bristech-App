@@ -42,9 +42,6 @@ public class EventDetailActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.event_description);
         textView.setText(mEvent.getDescriptionHtml());
 
-//        ImageView testImage = findViewById(R.id.event_image);
-//        testImage.setImageResource(R.drawable.test_event_image_2);
-
         Toolbar toolbar = findViewById(R.id.event_toolbar);
         toolbar.setNavigationIcon(R.drawable.arrow_back);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {

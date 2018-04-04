@@ -30,7 +30,6 @@ public class Event implements Serializable{
 
     private String location;
     private String shortDescription;
-    private Spanned shortDescriptionHtml;
 //    private Drawable image;
     private int tileColour;
 
@@ -81,10 +80,6 @@ public class Event implements Serializable{
     }
 
     public Spanned getShortDescription() {
-        if( this.shortDescriptionHtml != null ) {
-            return this.shortDescriptionHtml;
-        }
-
         if( this.description != null ) {
             try {
                 String[] pSep = description.split("<br/>")[1].split("</p>");
@@ -99,9 +94,7 @@ public class Event implements Serializable{
                     this.shortDescription = this.description;
                 }
             }
-//            this.shortDescription = this.shortDescription.replaceAll("<br/>", "\n\n");
-            this.shortDescriptionHtml = Html.fromHtml(this.shortDescription);
-            return this.shortDescriptionHtml;
+            return Html.fromHtml(this.shortDescription);
         }
         else { return Html.fromHtml("no_short_description"); }
     }
