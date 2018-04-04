@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 
@@ -16,11 +15,14 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
     private EditText mSpeakerNameField;
     private EditText mSpeakerTopicField;
     private EditText mSpeakerEmailField;
+    private View hiddenText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_speaker);
+        hiddenText = findViewById(R.id.thank_for_speaker_volunteer);
+        hiddenText.setVisibility(View.GONE);
         mSpeakerNameField = findViewById(R.id.speaker_name);
         mSpeakerTopicField = findViewById(R.id.speaker_topic);
         mSpeakerEmailField = findViewById(R.id.speaker_email);
@@ -40,8 +42,7 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
                 .setPositiveButton("GO BACK", null)
                 .show();
 
-//        TextView textView = findViewById(R.id.thank_for_speaker_volunteer);
-//        textView.setText(R.string.txt_thank_for_speaker_volunteer);
+        hiddenText.setVisibility(View.VISIBLE);
     }
 
 
