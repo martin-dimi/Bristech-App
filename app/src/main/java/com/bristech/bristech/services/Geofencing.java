@@ -16,8 +16,10 @@ public class Geofencing implements OnSuccessListener<Void>, OnFailureListener {
 
     // Constants
     private static final String TAG = Geofencing.class.getSimpleName();
+
     private static final float GEOFENCE_RADIUS = 50; // 50 meters
     private static final long GEOFENCE_TIMEOUT = 7 * 24 * 60 * 60 * 1000; // 1 week
+
     private static final String ENGINE_SHED_ID = "157457";
     private static final double ENGINE_SHED_LAT = 51.448916;
     private static final double ENGINE_SHED_LNG = -2.583420;
@@ -45,7 +47,6 @@ public class Geofencing implements OnSuccessListener<Void>, OnFailureListener {
             return;
         }
         try {
-
             LocationServices.getGeofencingClient(mContext)
                     .addGeofences(getGeofencingRequest(), getGeofencePendingIntent())
                     .addOnSuccessListener(this)
@@ -58,8 +59,7 @@ public class Geofencing implements OnSuccessListener<Void>, OnFailureListener {
     }
 
     /***
-     * Creates a GeofencingRequest object using the mGeofenceList ArrayList of Geofences
-     * Used by {@code #registerGeofences}
+     * Creates a GeofencingRequest object using the mGeofence
      *
      * @return the GeofencingRequest object
      */
@@ -71,8 +71,7 @@ public class Geofencing implements OnSuccessListener<Void>, OnFailureListener {
     }
 
     /***
-     * Creates a PendingIntent object using the GeofenceTransitionsIntentService class
-     * Used by {@code #registerGeofences}
+     * Creates a PendingIntent object using the GeofenceBroadcastReceiver class as a receiver
      *
      * @return the PendingIntent object
      */
