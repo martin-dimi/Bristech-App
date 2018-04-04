@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.widget.Toolbar;
@@ -39,6 +40,9 @@ public class EventDetailActivity extends AppCompatActivity {
         setText(mEvent.getTimeStr(), R.id.event_time);
 //        setText(mEvent.getLocation(), R.id.event_location);
 
+        FrameLayout myFrame = findViewById(R.id.event_colour_frame);
+        myFrame.setBackgroundColor(mEvent.getTileColour());
+
         TextView textView = findViewById(R.id.event_description);
         textView.setText(mEvent.getDescriptionHtml());
 
@@ -55,6 +59,11 @@ public class EventDetailActivity extends AppCompatActivity {
         if(mEvent != null && mEvent.getStatus().equals("past")) {
             registerButton.setVisibility(View.GONE);
         }
+
+        if(User.currentUser == null || User.currentUser.getEmail() == null) {
+            registerButton.setVisibility(View.GONE);
+        }
+
     }
 
     private void setText(String key, int textViewID) {
