@@ -36,7 +36,7 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
         String email = mSpeakerEmailField.getText().toString();
         new AlertDialog.Builder(this)
                 .setTitle("Notice")
-                .setMessage(R.string.txt_thank_for_speaker_volunteer)
+                .setMessage(String.format(getString(R.string.txt_thank_for_speaker_volunteer), name))
                 .setPositiveButton("GO BACK", null)
                 .show();
 

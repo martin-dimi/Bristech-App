@@ -12,7 +12,7 @@
     <string name="btn_submit">Submit</string>
     <string name="btn_homepage">Homepage</string>
     <string name="thank_for_feedback">Thank you for the feedback!</string>
-    <string name="txt_thank_for_speaker_volunteer">Thank you for volunteering [name]</string>
+    <string name="txt_thank_for_speaker_volunteer">Thank you for volunteering %1$s</string>
     <string name="txt_ask_for_details">Enter details of the speaker you would like to volunteer below, and we will courteously contact them!</string>
     <string name="no_description_set">No content description set yet</string>
     <string name="email">email</string>
