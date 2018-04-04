@@ -3,7 +3,6 @@
     package="com.bristech.bristech">
 
     <uses-permission android:name="android.permission.INTERNET"/>
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
@@ -14,10 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
 
+        <receiver android:name=".services.GeofenceBroadcastReceiver" />
+
         <activity
             android:name=".activities.MainActivity"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,8 +63,6 @@
                 <data android:scheme="@string/fb_login_protocol_scheme" />
             </intent-filter>
         </activity>
-
-        <service android:name="com.bristech.bristech.activities.geofencing.GeofenceTransitionsJobIntentService"/>
 
     </application>
 

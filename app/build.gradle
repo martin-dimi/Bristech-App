@@ -20,6 +20,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:support-compat:27.1.0"
     implementation 'com.android.support:appcompat-v7:27.1.0'
     implementation 'com.android.support:animated-vector-drawable:27.1.0'
     implementation 'com.android.support:customtabs:27.1.0'
@@ -42,6 +43,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.google.android.gms:play-services-auth:12.0.1'
     implementation 'com.facebook.android:facebook-android-sdk:4.31.0'
+    implementation 'com.google.android.gms:play-services-places:12.0.1'
+    implementation 'com.google.android.gms:play-services-location:12.0.1'
 
     //tests
     testImplementation 'junit:junit:4.12'

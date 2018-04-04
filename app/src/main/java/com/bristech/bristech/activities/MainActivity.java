@@ -1,10 +1,14 @@
 package com.bristech.bristech.activities;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,29 +19,31 @@ import android.widget.Toast;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
-import com.bristech.bristech.entities.User;
 import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
+import com.bristech.bristech.services.Geofencing;
 import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.LoginUtils;
 import com.bristech.bristech.utils.UserUtils;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String TAG = "MainActivityEventsLoade";
+    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final int PERMISSIONS_REQUEST_FINE_LOCATION = 111;
+
 
     private List<Event> mEventList;
     private FragmentManager mFragmentManager;
+    private Geofencing mGeofencing;
+
 
     // TODO Use onSaveInstanceState to save the instance on device rotaion,
     // TODO so that it doesn't re-download the events again when device is rotated
-
     // TODO save the user in SharedPreferences and use it through there in other activities
-
     // TODO get the events once, not every time you change screens/rotate device
-
     // TODO fix options screen so it's not an activity but a fragment
 
     @Override
@@ -51,14 +57,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //Check if logged in
         boolean isLoggedIn = LoginUtils.isLoggedIn();
-        if(!isLoggedIn){
+        if (!isLoggedIn) {
             Intent startLogin = new Intent(this, LoginActivity.class);
             startActivity(startLogin);
-        }else {
+        } else {
             Toast.makeText(this, "You are logged in", Toast.LENGTH_LONG).show();
             UserUtils.getCurrentUser();
         }
 
+        // Check if app has permissions
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+            requestLocationPermission();
+        }
+
+        mGeofencing = new Geofencing(this);
+        mGeofencing.registerGeofence();
 
         // set up navigation functionality of the sidebar
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -68,7 +82,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
 
         //Gets events and set fragment manager
         mFragmentManager = getSupportFragmentManager();
@@ -94,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        switch (id){
+        switch (id) {
             case R.id.nav_upcoming_events:
                 showUpcomingEvents();
                 break;
@@ -155,8 +168,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mFragmentManager.beginTransaction().replace(R.id.fragment_container, addEventFragment).commit();
     }
 
-    private void getEvents(EventsFragment eventsFragment){
+    private void getEvents(EventsFragment eventsFragment) {
         EventUtils.getAllEvents(eventsFragment);
+    }
+
+    public void requestLocationPermission() {
+        ActivityCompat.requestPermissions(MainActivity.this,
+                new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                PERMISSIONS_REQUEST_FINE_LOCATION);
     }
 
 }
