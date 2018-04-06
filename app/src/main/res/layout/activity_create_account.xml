@@ -8,15 +8,25 @@
 
     <ImageView
         android:id="@+id/img_bristechBanner"
-        android:layout_width="230dp"
-        android:layout_height="250dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@drawable/bristech_banner"
         android:tint="@color/black"
+        app:layout_constraintDimensionRatio="h,5:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:contentDescription="@string/bristech_banner_description"
         android:layout_marginTop="100dp"
         app:layout_constraintVertical_bias="0.0"/>
+
+    <Space
+        android:id="@+id/space_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,20:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner"/>
 
     <EditText
         android:id="@+id/txtEmail"
@@ -31,13 +41,21 @@
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner" />
+        app:layout_constraintTop_toBottomOf="@+id/space_1" />
+
+    <Space
+        android:id="@+id/space_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail"/>
 
     <EditText
         android:id="@+id/txtUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:hint="@string/hint_username"
         android:inputType="textPersonName"
         android:textSize="@dimen/create_account_text_size"
@@ -47,13 +65,21 @@
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/space_2" />
+
+    <Space
+        android:id="@+id/space_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUsername"/>
 
     <EditText
         android:id="@+id/txtFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:hint="@string/first_name"
         android:inputType="textPersonName"
         style="@style/et_loginActivity_loginInformationField"
@@ -63,13 +89,21 @@
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsername" />
+        app:layout_constraintTop_toBottomOf="@+id/space_3" />
+
+    <Space
+        android:id="@+id/space_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtFirstName"/>
 
     <EditText
         android:id="@+id/txtOtherNames"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:hint="@string/other_names"
         android:inputType="textPersonName"
         android:textSize="@dimen/create_account_text_size"
@@ -79,23 +113,39 @@
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFirstName" />
+        app:layout_constraintTop_toBottomOf="@+id/space_4" />
+
+    <Space
+        android:id="@+id/space_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtOtherNames"/>
 
     <Spinner
         android:id="@+id/spiGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:entries="@array/genders_array"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtOtherNames" />
+        app:layout_constraintTop_toBottomOf="@+id/space_5" />
+
+    <Space
+        android:id="@+id/space_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spiGender"/>
 
     <EditText
         android:id="@+id/txtPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
         android:textSize="@dimen/create_account_text_size"
@@ -105,13 +155,21 @@
         android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spiGender" />
+        app:layout_constraintTop_toBottomOf="@+id/space_6" />
+
+    <Space
+        android:id="@+id/space_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword"/>
 
     <EditText
         android:id="@+id/txtRetypePassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         android:hint="@string/retype_password"
         android:inputType="textPassword"
         android:textSize="@dimen/create_account_text_size"
@@ -121,18 +179,26 @@
         android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/space_7" />
+
+    <Space
+        android:id="@+id/space_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,100:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRetypePassword"/>
 
     <Button
         android:id="@+id/btnCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/create_account_vertical_margins"
         style="@style/btn_effect"
         android:text="@string/tv_create_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRetypePassword" />
+        app:layout_constraintTop_toBottomOf="@+id/space_8" />
 
     <TextView
         android:id="@+id/txtInfoText"
