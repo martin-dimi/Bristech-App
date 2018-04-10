@@ -13,6 +13,7 @@
         android:layout_height="match_parent"
         android:id="@+id/app_bar"/>
 
+
     <ImageView
         android:id="@+id/feedback_image"
         android:layout_width="363dp"
@@ -37,7 +38,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:fontFamily="@font/roboto_bold"
+        android:fontFamily="@font/roboto_regular"
         android:gravity="center_horizontal"
         android:padding="@dimen/txt_thank_for_attending_padding"
         android:text="@string/thank_for_attending"
@@ -63,7 +64,6 @@
         android:text="link_holder"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/Feedback"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -74,11 +74,12 @@
     <Button
         android:id="@+id/btn_return_to_homepage"
         style="@style/btn_effect"
+        android:layout_height="@dimen/btn_raised_height"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_regular"
+        android:fontFamily="@font/roboto_medium"
         android:onClick="returnToHomepageBtnPress"
         android:text="@string/btn_homepage"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +92,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"

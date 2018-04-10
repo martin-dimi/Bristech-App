@@ -29,6 +29,7 @@
     <dimen name="btn_raised_margin_ver">6dp</dimen>
     <dimen name="btn_raised_text_size">14sp</dimen>
     <dimen name="btn_raised_height">36dp</dimen>
+    <dimen name="btn_raised_width">36dp</dimen>
 
     <!--Event Detail-->
     <dimen name="event_topic_t_padding">6dp</dimen>

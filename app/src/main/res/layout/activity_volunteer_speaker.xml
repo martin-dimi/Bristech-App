@@ -178,6 +178,7 @@
     <Button
         android:id="@+id/btn_submit"
         style="@style/btn_effect"
+
         android:layout_height="32dp"
         android:layout_gravity="center_horizontal"
         android:fontFamily="@font/roboto_medium"

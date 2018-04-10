@@ -15,6 +15,8 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.animation.ScaleAnimation;
 import android.widget.Toast;
 
 import com.bristech.bristech.R;
@@ -49,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
         // set up the sidebar
         setContentView(R.layout.activity_main);
@@ -88,6 +91,8 @@ public class MainActivity extends AppCompatActivity implements
 
         // sets upcoming events as default
         showUpcomingEvents();
+
+
 
     }
 

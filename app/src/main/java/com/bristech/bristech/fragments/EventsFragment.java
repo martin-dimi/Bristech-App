@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.ScaleAnimation;
 import android.widget.Toast;
 
 import com.bristech.bristech.R;
@@ -88,6 +89,7 @@ public class EventsFragment extends Fragment implements EventsAdaptor.EventOnCli
 
         // start the activity
         startActivity(eventDetailActivityIntent);
+
     }
 
     @Override

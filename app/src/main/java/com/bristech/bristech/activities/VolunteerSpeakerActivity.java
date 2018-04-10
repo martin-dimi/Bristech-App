@@ -37,6 +37,7 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
         String topic = mSpeakerTopicField.getText().toString();
         String email = mSpeakerEmailField.getText().toString();
         new AlertDialog.Builder(this)
+                .setIcon(R.mipmap.ic_launcher_round)
                 .setTitle("Notice")
                 .setMessage(String.format(getString(R.string.txt_thank_for_speaker_volunteer), name))
                 .setPositiveButton("GO BACK", null)
