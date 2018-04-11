@@ -14,13 +14,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="26dp"
-        android:layout_marginStart="16dp"
+        android:layout_height="38dp"
+        android:gravity="center"
+        android:layout_marginStart="18dp"
         android:layout_marginTop="16dp"
         android:text="@string/settings"
         android:fontFamily="@font/roboto_medium"
         android:textColor="@android:color/background_light"
-        android:textSize="20sp" />
+        android:textSize="28sp" />
     <!--/    app:layout_constraintLeft_toLeftOf="parent"-->
         <!--app:layout_constraintTop_toTopOf="parent" />-->
 

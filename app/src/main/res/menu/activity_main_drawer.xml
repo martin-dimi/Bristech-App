@@ -27,11 +27,11 @@
             <item
                 android:id="@+id/nav_attend_event"
                 android:icon="@drawable/ic_menu_send"
-                android:title="(physically attend an event)" />
+                android:title="Record event attendance" />
             <item
                 android:id="@+id/nav_add_event"
                 android:icon="@drawable/ic_add_circle_black_24dp"
-                android:title="add an event (admin only)" />
+                android:title="Add an event" />
         </menu>
     </item>
 
