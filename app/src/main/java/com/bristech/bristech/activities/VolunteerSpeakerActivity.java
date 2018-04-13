@@ -29,6 +29,8 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
         mSpeakerNameField.setGravity(Gravity.CENTER);
         mSpeakerTopicField.setGravity(Gravity.CENTER);
         mSpeakerEmailField.setGravity(Gravity.CENTER);
+
+
     }
 
     public void submitBtnPress(View view) {
@@ -45,6 +47,7 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
 
         hiddenText.setVisibility(View.VISIBLE);
     }
+
 
 
 }

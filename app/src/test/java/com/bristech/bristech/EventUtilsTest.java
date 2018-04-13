@@ -66,5 +66,7 @@ public class EventUtilsTest {
         mSubscriber.assertCompleted();
 
     }
+
+
 }
 

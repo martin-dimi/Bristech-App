@@ -19,6 +19,7 @@ public class createAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
+
         final EditText email = findViewById(R.id.txtEmail);
         EditText username = findViewById(R.id.txtUsername);
         EditText firstname = findViewById(R.id.txtFirstName);
