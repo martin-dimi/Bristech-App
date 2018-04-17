@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context="com.bristech.bristech.activities.createAccount">
 
+    <Space
+        android:id="@+id/space_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="h,50:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <ImageView
         android:id="@+id/img_bristechBanner"
         android:layout_width="0dp"
@@ -15,8 +23,8 @@
         app:layout_constraintDimensionRatio="h,5:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/space_0"
         android:contentDescription="@string/bristech_banner_description"
-        android:layout_marginTop="100dp"
         app:layout_constraintVertical_bias="0.0"/>
 
     <Space
