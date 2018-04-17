@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <!--when button is pressed it shows grey-->
-    <solid android:color="@color/grey"/>
+    <solid android:color="@color/btn_pressed"/>
     <corners
         android:radius="35dip" />
 </shape>

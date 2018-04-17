@@ -55,7 +55,8 @@ public class EventDetailActivity extends AppCompatActivity {
             }
         });
 
-        Button registerButton = findViewById(R.id.btn_register_for_event);
+        final Button registerButton = findViewById(R.id.btn_register_for_event);
+
         if(mEvent != null && mEvent.getStatus().equals("past")) {
             registerButton.setVisibility(View.GONE);
         }
@@ -63,6 +64,13 @@ public class EventDetailActivity extends AppCompatActivity {
         if(User.currentUser == null || User.currentUser.getEmail() == null) {
             registerButton.setVisibility(View.GONE);
         }
+
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerButton.setBackgroundResource(R.drawable.clr_pressed);
+            }
+        });
 
     }
 

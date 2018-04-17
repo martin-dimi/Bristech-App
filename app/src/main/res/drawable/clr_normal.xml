@@ -3,7 +3,7 @@
     android:shape="rectangle">
 
     <!--when button is NOT pressed it red-->
-    <solid android:color="@color/maroon"/>
+    <solid android:color="@color/btn_default"/>
 
     <corners
         android:radius="35dp" />
