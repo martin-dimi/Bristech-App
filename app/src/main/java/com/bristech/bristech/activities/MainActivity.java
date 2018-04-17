@@ -91,9 +91,6 @@ public class MainActivity extends AppCompatActivity implements
 
         // sets upcoming events as default
         showUpcomingEvents();
-
-
-
     }
 
 
