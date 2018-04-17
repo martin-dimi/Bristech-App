@@ -34,7 +34,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
 public class VolunteerSpeakerActivityTest {
-    private static final String name = "Abby";
+    private static final String name = "Aneesh";
     private static final String email = "123456789@bristol.ac.uk";
     private static final String topic = "Testing";
 
@@ -55,7 +55,6 @@ public class VolunteerSpeakerActivityTest {
         Espresso.onView(withId(R.id.speaker_name)).check(matches(withText(name)));
         Espresso.onView(withId(R.id.speaker_topic)).perform(typeText(topic), closeSoftKeyboard());
         Espresso.onView(withId(R.id.speaker_topic)).check(matches(withText(topic)));
-
     }
 
 
