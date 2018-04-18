@@ -20,7 +20,7 @@
     <color name="google_sign_in">#dd4b39</color>
     <color name="facebook_sing_in">#3c589a</color>
 
-    <color name="btn_pressed">#6c0000</color>
+    <color name="btn_pressed">#A3A4A8</color>
     <color name="btn_default">#9a1c30</color>
 
 </resources>
