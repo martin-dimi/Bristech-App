@@ -12,7 +12,6 @@ import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isClickable;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.containsString;
@@ -27,11 +26,6 @@ public class createAccountTest {
     private static final String retypePassWord = "123456789";
     private static final String invalidEmail = "fdlghbdakb";
     private static final String retypePassWordInvalid = "abcde";
-//    private static final String userName2 = "google";
-//    private static final String firstName2 = "bristol";
-//    private static final String otherName2 = "university";
-//    private static final String passWord2 = "abcde";
-
 
 
     @Rule
@@ -39,9 +33,7 @@ public class createAccountTest {
 
     @Test
     public void testButton() {
-
         Espresso.onView(withId(R.id.btnCreateAccount)).check(matches(isClickable()));
-
     }
 
     @Test
@@ -81,7 +73,7 @@ public class createAccountTest {
     }
 
     @Test
-    public void testRetpyePassword() {
+    public void testRetypePassword() {
         Espresso.onView(withId(R.id.txtRetypePassword)).perform(typeText(retypePassWord), closeSoftKeyboard());
         Espresso.onView(withId(R.id.txtRetypePassword)).check(matches(withText(passWord)));
     }
@@ -94,7 +86,6 @@ public class createAccountTest {
 
     @Test
     public void testAccountCreation() {
-
         Espresso.onView(withId(R.id.txtEmail)).perform(typeText(emailValid), closeSoftKeyboard());
         Espresso.onView(withId(R.id.txtEmail)).check(matches(withText(emailValid)));
         Espresso.onView(withId(R.id.txtUsername)).perform(typeText(userName), closeSoftKeyboard());
@@ -107,5 +98,6 @@ public class createAccountTest {
         Espresso.onView(withId(R.id.txtPassword)).check(matches(withText(passWord)));
         Espresso.onView(withId(R.id.txtRetypePassword)).perform(typeText(retypePassWord), closeSoftKeyboard());
         Espresso.onView(withId(R.id.txtRetypePassword)).check(matches(withText(retypePassWord)));
+        Espresso.onView(withId(R.id.btnCreateAccount)).check(matches(isClickable()));
     }
 }

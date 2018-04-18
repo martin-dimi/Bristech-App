@@ -19,7 +19,6 @@ public class FeedbackActivityTest {
 
     @Test
     public void testButton() {
-
         Espresso.onView(withId(R.id.btn_return_to_homepage)).check(matches(isClickable()));
     }
 }

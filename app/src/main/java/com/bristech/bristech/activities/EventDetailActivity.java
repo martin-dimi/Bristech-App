@@ -36,7 +36,7 @@ public class EventDetailActivity extends AppCompatActivity {
 
         mEvent = (Event) getIntent().getSerializableExtra(EVENT);
         setText(mEvent.getName(), R.id.event_title);
-        setText(mEvent.getDateStr(), R.id.event_date);
+                    setText(mEvent.getDateStr(), R.id.event_date);
         setText(mEvent.getTimeStr(), R.id.event_time);
 //        setText(mEvent.getLocation(), R.id.event_location);
 

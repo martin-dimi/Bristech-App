@@ -23,19 +23,31 @@ public class LoginActivityTest {
     public ActivityTestRule<LoginActivity> mActivityRule = new ActivityTestRule<>(LoginActivity.class);
 
     @Test
-    public void testButton() {
-
+    public void testButtonSignIn() {
         Espresso.onView(withId(R.id.bt_sign_in)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void testButtonGoogle() {
         Espresso.onView(withId(R.id.btn_google_sign_in)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void testButtonFacebook() {
         Espresso.onView(withId(R.id.btn_facebook_sign_in)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void testButtonLogout() {
         Espresso.onView(withId(R.id.btn_logout)).check(matches(isClickable()));
     }
 
     @Test
-    public void testText(){
+    public void testLogin(){
         Espresso.onView(withId(R.id.et_username)).perform(typeText(userName), closeSoftKeyboard());
         Espresso.onView(withId(R.id.et_username)).check(matches(withText(userName)));
         Espresso.onView(withId(R.id.et_password)).perform(typeText(passWord), closeSoftKeyboard());
         Espresso.onView(withId(R.id.et_password)).check(matches(withText(passWord)));
+        Espresso.onView(withId(R.id.bt_sign_in)).check(matches(isClickable()));
     }
 }

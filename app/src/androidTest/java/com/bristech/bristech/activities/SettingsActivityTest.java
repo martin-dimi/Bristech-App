@@ -1,12 +1,12 @@
 package com.bristech.bristech.activities;
 
 import android.support.test.espresso.Espresso;
+import android.support.test.espresso.action.ViewActions;
+import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 
 import com.bristech.bristech.R;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -20,10 +20,17 @@ public class SettingsActivityTest {
     public ActivityTestRule<SettingsActivity> mActivityRule = new ActivityTestRule<>(SettingsActivity.class);
 
     @Test
-    public void testButton() {
-
+    public void testButtonLogout() {
         Espresso.onView(withId(R.id.btn_log_out)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void testButtonModifyInterests() {
         Espresso.onView(withId(R.id.btn_modify_interests)).check(matches(isClickable()));
+    }
+
+    @Test
+    public void testButtonEditSettings() {
         Espresso.onView(withId(R.id.btn_edit_user_settings)).check(matches(isClickable()));
     }
 }
