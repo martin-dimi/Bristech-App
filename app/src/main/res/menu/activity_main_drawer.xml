@@ -6,11 +6,11 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_upcoming_events"
-            android:icon="@drawable/ic_home_black_24dp"
+            android:icon="@drawable/ic_lightbulb_outline_black_24dp"
             android:title="@string/upcoming_events" />
         <item
             android:id="@+id/nav_past_events"
-            android:icon="@drawable/ic_view_agenda_black_24dp"
+            android:icon="@drawable/ic_watch_later_black_24dp"
             android:title="@string/past_events" />
         <item
             android:id="@+id/nav_accounts"
@@ -28,10 +28,6 @@
                 android:id="@+id/nav_attend_event"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Give Feedback" />
-            <item
-                android:id="@+id/nav_add_event"
-                android:icon="@drawable/ic_add_circle_black_24dp"
-                android:title="Add an event" />
         </menu>
     </item>
 

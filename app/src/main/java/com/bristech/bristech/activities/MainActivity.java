@@ -126,9 +126,6 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.nav_attend_event:
                 showAttendEvent();
                 break;
-            case R.id.nav_add_event:
-                showAddEvent();
-                break;
             default:
                 break;
         }
