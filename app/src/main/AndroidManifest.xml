@@ -33,7 +33,8 @@
         <activity android:name=".activities.SettingsActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activities.FeedbackActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".activities.LoginActivity"
             android:screenOrientation="portrait"/>

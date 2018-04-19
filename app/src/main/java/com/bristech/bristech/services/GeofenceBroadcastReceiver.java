@@ -12,6 +12,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
 import com.bristech.bristech.R;
+import com.bristech.bristech.activities.FeedbackActivity;
 import com.bristech.bristech.activities.MainActivity;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingEvent;
@@ -65,7 +66,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
      * @param context The calling context for building a task stack
      */
     private void sendNotification(Context context) {
-        Intent notificationIntent = new Intent(context, MainActivity.class);
+        Intent notificationIntent = new Intent(context, FeedbackActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
         stackBuilder.addParentStack(MainActivity.class);
         stackBuilder.addNextIntent(notificationIntent);

@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity implements
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             requestLocationPermission();
+        } else{
+            mGeofencing = new Geofencing(this);
+            mGeofencing.registerGeofence();
         }
-
-        mGeofencing = new Geofencing(this);
-        mGeofencing.registerGeofence();
 
         // set up navigation functionality of the sidebar
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
