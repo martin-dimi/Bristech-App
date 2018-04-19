@@ -23,9 +23,13 @@ public class FeedbackActivity extends AppCompatActivity {
         setContentView(R.layout.activity_feedback);
 
         Toolbar toolbar = findViewById(R.id.feedback_toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.arrow_back_white);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         TextView textView = findViewById(R.id.txt_poll_link);
         textView.setClickable(true);
@@ -49,11 +53,5 @@ public class FeedbackActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.txt_poll_link);
         textView.setText(R.string.thank_for_feedback);
     }
-
-    public void returnToHomepageBtnPress(View view) {
-        Intent mainActivityIntent = new Intent(this, MainActivity.class);
-        startActivity(mainActivityIntent);
-    }
-
 
 }

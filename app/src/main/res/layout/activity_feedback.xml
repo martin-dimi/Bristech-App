@@ -7,17 +7,16 @@
     android:orientation="vertical"
     tools:context="com.bristech.bristech.activities.FeedbackActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/feedback_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"/>
-
     <include
         layout="@layout/app_bar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/app_bar"/>
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/feedback_toolbar"
+        android:layout_height="@dimen/event_toolbar_height"
+        android:layout_width="match_parent" />
 
     <ImageView
         android:id="@+id/feedback_image"
@@ -76,20 +75,6 @@
         app:layout_constraintTop_toBottomOf="@+id/txt_thank_for_attending"
         app:layout_constraintVertical_bias="0.093" />
 
-    <Button
-        android:id="@+id/btn_return_to_homepage"
-        style="@style/btn_effect"
-        android:layout_height="@dimen/btn_raised_height"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:fontFamily="@font/roboto_medium"
-        android:onClick="returnToHomepageBtnPress"
-        android:text="@string/btn_homepage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/Feedback"
@@ -104,9 +89,9 @@
         android:textColor="@color/cardview_light_background"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btn_return_to_homepage"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
