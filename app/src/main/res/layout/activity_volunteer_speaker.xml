@@ -12,34 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <Space
-        android:id="@+id/space_0"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="h,20:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:fontFamily="@font/roboto_medium"
-        android:gravity="center"
-        android:text="@string/volunteerToSpeak"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
-        app:layout_constraintDimensionRatio="h,10:1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/space_0" />
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/volunteer_toolbar"
+        android:layout_height="@dimen/event_toolbar_height"
+        android:layout_width="match_parent" />
 
     <Space
         android:id="@+id/space_1"
@@ -48,7 +24,7 @@
         app:layout_constraintDimensionRatio="h,10:1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/volunteer_toolbar" />
 
     <ImageView
         android:id="@+id/vulenteer_speak"

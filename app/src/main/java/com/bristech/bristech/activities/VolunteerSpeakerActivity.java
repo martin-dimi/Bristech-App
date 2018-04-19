@@ -2,6 +2,7 @@ package com.bristech.bristech.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -21,6 +22,18 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_volunteer_speaker);
+
+        Toolbar toolbar = findViewById(R.id.volunteer_toolbar);
+        toolbar.setNavigationIcon(R.drawable.arrow_back_white);
+
+        toolbar.setTitle(R.string.volunteerToSpeak);
+        toolbar.setTitleTextColor(getColor(R.color.white));
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
         hiddenText = findViewById(R.id.thank_for_speaker_volunteer);
         hiddenText.setVisibility(View.GONE);
         mSpeakerNameField = findViewById(R.id.speaker_name);
