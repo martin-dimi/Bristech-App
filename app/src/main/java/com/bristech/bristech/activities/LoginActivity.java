@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -78,6 +79,15 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
         mCallbackManager = CallbackManager.Factory.create();
+
+        Toolbar toolbar = findViewById(R.id.login_toolbar);
+        toolbar.setNavigationIcon(R.drawable.arrow_back_black);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
         updateButtonListeners();
     }
