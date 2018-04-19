@@ -4,16 +4,15 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import android.support.v7.widget.Toolbar;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.entities.User;
-import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.UserUtils;
 
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
@@ -79,7 +78,7 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     void register(){
-        EventUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new EventUtils.EventsCallback<Boolean>() {
+        UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
             @Override
             public void onComplete(final Boolean object) {
                 UserUtils.getUser(new UserUtils.UserCallback<User>() {

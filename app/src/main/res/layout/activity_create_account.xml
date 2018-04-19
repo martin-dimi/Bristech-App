@@ -9,9 +9,9 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/create_toolbar"
-        android:background="@color/transparent"
-        android:layout_height="@dimen/event_toolbar_height"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/event_toolbar_height"
+        android:background="@color/transparent"
         app:layout_collapseMode="parallax"/>
 
 
@@ -20,20 +20,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,50:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/img_bristechBanner"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="@string/bristech_banner_description"
         android:src="@drawable/bristech_banner"
         android:tint="@color/black"
         app:layout_constraintDimensionRatio="h,5:2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_0"
-        android:contentDescription="@string/bristech_banner_description"
         app:layout_constraintVertical_bias="0.0"/>
 
     <Space
@@ -41,21 +41,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,20:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/img_bristechBanner"/>
 
     <EditText
         android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
-        style="@style/et_loginActivity_loginInformationField"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_1" />
@@ -65,21 +65,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail"/>
 
     <EditText
         android:id="@+id/txtUsername"
-        android:layout_width="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
         android:hint="@string/hint_username"
         android:inputType="textPersonName"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
-        style="@style/et_loginActivity_loginInformationField"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_2" />
@@ -89,21 +89,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtUsername"/>
 
     <EditText
         android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
         android:hint="@string/first_name"
         android:inputType="textPersonName"
-        style="@style/et_loginActivity_loginInformationField"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_3" />
@@ -113,21 +113,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtFirstName"/>
 
     <EditText
         android:id="@+id/txtOtherNames"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
+        android:fontFamily="@font/roboto_regular"
         android:hint="@string/other_names"
         android:inputType="textPersonName"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
-        style="@style/et_loginActivity_loginInformationField"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_4" />
@@ -137,8 +136,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtOtherNames"/>
 
     <Spinner
@@ -155,21 +154,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spiGender"/>
 
     <EditText
         android:id="@+id/txtPassword"
-        android:layout_width="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_regular"
         android:hint="@string/hint_password"
         android:inputType="textPassword"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
-        style="@style/et_loginActivity_loginInformationField"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_regular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_6" />
@@ -179,21 +178,21 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassword"/>
 
     <EditText
         android:id="@+id/txtRetypePassword"
-        android:layout_width="wrap_content"
+        style="@style/et_loginActivity_loginInformationField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
         android:hint="@string/retype_password"
         android:inputType="textPassword"
-        android:textSize="@dimen/create_account_text_size"
         android:textCursorDrawable="@drawable/cursor_color"
-        style="@style/et_loginActivity_loginInformationField"
+        android:textSize="@dimen/create_account_text_size"
         android:theme="@style/MyEditText"
-        android:fontFamily="@font/roboto_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/space_7" />
@@ -203,15 +202,15 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintDimensionRatio="h,100:1"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtRetypePassword"/>
 
     <Button
         android:id="@+id/btnCreateAccount"
+        style="@style/btn_effect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/btn_effect"
         android:text="@string/tv_create_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -221,10 +220,10 @@
         android:id="@+id/txtInfoText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/unexpected_text"
         android:layout_marginTop="@dimen/create_account_vertical_margins"
-        android:visibility="gone"
         android:fontFamily="@font/roboto_regular"
+        android:text="@string/unexpected_text"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

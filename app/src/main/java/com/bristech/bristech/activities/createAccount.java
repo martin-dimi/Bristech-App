@@ -1,8 +1,11 @@
 package com.bristech.bristech.activities;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
@@ -11,9 +14,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bristech.bristech.R;
+import com.bristech.bristech.entities.User;
 import com.bristech.bristech.utils.LoginUtils;
+import com.bristech.bristech.utils.UserUtils;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthInvalidUserException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
-public class createAccount extends AppCompatActivity {
+import java.util.Objects;
+
+public class createAccount extends AppCompatActivity implements LoginUtils.AuthenticationCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,31 +66,71 @@ public class createAccount extends AppCompatActivity {
                     allFieldsValid = false;
                     infoText.setText("Passwords do not match"); }
 
-                // If so, send request to server, which sends a verification email
-
-                // set info text
-                if (!allFieldsValid) {
-                    infoText.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.maroon));
-                    infoText.setVisibility(View.VISIBLE);
-                }
-                else {
-                    infoText.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.black));
-                    infoText.setText("Verification email sent to " + email.getText().toString());
-                    infoText.setVisibility(View.VISIBLE);
-                }
+                if(allFieldsValid)
+                    accCreate(email.getText().toString(), password.getText().toString());
             }
         });
     }
 
-    public boolean checkEmail(CharSequence target) {
-        if (target == null) {
-            return false;
-        } else {
-            return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    private void accCreate(String email, String pass){
+        LoginUtils.createAccount(email, pass, this);
+    }
+
+    @Override
+    public void onComplete(@NonNull Task<AuthResult> task) {
+        try {
+            AuthResult r = task.getResult(FirebaseException.class);
+            showSnackbar("Successful login");
+            UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                @Override
+                public void onComplete(User user) {
+                    // TODO This is the callback function for getting the user from our servers, do something here
+                    // TODO or use the function below
+                    userHasLoggedIn(user);
+                }
+            });
+
+            Handler handler = new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    finish();
+                }
+            }, 900);   //1 seconds
+        } catch (FirebaseAuthUserCollisionException e) {
+            showSnackbar("User already exists with another provider");
+        } catch (FirebaseAuthInvalidCredentialsException e) {
+            showSnackbar("Please enter a valid email");
+        } catch (FirebaseAuthInvalidUserException e) {
+            showSnackbar("Account does not exist");
+        } catch (FirebaseException e) {
+            showSnackbar("An error occurred");
+            e.printStackTrace();
         }
     }
 
+    private void showSnackbar(String message) {
+        Snackbar
+                .make(getWindow().getDecorView().getRootView(),
+                        message
+                        , Snackbar.LENGTH_LONG)
+                .show();
+    }
+
+    private void userHasLoggedIn(User user){
+        // TODO Do something with the user.. like save it to sharedPreferences
+        User.currentUser = user;
+
+        Intent startLogin = new Intent(this, MainActivity.class);
+        startLogin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startLogin);
+        finish();
+    }
+
+    public boolean checkEmail(CharSequence target) {
+        return target != null && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
     public boolean checkPasswords(String firstPassword, String secondPassword) {
-        return (firstPassword == secondPassword);
+        return (Objects.equals(firstPassword, secondPassword));
     }
 }

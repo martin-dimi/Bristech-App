@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
 
 
 /**
@@ -18,4 +19,10 @@ public interface UserService {
 
     @GET("/user/create")
     Call<User> createUser(@Body User user);
+
+    @POST("/event/attend")
+    Call<Boolean> attendEvent(@Header("email") String email, @Header("event_id") long eventId);
+
+    @POST("/event/register")
+    Call<Boolean> registerToEvent(@Header("email") String email, @Header("event_id") long eventId);
 }

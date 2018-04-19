@@ -1,7 +1,6 @@
 package com.bristech.bristech.utils;
 
 
-import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.bristech.bristech.entities.Event;
@@ -113,35 +112,6 @@ public class EventUtils {
 
             @Override
             public void onFailure(Call<List<Event>> call, Throwable t) {
-                // TODO Handle appropriate failure for not connecting to server
-                Log.e(TAG, t.getMessage());
-            }
-        });
-    }
-
-    /**
-     * Registers/Unregisters the user from the event
-     * @param eventId   the id of the event
-     * @param userEmail the email of the user
-     * @param callback  callback to be executed when the callback is done
-     */
-    public static void attendEvent(long eventId, String userEmail, final EventsCallback<Boolean> callback){
-        Call<Boolean> allEventsCall = mEventService.attendEvent(userEmail, eventId);
-        allEventsCall.enqueue(new Callback<Boolean>() {
-            @Override
-            public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
-                if(response.isSuccessful()){
-                    Boolean isUserAttending = response.body();
-
-                    callback.onComplete(isUserAttending);
-                } else {
-                    // TODO Handle appropriate failure for response != OK
-                    Log.e(TAG, response.message());
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
                 // TODO Handle appropriate failure for not connecting to server
                 Log.e(TAG, t.getMessage());
             }

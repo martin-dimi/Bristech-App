@@ -15,8 +15,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.animation.ScaleAnimation;
 import android.widget.Toast;
 
 import com.bristech.bristech.R;
@@ -62,35 +60,39 @@ public class MainActivity extends AppCompatActivity implements
         boolean isLoggedIn = LoginUtils.isLoggedIn();
         if (!isLoggedIn) {
             Intent startLogin = new Intent(this, LoginActivity.class);
+            startLogin.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(startLogin);
+            finish();
         } else {
             Toast.makeText(this, "You are logged in", Toast.LENGTH_LONG).show();
             UserUtils.getCurrentUser();
+
+            // Check if app has permissions
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                requestLocationPermission();
+            } else{
+                mGeofencing = new Geofencing(this);
+                mGeofencing.registerGeofence();
+            }
+
+            // set up navigation functionality of the sidebar
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                    this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+            drawer.addDrawerListener(toggle);
+            toggle.syncState();
+            NavigationView navigationView = findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(this);
+
+            //Gets events and set fragment manager
+            mFragmentManager = getSupportFragmentManager();
+
+            // sets upcoming events as default
+            showUpcomingEvents();
         }
 
-        // Check if app has permissions
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {
-            requestLocationPermission();
-        } else{
-            mGeofencing = new Geofencing(this);
-            mGeofencing.registerGeofence();
-        }
 
-        // set up navigation functionality of the sidebar
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        //Gets events and set fragment manager
-        mFragmentManager = getSupportFragmentManager();
-
-        // sets upcoming events as default
-        showUpcomingEvents();
     }
 
 

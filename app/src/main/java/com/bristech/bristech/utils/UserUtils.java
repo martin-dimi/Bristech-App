@@ -84,6 +84,59 @@ public class UserUtils {
         });
     }
 
+    /**
+     * Registers/Unregisters the user from the event
+     * @param eventId   the id of the event
+     * @param userEmail the email of the user
+     * @param callback  callback to be executed when the callback is done
+     */
+    public static void attendEvent(long eventId, String userEmail, final UserCallback<Boolean> callback){
+        Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
+        allEventsCall.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
+                if(response.isSuccessful()){
+                    Boolean isUserAttending = response.body();
+
+                    callback.onComplete(isUserAttending);
+                } else {
+                    // TODO Handle appropriate failure for response != OK
+                    Log.e(TAG, response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
+                // TODO Handle appropriate failure for not connecting to server
+                Log.e(TAG, t.getMessage());
+            }
+        });
+    }
+
+
+    public static void registerEvent(long eventId, String userEmail, final UserCallback<Boolean> callback){
+        Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
+        allEventsCall.enqueue(new Callback<Boolean>() {
+            @Override
+            public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
+                if(response.isSuccessful()){
+                    Boolean isUserRegistered = response.body();
+
+                    callback.onComplete(isUserRegistered);
+                } else {
+                    // TODO Handle appropriate failure for response != OK
+                    Log.e(TAG, response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
+                // TODO Handle appropriate failure for not connecting to server
+                Log.e(TAG, t.getMessage());
+            }
+        });
+    }
+
     public interface UserCallback<T> {
         void onComplete(T object);
     }
