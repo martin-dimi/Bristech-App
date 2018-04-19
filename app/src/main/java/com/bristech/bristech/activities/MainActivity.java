@@ -116,8 +116,8 @@ public class MainActivity extends AppCompatActivity implements
             case R.id.nav_past_events:
                 showPastEvents();
                 break;
-            case R.id.nav_settings:
-                showSettings();
+            case R.id.nav_accounts:
+                showAccounts();
                 break;
 
             case R.id.nav_volunteer_a_speaker:
@@ -155,9 +155,9 @@ public class MainActivity extends AppCompatActivity implements
         startActivity(volunteerSpeakerActivityIntent);
     }
 
-    private void showSettings() {
-        Intent settingsActivityIntent = new Intent(this, SettingsActivity.class);
-        startActivity(settingsActivityIntent);
+    private void showAccounts() {
+        Intent mainActivityIntent = new Intent(this, MainActivity.class);
+        startActivity(mainActivityIntent);
     }
 
     private void showAttendEvent() {

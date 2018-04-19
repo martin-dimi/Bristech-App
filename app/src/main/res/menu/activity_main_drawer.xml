@@ -13,9 +13,9 @@
             android:icon="@drawable/ic_view_agenda_black_24dp"
             android:title="@string/past_events" />
         <item
-            android:id="@+id/nav_settings"
+            android:id="@+id/nav_accounts"
             android:icon="@drawable/ic_menu_manage"
-            android:title="@string/Settings" />
+            android:title="@string/accounts" />
     </group>
 
     <item android:title="Communicate">
