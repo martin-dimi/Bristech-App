@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -66,8 +67,7 @@ public class createAccount extends AppCompatActivity implements LoginUtils.Authe
                     allFieldsValid = false;
                     infoText.setText("Passwords do not match"); }
 
-                if(allFieldsValid)
-                    accCreate(email.getText().toString(), password.getText().toString());
+                accCreate(email.getText().toString(), password.getText().toString());
             }
         });
     }
@@ -110,7 +110,7 @@ public class createAccount extends AppCompatActivity implements LoginUtils.Authe
 
     private void showSnackbar(String message) {
         Snackbar
-                .make(getWindow().getDecorView().getRootView(),
+                .make(findViewById(R.id.createAccountCoordinator),
                         message
                         , Snackbar.LENGTH_LONG)
                 .show();
