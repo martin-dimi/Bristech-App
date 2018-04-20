@@ -7,7 +7,10 @@
 The aim of the project is to develop a more elegant way for speakers, managers and attendees to interact in the run-up to and during events. The key motivation for the new platform is to go beyond what meetup currently offers Bristech and its users.
 
 ## Solution
-Our solution is a dynamic mobile application partially integrated with meetup.com, to begin the transition to a holistic application while not losing the benefits of meetup.com. Members of the event will be able to view past and upcoming events, register for events, provide feedback on events, and be prompted to provide feedback when attending a talk, as well as monitoring their attendance through a geofencing check-in system to ensure they are in the vicinity of the venue at the correct time. 
+Our solution is a dynamic mobile application partially integrated with meetup.com, to begin the transition to a holistic application while not losing the benefits of meetup.com. Members of the event will be able to view past and upcoming events, register for events, provide feedback on events, and be prompted to provide feedback when attending a talk, as well as monitoring their attendance through a geofencing check-in system to ensure they are in the vicinity of the venue at the correct time.
+
+This is one part of a two part solution which in this case takes the form of an **Android app_**.  
+It's build with *Android studio* with **JAVA**, **Groovy** and **XML**.
 
 ## Screenshots
 <img src="photos/Login.png" height="360" width="200">  <img src="photos/Sidebar.png" height="360" width="200">  <img src="photos/EventsPage.png" height="360" width="200">  <img src="photos/EventCard.png" height="360" width="200">
