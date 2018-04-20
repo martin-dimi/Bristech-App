@@ -223,6 +223,8 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 public void run() {
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
                     finish();
                 }
             }, 900);   //1 seconds
