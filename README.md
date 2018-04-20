@@ -1,7 +1,5 @@
 # Bristech
-[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000)]()  
-[![Generic badge](https://img.shields.io/badge/license-Google-<red>.svg)](https://shields.io/)  
-[![Build status](https://travis-ci.org/google/licenseclassifier.svg?branch=master)](https://travis-ci.org/google/licenseclassifier)
+[![Crates.io](https://img.shields.io/crates/l/rustc-serialize.svg?maxAge=2592000)]()  [![Generic badge](https://img.shields.io/badge/license-Google-<red>.svg)](https://shields.io/)  [![Build status](https://travis-ci.org/google/licenseclassifier.svg?branch=master)](https://travis-ci.org/google/licenseclassifier)
 
 ## Aim
 The aim of the project is to develop a more elegant way for speakers, managers and attendees to interact in the run-up to and during events. The key motivation for the new platform is to go beyond what meetup currently offers Bristech and its users.
