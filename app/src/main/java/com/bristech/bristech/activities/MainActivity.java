@@ -177,5 +177,4 @@ public class MainActivity extends AppCompatActivity implements
                 new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
                 PERMISSIONS_REQUEST_FINE_LOCATION);
     }
-
 }
