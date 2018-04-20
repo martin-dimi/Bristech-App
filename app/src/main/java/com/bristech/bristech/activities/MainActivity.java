@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.entities.User;
 import com.bristech.bristech.fragments.AddEventFragment;
 import com.bristech.bristech.fragments.EventsFragment;
 import com.bristech.bristech.services.Geofencing;
@@ -155,6 +156,9 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     private void showAccounts() {
+        User.currentUser = null;
+        LoginUtils.signOut();
+
         Intent mainActivityIntent = new Intent(this, MainActivity.class);
         startActivity(mainActivityIntent);
     }
@@ -162,11 +166,6 @@ public class MainActivity extends AppCompatActivity implements
     private void showAttendEvent() {
         Intent feedbackActivityEvent = new Intent(this, FeedbackActivity.class);
         startActivity(feedbackActivityEvent);
-    }
-
-    private void showAddEvent() {
-        AddEventFragment addEventFragment = AddEventFragment.getInstance();
-        mFragmentManager.beginTransaction().replace(R.id.fragment_container, addEventFragment).commit();
     }
 
     private void getEvents(EventsFragment eventsFragment) {

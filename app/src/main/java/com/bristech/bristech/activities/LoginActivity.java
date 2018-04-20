@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.bristech.bristech.R;
 import com.bristech.bristech.entities.User;
+import com.bristech.bristech.fragments.EventsFragment;
+import com.bristech.bristech.utils.EventUtils;
 import com.bristech.bristech.utils.LoginUtils;
 import com.bristech.bristech.utils.UserUtils;
 import com.facebook.CallbackManager;
@@ -85,11 +87,17 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+//                loginBackBtnPressed();
                 onBackPressed();
             }
         });
 
         updateButtonListeners();
+    }
+
+    private void loginBackBtnPressed() {
+        Intent mainActivityIntent = new Intent(this, MainActivity.class);
+        startActivity(mainActivityIntent);
     }
 
     private void googleSignIn() {
@@ -180,7 +188,6 @@ public class LoginActivity extends AppCompatActivity implements LoginUtils.Authe
                 Snackbar
                         .make(findViewById(R.id.login_coordinator), "Logout successful", Snackbar.LENGTH_LONG)
                         .show();
-
             }
         });
     }

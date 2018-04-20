@@ -15,6 +15,8 @@ import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.entities.User;
 import com.bristech.bristech.utils.UserUtils;
 
+import java.util.List;
+
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
 
 public class EventDetailActivity extends AppCompatActivity {
@@ -58,11 +60,17 @@ public class EventDetailActivity extends AppCompatActivity {
         if(User.currentUser == null || User.currentUser.getEmail() == null) {
             registerButton.setVisibility(View.GONE);
         }
+        else {
+            if(User.currentUser.getEvents().contains(mEvent.getId())) {
+                registerButton.setBackgroundResource(R.drawable.clr_pressed);
+            }
+        }
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registerButton.setBackgroundResource(R.drawable.clr_pressed);
+//                registerButton.setBackgroundResource(R.drawable.clr_pressed);
+                registerForTalkBtnPress(v);
             }
         });
 
