@@ -3,12 +3,15 @@ package com.bristech.bristech.activities;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
+import android.widget.TextView;
 
 import com.bristech.bristech.R;
 
@@ -34,33 +37,16 @@ public class VolunteerSpeakerActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-        hiddenText = findViewById(R.id.thank_for_speaker_volunteer);
-        hiddenText.setVisibility(View.GONE);
-        mSpeakerNameField = findViewById(R.id.speaker_name);
-        mSpeakerTopicField = findViewById(R.id.speaker_topic);
-        mSpeakerEmailField = findViewById(R.id.speaker_email);
-        mSpeakerNameField.setGravity(Gravity.CENTER);
-        mSpeakerTopicField.setGravity(Gravity.CENTER);
-        mSpeakerEmailField.setGravity(Gravity.CENTER);
+
+        TextView textView = findViewById(R.id.txt_poll_link);
+        textView.setClickable(true);
+        textView.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "Click this <a href='https://docs.google.com/forms/d/e/1FAIpQLSf-9t-zSt4x2qGpkw17yr50i8hOZ_ShrIKvMZA6B0JmyoPVLw/viewform'>Google Poll</a> link to volunteer a speaker";
+        textView.setText(Html.fromHtml(text));
+
 
 
     }
-
-    public void submitBtnPress(View view) {
-        Log.i("VolunteerSpeakerActivit", "Submit button pressed");
-        String name = mSpeakerNameField.getText().toString();
-        String topic = mSpeakerTopicField.getText().toString();
-        String email = mSpeakerEmailField.getText().toString();
-        new AlertDialog.Builder(this)
-                .setIcon(R.mipmap.ic_launcher_round)
-                .setTitle("Notice")
-                .setMessage(String.format(getString(R.string.txt_thank_for_speaker_volunteer), name))
-                .setPositiveButton("GO BACK", null)
-                .show();
-
-        hiddenText.setVisibility(View.VISIBLE);
-    }
-
 
 
 }

@@ -43,15 +43,4 @@ public class FeedbackActivity extends AppCompatActivity {
         return true;
     }
 
-    public void submitBtnPress(View view) {
-        Log.i("FeedbackActivity", "Submit button pressed");
-        new AlertDialog.Builder(this)
-                .setTitle("Notice")
-                .setMessage("Thank you for the feedback")
-                .setPositiveButton("GO BACK", null)
-                .show();
-        TextView textView = findViewById(R.id.txt_poll_link);
-        textView.setText(R.string.thank_for_feedback);
-    }
-
 }
