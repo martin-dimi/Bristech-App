@@ -11,6 +11,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GetTokenResult;
 
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -91,24 +93,37 @@ public class UserUtils {
      * @param callback  callback to be executed when the callback is done
      */
     public static void attendEvent(long eventId, String userEmail, final UserCallback<Boolean> callback){
+
+        Log.d(TAG, "Calling attend event");
+
         Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
         allEventsCall.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
+                Log.d(TAG, "`getting a response from server");
+
                 if(response.isSuccessful()){
                     Boolean isUserAttending = response.body();
+                    Log.d(TAG, "successful response");
 
                     callback.onComplete(isUserAttending);
                 } else {
                     // TODO Handle appropriate failure for response != OK
-                    Log.e(TAG, response.message());
+                    Log.d(TAG, "error response");
+                    try {
+                        Log.e(TAG, response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
             @Override
             public void onFailure(@NonNull Call<Boolean> call, @NonNull Throwable t) {
                 // TODO Handle appropriate failure for not connecting to server
-                Log.e(TAG, t.getMessage());
+                Log.d(TAG, "Couldn't get response from server");
+
+//                Log.e(TAG, t.getMessage());
             }
         });
     }

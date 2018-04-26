@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -21,6 +22,7 @@ import static com.bristech.bristech.fragments.EventsFragment.EVENT;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
+    private int flag = 0;
 
     Event mEvent;
 
@@ -69,8 +71,23 @@ public class EventDetailActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                registerButton.setBackgroundResource(R.drawable.clr_pressed);
-                registerForTalkBtnPress(v);
+
+                if (flag==0){
+                    flag=1;
+                }
+                else{
+                    flag=0;
+                }
+
+                // 1 means user is going and the color of btn shows grey
+                if (flag == 1){
+                    registerButton.setBackgroundResource(R.drawable.clr_pressed);
+//                registerForTalkBtnPress(v);
+                }
+                // 0 means user is not going and the color of btn shows red
+                else if (flag==0){
+                    registerButton.setBackgroundResource(R.drawable.clr_normal);
+                }
             }
         });
 
@@ -86,26 +103,44 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     void register(){
+//        Log.i(TAG, "lkfgghfgkhjcghghb");
         UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
             @Override
-            public void onComplete(final Boolean object) {
+            public void onComplete(final Boolean isGoing) {
                 UserUtils.getUser(new UserUtils.UserCallback<User>() {
                     @Override
                     public void onComplete(User uobject) {
                         User.currentUser = uobject;
-                        if( object ) {
+                        if( isGoing ) {
                             Snackbar.make(findViewById(R.id.activity_event_coordinator),
                                     "Registered"
                                     , Snackbar.LENGTH_LONG).show();
+
+
+                            // USER IS GOING
+//                            isGoing();
                         }
                         else {
                             Snackbar.make(findViewById(R.id.activity_event_coordinator),
                                     "Unregistered"
                                     , Snackbar.LENGTH_LONG).show();
+
+                            // USER IS NOT GOING
+//                            isNotGoing();
                         }
                     }
                 });
             }
         });
     }
+
+//    //If going the color of the register btn shows grey.
+//    private void isGoing(){
+//
+//    }
+//
+//    //If not going the color of the btn shows red.
+//    private void isNotGoing(){
+//
+//    }
 }
