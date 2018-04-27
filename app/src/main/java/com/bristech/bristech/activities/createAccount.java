@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -91,13 +90,13 @@ public class createAccount extends AppCompatActivity implements LoginUtils.Authe
     }
 
     public static boolean isPassEqual(String pass1, String pass2) {
-        return pass1 == pass2;
+        return pass1.equals(pass2);
     }
 
     @SuppressWarnings("unused")
     public static boolean isPasswordLengthValid(String pass) {
-        if(pass.length() < 9) return false;
-        else return pass.length() <= 16;
+        if(pass.length() <= 9) return false;
+        else return pass.length() < 16;
     }
 
     @Override
