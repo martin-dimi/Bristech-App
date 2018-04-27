@@ -20,7 +20,7 @@ public interface UserService {
     @GET("/user/create")
     Call<User> createUser(@Body User user);
 
-    @POST("/event/attend")
+    @POST("/user/attend")
     Call<Boolean> attendEvent(@Header("email") String email, @Header("event_id") long eventId);
 
     @POST("/event/register")
