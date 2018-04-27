@@ -19,10 +19,12 @@ import com.bristech.bristech.utils.UserUtils;
 import java.util.List;
 
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
+import static com.bristech.bristech.utils.UserUtils.attendEvent;
+import static com.bristech.bristech.utils.UserUtils.user;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
-    private int flag = 0;
+//    Button registerButton = findViewById(R.id.btn_register_for_event);
 
     Event mEvent;
 
@@ -34,7 +36,7 @@ public class EventDetailActivity extends AppCompatActivity {
 
         mEvent = (Event) getIntent().getSerializableExtra(EVENT);
         setText(mEvent.getName(), R.id.event_title);
-                    setText(mEvent.getDateStr(), R.id.event_date);
+        setText(mEvent.getDateStr(), R.id.event_date);
         setText(mEvent.getTimeStr(), R.id.event_time);
 //        setText(mEvent.getLocation(), R.id.event_location);
 
@@ -71,26 +73,10 @@ public class EventDetailActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (flag==0){
-                    flag=1;
-                }
-                else{
-                    flag=0;
-                }
-
-                // 1 means user is going and the color of btn shows grey
-                if (flag == 1){
-                    registerButton.setBackgroundResource(R.drawable.clr_pressed);
-//                registerForTalkBtnPress(v);
-                }
-                // 0 means user is not going and the color of btn shows red
-                else if (flag==0){
-                    registerButton.setBackgroundResource(R.drawable.clr_normal);
-                }
+//                registerButton.setBackgroundResource(R.drawable.clr_pressed);
+                registerForTalkBtnPress(v);
             }
         });
-
     }
 
     private void setText(String key, int textViewID) {
@@ -104,7 +90,7 @@ public class EventDetailActivity extends AppCompatActivity {
 
     void register(){
 //        Log.i(TAG, "lkfgghfgkhjcghghb");
-        UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
+        attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
             @Override
             public void onComplete(final Boolean isGoing) {
                 UserUtils.getUser(new UserUtils.UserCallback<User>() {
@@ -116,9 +102,9 @@ public class EventDetailActivity extends AppCompatActivity {
                                     "Registered"
                                     , Snackbar.LENGTH_LONG).show();
 
-
                             // USER IS GOING
-//                            isGoing();
+                            isGoing();
+                            Log.i(TAG, "is going");
                         }
                         else {
                             Snackbar.make(findViewById(R.id.activity_event_coordinator),
@@ -126,7 +112,8 @@ public class EventDetailActivity extends AppCompatActivity {
                                     , Snackbar.LENGTH_LONG).show();
 
                             // USER IS NOT GOING
-//                            isNotGoing();
+                            isNotGoing();
+                            Log.i(TAG, "not going");
                         }
                     }
                 });
@@ -134,13 +121,38 @@ public class EventDetailActivity extends AppCompatActivity {
         });
     }
 
-//    //If going the color of the register btn shows grey.
-//    private void isGoing(){
-//
-//    }
-//
-//    //If not going the color of the btn shows red.
-//    private void isNotGoing(){
-//
-//    }
+    // user is going to the event (register)
+    private void isGoing(){
+        UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
+            @Override
+            public void onComplete(final Boolean isUserRegistered){
+                UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                    @Override
+                    public void onComplete(User object) {
+                        User.currentUser = object;
+                        Button registerButton = findViewById(R.id.btn_register_for_event);
+                        registerButton.setBackgroundResource(R.drawable.clr_pressed);
+                    }
+                });
+            }
+        });
+    }
+
+    // user is not going to the event (unregister)
+    private void isNotGoing(){
+        UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
+            @Override
+            public void onComplete(final Boolean isUserRegistered){
+                UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                    @Override
+                    public void onComplete(User object) {
+                        User.currentUser = object;
+                        Button registerButton = findViewById(R.id.btn_register_for_event);
+                        registerButton.setBackgroundResource(R.drawable.clr_normal);
+                    }
+                });
+            }
+        });
+    }
+
 }

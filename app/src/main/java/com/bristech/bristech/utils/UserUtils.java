@@ -123,13 +123,14 @@ public class UserUtils {
                 // TODO Handle appropriate failure for not connecting to server
                 Log.d(TAG, "Couldn't get response from server");
 
-//                Log.e(TAG, t.getMessage());
+                Log.e(TAG, t.getMessage());
             }
         });
     }
 
 
     public static void registerEvent(long eventId, String userEmail, final UserCallback<Boolean> callback){
+
         Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
         allEventsCall.enqueue(new Callback<Boolean>() {
             @Override
@@ -140,7 +141,12 @@ public class UserUtils {
                     callback.onComplete(isUserRegistered);
                 } else {
                     // TODO Handle appropriate failure for response != OK
-                    Log.e(TAG, response.message());
+                    Log.d(TAG, "error response");
+                    try {
+                        Log.e(TAG, response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
