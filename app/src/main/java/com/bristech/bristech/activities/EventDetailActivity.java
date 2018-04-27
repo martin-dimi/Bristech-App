@@ -24,7 +24,6 @@ import static com.bristech.bristech.utils.UserUtils.user;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
-//    Button registerButton = findViewById(R.id.btn_register_for_event);
 
     Event mEvent;
 
@@ -64,16 +63,29 @@ public class EventDetailActivity extends AppCompatActivity {
         if(User.currentUser == null || User.currentUser.getEmail() == null) {
             registerButton.setVisibility(View.GONE);
         }
-        else {
-            if(User.currentUser.getEvents().contains(mEvent.getId())) {
-                registerButton.setBackgroundResource(R.drawable.clr_pressed);
-            }
-        }
+
+//        else {
+//            if(User.currentUser.getEvents().contains(mEvent.getId())) {
+
+                UserUtils.registerEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
+                    @Override
+                    public void onComplete(Boolean object) {
+                        Log.i(TAG, "before click button");
+
+                        if (object == true){
+                            registerButton.setBackgroundResource(R.drawable.clr_pressed);
+                        }
+                        else{
+                            registerButton.setBackgroundResource(R.drawable.clr_normal);
+                        }
+                    }
+                });
+//            }
+//        }
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                registerButton.setBackgroundResource(R.drawable.clr_pressed);
                 registerForTalkBtnPress(v);
             }
         });
@@ -121,7 +133,7 @@ public class EventDetailActivity extends AppCompatActivity {
         });
     }
 
-    // user is going to the event (register)
+    // user is going to the event(register) indicating with color grey
     private void isGoing(){
         UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
             @Override
@@ -130,7 +142,7 @@ public class EventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(User object) {
                         User.currentUser = object;
-                        Button registerButton = findViewById(R.id.btn_register_for_event);
+                        final Button registerButton = findViewById(R.id.btn_register_for_event);
                         registerButton.setBackgroundResource(R.drawable.clr_pressed);
                     }
                 });
@@ -138,7 +150,7 @@ public class EventDetailActivity extends AppCompatActivity {
         });
     }
 
-    // user is not going to the event (unregister)
+    // user is not going to the event(unregister) indicating with color red
     private void isNotGoing(){
         UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
             @Override
@@ -147,7 +159,7 @@ public class EventDetailActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(User object) {
                         User.currentUser = object;
-                        Button registerButton = findViewById(R.id.btn_register_for_event);
+                        final Button registerButton = findViewById(R.id.btn_register_for_event);
                         registerButton.setBackgroundResource(R.drawable.clr_normal);
                     }
                 });
