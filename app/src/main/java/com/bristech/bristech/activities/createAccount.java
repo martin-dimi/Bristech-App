@@ -26,6 +26,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
 import java.util.Objects;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class createAccount extends AppCompatActivity implements LoginUtils.AuthenticationCallback {
 
@@ -74,6 +76,28 @@ public class createAccount extends AppCompatActivity implements LoginUtils.Authe
 
     private void accCreate(String email, String pass){
         LoginUtils.createAccount(email, pass, this);
+    }
+
+
+    @SuppressWarnings("unused")
+    public static boolean isStringValid(String toExamine) {
+        Pattern pattern = Pattern.compile("[^a-zA-Z0-9~#@*+%{}<>\\[\\]|\"\\_^]+");
+        Matcher matcher = pattern.matcher(toExamine);
+        return !matcher.find();
+    }
+
+    public static boolean isEmailValid(String email) {
+        return email.contains("@");
+    }
+
+    public static boolean isPassEqual(String pass1, String pass2) {
+        return pass1 == pass2;
+    }
+
+    @SuppressWarnings("unused")
+    public static boolean isPasswordLengthValid(String pass) {
+        if(pass.length() < 9) return false;
+        else return pass.length() <= 16;
     }
 
     @Override
