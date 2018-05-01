@@ -16,11 +16,8 @@ import com.bristech.bristech.entities.Event;
 import com.bristech.bristech.entities.User;
 import com.bristech.bristech.utils.UserUtils;
 
-import java.util.List;
-
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
 import static com.bristech.bristech.utils.UserUtils.attendEvent;
-import static com.bristech.bristech.utils.UserUtils.user;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
@@ -123,36 +120,15 @@ public class EventDetailActivity extends AppCompatActivity {
 
     // user is going to the event (register)
     private void isGoing(){
-        UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
-            @Override
-            public void onComplete(final Boolean isUserRegistered){
-                UserUtils.getUser(new UserUtils.UserCallback<User>() {
-                    @Override
-                    public void onComplete(User object) {
-                        User.currentUser = object;
-                        Button registerButton = findViewById(R.id.btn_register_for_event);
-                        registerButton.setBackgroundResource(R.drawable.clr_pressed);
-                    }
-                });
-            }
-        });
+        Button registerButton = findViewById(R.id.btn_register_for_event);
+        registerButton.setBackgroundResource(R.drawable.clr_pressed);
     }
 
     // user is not going to the event (unregister)
     private void isNotGoing(){
-        UserUtils.registerEvent(mEvent.getId(),User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>(){
-            @Override
-            public void onComplete(final Boolean isUserRegistered){
-                UserUtils.getUser(new UserUtils.UserCallback<User>() {
-                    @Override
-                    public void onComplete(User object) {
-                        User.currentUser = object;
-                        Button registerButton = findViewById(R.id.btn_register_for_event);
-                        registerButton.setBackgroundResource(R.drawable.clr_normal);
-                    }
-                });
-            }
-        });
+
+        Button registerButton = findViewById(R.id.btn_register_for_event);
+        registerButton.setBackgroundResource(R.drawable.clr_normal);
     }
 
 }
