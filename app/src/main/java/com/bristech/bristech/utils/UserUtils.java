@@ -131,17 +131,21 @@ public class UserUtils {
 
     public static void registerEvent(long eventId, String userEmail, final UserCallback<Boolean> callback){
 
+        Log.d(TAG, "Calling register event");
+
         Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
         allEventsCall.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {
+                Log.d(TAG, "`getting a response from registerServer");
+
                 if(response.isSuccessful()){
                     Boolean isUserRegistered = response.body();
 
                     callback.onComplete(isUserRegistered);
                 } else {
                     // TODO Handle appropriate failure for response != OK
-                    Log.d(TAG, "error response");
+                    Log.d(TAG, "error response from registerServer");
                     try {
                         Log.e(TAG, response.errorBody().string());
                     } catch (IOException e) {

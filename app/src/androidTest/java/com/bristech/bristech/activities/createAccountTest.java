@@ -5,7 +5,6 @@ import android.support.test.rule.ActivityTestRule;
 
 import com.bristech.bristech.R;
 
-import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -19,8 +18,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static com.bristech.bristech.R.id.txtEmail;
 import static com.bristech.bristech.R.id.txtFirstName;
 import static com.bristech.bristech.R.id.txtOtherNames;
-import static org.hamcrest.CoreMatchers.containsString;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
 
 
@@ -138,17 +136,15 @@ public class createAccountTest {
     @Test
     public void testPasswordInvalid2() {
         Espresso.onView(withId(R.id.txtPassword)).perform(typeText(passWordInvalid2), closeSoftKeyboard());
-        createAccount.isStringValid(passWordInvalid2);
-        createAccount.isPasswordLengthValid(passWordInvalid2);
-        Espresso.onView(withId(R.id.txtPassword)).check(matches(withText(passWordInvalid2)));
+        Boolean isValid = createAccount.isPasswordLengthValid(passWordInvalid2);
+        assertFalse(isValid);
     }
 
     @Test
     public void testPasswordInvalid3() {
         Espresso.onView(withId(R.id.txtPassword)).perform(typeText(passWordInvalid3), closeSoftKeyboard());
-        createAccount.isStringValid(passWordInvalid3);
-        createAccount.isPasswordLengthValid(passWordInvalid3);
-        Espresso.onView(withId(R.id.txtPassword)).check(matches(withText(passWordInvalid3)));
+        Boolean isValid = createAccount.isPasswordLengthValid(passWordInvalid3);
+        assertFalse(isValid);
     }
 
     @Test
