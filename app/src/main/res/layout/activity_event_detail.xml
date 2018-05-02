@@ -16,12 +16,13 @@
             android:id="@+id/collapsing_toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:layout_collapseMode="parallax"
             android:fitsSystemWindows="true"
+            android:minHeight="@dimen/event_toolbar_height"
             app:contentScrim="@color/maroon"
+            app:expandedTitleMarginEnd="64dp"
             app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginEnd="64dp">
+            app:layout_collapseMode="parallax"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <FrameLayout
                 android:id="@+id/event_colour_frame"
@@ -33,22 +34,22 @@
                     android:id="@+id/event_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:fontFamily="@font/roboto_black"
-                    android:textSize="30sp"
-                    android:gravity="center"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="@font/roboto_black"
+                    android:gravity="center"
                     android:textColor="@color/white"
-                    tools:text="empty_title"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="empty_title" />
 
             </FrameLayout>
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/event_toolbar"
-                android:layout_height="@dimen/event_toolbar_height"
                 android:layout_width="match_parent"
+                android:layout_height="@dimen/event_toolbar_height"
                 app:layout_collapseMode="pin"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
@@ -57,8 +58,8 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_marginBottom="45dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         >
 
         <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -72,37 +73,37 @@
                 android:id="@+id/event_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:fontFamily="@font/roboto_italic"
-                tools:text="empty_time"
+                android:padding="16dp"
                 android:textSize="22sp"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                tools:text="empty_time" />
 
             <TextView
                 android:id="@+id/event_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:fontFamily="@font/roboto_italic"
-                tools:text="empty_date"
+                android:padding="16dp"
                 android:textSize="22sp"
-                app:layout_constraintStart_toEndOf="@+id/event_time" />
+                app:layout_constraintStart_toEndOf="@+id/event_time"
+                tools:text="empty_date" />
 
             <TextView
                 android:id="@+id/event_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
                 android:fontFamily="@font/roboto_regular"
-                android:textColor="@color/black"
-                tools:text="empty_description"
+                android:padding="16dp"
                 android:textAlignment="textStart"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/event_time" />
+                app:layout_constraintTop_toBottomOf="@+id/event_time"
+                tools:text="empty_description" />
 
             <Button
                 android:id="@+id/btn_register_for_event"

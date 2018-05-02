@@ -23,6 +23,6 @@ public interface UserService {
     @POST("/user/attend")
     Call<Boolean> attendEvent(@Header("email") String email, @Header("event_id") long eventId);
 
-    @POST("/event/register")
+    @POST("/user/register")
     Call<Boolean> registerToEvent(@Header("email") String email, @Header("event_id") long eventId);
 }

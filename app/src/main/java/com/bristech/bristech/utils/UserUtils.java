@@ -133,7 +133,7 @@ public class UserUtils {
 
         Log.d(TAG, "Calling register event");
 
-        Call<Boolean> allEventsCall = userService.attendEvent(userEmail, eventId);
+        Call<Boolean> allEventsCall = userService.registerToEvent(userEmail, eventId);
         allEventsCall.enqueue(new Callback<Boolean>() {
             @Override
             public void onResponse(@NonNull Call<Boolean> call, @NonNull Response<Boolean> response) {

@@ -14,6 +14,9 @@ import android.util.Log;
 import com.bristech.bristech.R;
 import com.bristech.bristech.activities.FeedbackActivity;
 import com.bristech.bristech.activities.MainActivity;
+import com.bristech.bristech.entities.Event;
+import com.bristech.bristech.entities.User;
+import com.bristech.bristech.utils.UserUtils;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingEvent;
 
@@ -23,6 +26,7 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
     public static final String CHANNEL_ID = "notify_001";
     public static final String CHANNEL_NAME = "Bristech-channel";
 
+    private Event mEvent;
     /***
      * Handles the Broadcast message sent when the Geofence Transition is triggered
      * Make the call to the SERVER here.
@@ -34,21 +38,24 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         // Get the Geofence Event from the Intent sent through
 
+        Log.i(TAG, "GEOFENCE CALL");
 
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
         if (geofencingEvent.hasError()) {
             Log.e(TAG, String.format("Error code : %d", geofencingEvent.getErrorCode()));
             return;
         }
-        Log.i(TAG, "BROADCAST SUCCESSFUL!");
 
         // Get the transition type.
         int geofenceTransition = geofencingEvent.getGeofenceTransition();
+        Log.i(TAG, " CALL");
+
 
         // Check which transition type has triggered this event
         if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER) {
             // Send the notification
             // TODO Probably the call to the server should be here
+            Log.i(TAG, "Sending notif");
             sendNotification(context);
 
         } else {
@@ -56,6 +63,23 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
             Log.e(TAG, String.format("Unknown transition : %d", geofenceTransition));
         }
 
+    }
+
+    private void userAttendsEvents(final Context context){
+        if(mEvent == null && User.currentUser == null)
+            return;
+
+        UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
+            @Override
+            public void onComplete(final Boolean isGoing) {
+                UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                    @Override
+                    public void onComplete(User uobject) {
+                        Log.i(TAG, "User attending event call");
+                    }
+                });
+            }
+        });
     }
 
 

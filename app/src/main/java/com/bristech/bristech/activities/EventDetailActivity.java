@@ -17,7 +17,6 @@ import com.bristech.bristech.entities.User;
 import com.bristech.bristech.utils.UserUtils;
 
 import static com.bristech.bristech.fragments.EventsFragment.EVENT;
-import static com.bristech.bristech.utils.UserUtils.attendEvent;
 
 public class EventDetailActivity extends AppCompatActivity {
     public static final String TAG = "EventDetails";
@@ -87,7 +86,7 @@ public class EventDetailActivity extends AppCompatActivity {
 
     void register(){
 //        Log.i(TAG, "lkfgghfgkhjcghghb");
-        attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
+        UserUtils.registerEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
             @Override
             public void onComplete(final Boolean isGoing) {
                 UserUtils.getUser(new UserUtils.UserCallback<User>() {
