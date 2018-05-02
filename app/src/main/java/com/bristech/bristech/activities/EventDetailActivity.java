@@ -85,7 +85,6 @@ public class EventDetailActivity extends AppCompatActivity {
     }
 
     void register(){
-//        Log.i(TAG, "lkfgghfgkhjcghghb");
         UserUtils.registerEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
             @Override
             public void onComplete(final Boolean isGoing) {

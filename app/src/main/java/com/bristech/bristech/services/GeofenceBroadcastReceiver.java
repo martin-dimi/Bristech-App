@@ -27,6 +27,8 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
     public static final String CHANNEL_NAME = "Bristech-channel";
 
     private Event mEvent;
+
+
     /***
      * Handles the Broadcast message sent when the Geofence Transition is triggered
      * Make the call to the SERVER here.
@@ -65,24 +67,6 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
 
     }
 
-    private void userAttendsEvents(final Context context){
-        if(mEvent == null && User.currentUser == null)
-            return;
-
-        UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
-            @Override
-            public void onComplete(final Boolean isGoing) {
-                UserUtils.getUser(new UserUtils.UserCallback<User>() {
-                    @Override
-                    public void onComplete(User uobject) {
-                        Log.i(TAG, "User attending event call");
-                    }
-                });
-            }
-        });
-    }
-
-
     /**
      * Posts a notification in the notification bar when a transition is detected
      * If the user clicks the notification, control goes to the MainActivity
@@ -119,6 +103,23 @@ public class GeofenceBroadcastReceiver extends BroadcastReceiver {
         // Get an instance of the Notification manager
         manager.notify(0, builder.build());
 
+    }
+
+    private void userAttendsEvents(final Context context){
+        if(mEvent == null && User.currentUser == null)
+            return;
+
+        UserUtils.attendEvent(mEvent.getId(), User.currentUser.getEmail(), new UserUtils.UserCallback<Boolean>() {
+            @Override
+            public void onComplete(final Boolean isGoing) {
+                UserUtils.getUser(new UserUtils.UserCallback<User>() {
+                    @Override
+                    public void onComplete(User uobject) {
+                        Log.i(TAG, "User attending event call");
+                    }
+                });
+            }
+        });
     }
 
 }
